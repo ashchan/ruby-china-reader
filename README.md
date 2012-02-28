@@ -2,10 +2,13 @@ A simple reader for [Ruby China Group](http://ruby-china.org)
 
 booting...
 
+## How to build
+
+* use Xcode 4.3 or above to build the project
+
 ## Requirements
 
 * Mac OS X 10.6+
-
 
 ## License
 

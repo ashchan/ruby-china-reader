@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AFC258014FCDF1100443426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFC257F14FCDF1100443426 /* Cocoa.framework */; };
+		1AFC258A14FCDF1100443426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC258814FCDF1100443426 /* InfoPlist.strings */; };
+		1AFC258C14FCDF1100443426 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC258B14FCDF1100443426 /* main.m */; };
+		1AFC259014FCDF1100443426 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC258E14FCDF1100443426 /* Credits.rtf */; };
+		1AFC259314FCDF1100443426 /* RCRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC259214FCDF1100443426 /* RCRAppDelegate.m */; };
+		1AFC259614FCDF1100443426 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC259414FCDF1100443426 /* MainMenu.xib */; };
+		1AFC259E14FCDF1200443426 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFC259D14FCDF1200443426 /* SenTestingKit.framework */; };
+		1AFC259F14FCDF1200443426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFC257F14FCDF1100443426 /* Cocoa.framework */; };
+		1AFC25A714FCDF1200443426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC25A514FCDF1200443426 /* InfoPlist.strings */; };
+		1AFC25AA14FCDF1200443426 /* RubyChinaReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC25A914FCDF1200443426 /* RubyChinaReaderTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AFC25A014FCDF1200443426 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AFC257214FCDF1100443426 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AFC257A14FCDF1100443426;
+			remoteInfo = RubyChinaReader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1AFC257B14FCDF1100443426 /* RubyChinaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AFC257F14FCDF1100443426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1AFC258214FCDF1100443426 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1AFC258314FCDF1100443426 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1AFC258414FCDF1100443426 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1AFC258714FCDF1100443426 /* RubyChinaReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RubyChinaReader-Info.plist"; sourceTree = "<group>"; };
+		1AFC258914FCDF1100443426 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1AFC258B14FCDF1100443426 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1AFC258D14FCDF1100443426 /* RubyChinaReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RubyChinaReader-Prefix.pch"; sourceTree = "<group>"; };
+		1AFC258F14FCDF1100443426 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		1AFC259114FCDF1100443426 /* RCRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCRAppDelegate.h; sourceTree = "<group>"; };
+		1AFC259214FCDF1100443426 /* RCRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCRAppDelegate.m; sourceTree = "<group>"; };
+		1AFC259514FCDF1100443426 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1AFC259C14FCDF1200443426 /* RubyChinaReaderTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubyChinaReaderTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AFC259D14FCDF1200443426 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1AFC25A414FCDF1200443426 /* RubyChinaReaderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RubyChinaReaderTests-Info.plist"; sourceTree = "<group>"; };
+		1AFC25A614FCDF1200443426 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1AFC25A814FCDF1200443426 /* RubyChinaReaderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RubyChinaReaderTests.h; sourceTree = "<group>"; };
+		1AFC25A914FCDF1200443426 /* RubyChinaReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RubyChinaReaderTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AFC257814FCDF1100443426 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFC258014FCDF1100443426 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AFC259814FCDF1200443426 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFC259E14FCDF1200443426 /* SenTestingKit.framework in Frameworks */,
+				1AFC259F14FCDF1200443426 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1AFC257014FCDF1100443426 = {
+			isa = PBXGroup;
+			children = (
+				1AFC258514FCDF1100443426 /* RubyChinaReader */,
+				1AFC25A214FCDF1200443426 /* RubyChinaReaderTests */,
+				1AFC257E14FCDF1100443426 /* Frameworks */,
+				1AFC257C14FCDF1100443426 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1AFC257C14FCDF1100443426 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AFC257B14FCDF1100443426 /* RubyChinaReader.app */,
+				1AFC259C14FCDF1200443426 /* RubyChinaReaderTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AFC257E14FCDF1100443426 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AFC257F14FCDF1100443426 /* Cocoa.framework */,
+				1AFC259D14FCDF1200443426 /* SenTestingKit.framework */,
+				1AFC258114FCDF1100443426 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AFC258114FCDF1100443426 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AFC258214FCDF1100443426 /* AppKit.framework */,
+				1AFC258314FCDF1100443426 /* CoreData.framework */,
+				1AFC258414FCDF1100443426 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		1AFC258514FCDF1100443426 /* RubyChinaReader */ = {
+			isa = PBXGroup;
+			children = (
+				1AFC259114FCDF1100443426 /* RCRAppDelegate.h */,
+				1AFC259214FCDF1100443426 /* RCRAppDelegate.m */,
+				1AFC259414FCDF1100443426 /* MainMenu.xib */,
+				1AFC258614FCDF1100443426 /* Supporting Files */,
+			);
+			path = RubyChinaReader;
+			sourceTree = "<group>";
+		};
+		1AFC258614FCDF1100443426 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AFC258714FCDF1100443426 /* RubyChinaReader-Info.plist */,
+				1AFC258814FCDF1100443426 /* InfoPlist.strings */,
+				1AFC258B14FCDF1100443426 /* main.m */,
+				1AFC258D14FCDF1100443426 /* RubyChinaReader-Prefix.pch */,
+				1AFC258E14FCDF1100443426 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1AFC25A214FCDF1200443426 /* RubyChinaReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				1AFC25A814FCDF1200443426 /* RubyChinaReaderTests.h */,
+				1AFC25A914FCDF1200443426 /* RubyChinaReaderTests.m */,
+				1AFC25A314FCDF1200443426 /* Supporting Files */,
+			);
+			path = RubyChinaReaderTests;
+			sourceTree = "<group>";
+		};
+		1AFC25A314FCDF1200443426 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AFC25A414FCDF1200443426 /* RubyChinaReaderTests-Info.plist */,
+				1AFC25A514FCDF1200443426 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AFC257A14FCDF1100443426 /* RubyChinaReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AFC25AD14FCDF1200443426 /* Build configuration list for PBXNativeTarget "RubyChinaReader" */;
+			buildPhases = (
+				1AFC257714FCDF1100443426 /* Sources */,
+				1AFC257814FCDF1100443426 /* Frameworks */,
+				1AFC257914FCDF1100443426 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RubyChinaReader;
+			productName = RubyChinaReader;
+			productReference = 1AFC257B14FCDF1100443426 /* RubyChinaReader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1AFC259B14FCDF1200443426 /* RubyChinaReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AFC25B014FCDF1200443426 /* Build configuration list for PBXNativeTarget "RubyChinaReaderTests" */;
+			buildPhases = (
+				1AFC259714FCDF1200443426 /* Sources */,
+				1AFC259814FCDF1200443426 /* Frameworks */,
+				1AFC259914FCDF1200443426 /* Resources */,
+				1AFC259A14FCDF1200443426 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AFC25A114FCDF1200443426 /* PBXTargetDependency */,
+			);
+			name = RubyChinaReaderTests;
+			productName = RubyChinaReaderTests;
+			productReference = 1AFC259C14FCDF1200443426 /* RubyChinaReaderTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AFC257214FCDF1100443426 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RCR;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = ashchan.com;
+			};
+			buildConfigurationList = 1AFC257514FCDF1100443426 /* Build configuration list for PBXProject "RubyChinaReader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1AFC257014FCDF1100443426;
+			productRefGroup = 1AFC257C14FCDF1100443426 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AFC257A14FCDF1100443426 /* RubyChinaReader */,
+				1AFC259B14FCDF1200443426 /* RubyChinaReaderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AFC257914FCDF1100443426 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFC258A14FCDF1100443426 /* InfoPlist.strings in Resources */,
+				1AFC259014FCDF1100443426 /* Credits.rtf in Resources */,
+				1AFC259614FCDF1100443426 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AFC259914FCDF1200443426 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFC25A714FCDF1200443426 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AFC259A14FCDF1200443426 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AFC257714FCDF1100443426 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFC258C14FCDF1100443426 /* main.m in Sources */,
+				1AFC259314FCDF1100443426 /* RCRAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AFC259714FCDF1200443426 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AFC25AA14FCDF1200443426 /* RubyChinaReaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1AFC25A114FCDF1200443426 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AFC257A14FCDF1100443426 /* RubyChinaReader */;
+			targetProxy = 1AFC25A014FCDF1200443426 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1AFC258814FCDF1100443426 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AFC258914FCDF1100443426 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1AFC258E14FCDF1100443426 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AFC258F14FCDF1100443426 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		1AFC259414FCDF1100443426 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AFC259514FCDF1100443426 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		1AFC25A514FCDF1200443426 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AFC25A614FCDF1200443426 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1AFC25AB14FCDF1200443426 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1AFC25AC14FCDF1200443426 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1AFC25AE14FCDF1200443426 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RubyChinaReader/RubyChinaReader-Prefix.pch";
+				INFOPLIST_FILE = "RubyChinaReader/RubyChinaReader-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1AFC25AF14FCDF1200443426 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RubyChinaReader/RubyChinaReader-Prefix.pch";
+				INFOPLIST_FILE = "RubyChinaReader/RubyChinaReader-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1AFC25B114FCDF1200443426 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RubyChinaReader.app/Contents/MacOS/RubyChinaReader";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RubyChinaReader/RubyChinaReader-Prefix.pch";
+				INFOPLIST_FILE = "RubyChinaReaderTests/RubyChinaReaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1AFC25B214FCDF1200443426 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RubyChinaReader.app/Contents/MacOS/RubyChinaReader";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RubyChinaReader/RubyChinaReader-Prefix.pch";
+				INFOPLIST_FILE = "RubyChinaReaderTests/RubyChinaReaderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AFC257514FCDF1100443426 /* Build configuration list for PBXProject "RubyChinaReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AFC25AB14FCDF1200443426 /* Debug */,
+				1AFC25AC14FCDF1200443426 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AFC25AD14FCDF1200443426 /* Build configuration list for PBXNativeTarget "RubyChinaReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AFC25AE14FCDF1200443426 /* Debug */,
+				1AFC25AF14FCDF1200443426 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AFC25B014FCDF1200443426 /* Build configuration list for PBXNativeTarget "RubyChinaReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AFC25B114FCDF1200443426 /* Debug */,
+				1AFC25B214FCDF1200443426 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1AFC257214FCDF1100443426 /* Project object */;
+}

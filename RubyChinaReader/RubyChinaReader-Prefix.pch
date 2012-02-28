@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'RubyChinaReader' target in the 'RubyChinaReader' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

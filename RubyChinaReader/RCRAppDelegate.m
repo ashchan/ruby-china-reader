@@ -7,14 +7,13 @@
 //
 
 #import "RCRAppDelegate.h"
+#import "RCRAppController.h"
 
 @implementation RCRAppDelegate
 
-@synthesize window = _window;
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    [[RCRAppController sharedPrefsWindowController] showWindow:nil];
 }
 
 @end

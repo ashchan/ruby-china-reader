@@ -34,6 +34,7 @@
 /* Begin PBXFileReference section */
 		1A6ECA4414FD0C3300A91FEF /* DBPrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPrefsWindowController.h; sourceTree = "<group>"; };
 		1A6ECA4514FD0C3300A91FEF /* DBPrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrefsWindowController.m; sourceTree = "<group>"; };
+		1A6ECA5214FD0E2C00A91FEF /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		1A859B9514FCECDF00EB7867 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = Resources/icon.icns; sourceTree = "<group>"; };
 		1AFC257B14FCDF1100443426 /* RubyChinaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFC257F14FCDF1100443426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -81,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				1A6EC9AE14FD0BE700A91FEF /* SharedLib */,
+				1A6ECA5014FD0E0F00A91FEF /* Utils */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -102,6 +104,14 @@
 			name = DBPrefsWindowController;
 			path = SharedLib/DBPrefsWindowController/Source;
 			sourceTree = SOURCE_ROOT;
+		};
+		1A6ECA5014FD0E0F00A91FEF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1A6ECA5214FD0E2C00A91FEF /* SynthesizeSingleton.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
 		};
 		1A859B9314FCE78600EB7867 /* Resources */ = {
 			isa = PBXGroup;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A6ECA4A14FD0C3300A91FEF /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6ECA4514FD0C3300A91FEF /* DBPrefsWindowController.m */; };
 		1A859B9614FCECDF00EB7867 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1A859B9514FCECDF00EB7867 /* icon.icns */; };
 		1AFC258014FCDF1100443426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFC257F14FCDF1100443426 /* Cocoa.framework */; };
 		1AFC258A14FCDF1100443426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC258814FCDF1100443426 /* InfoPlist.strings */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A6ECA4414FD0C3300A91FEF /* DBPrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPrefsWindowController.h; sourceTree = "<group>"; };
+		1A6ECA4514FD0C3300A91FEF /* DBPrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrefsWindowController.m; sourceTree = "<group>"; };
 		1A859B9514FCECDF00EB7867 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = Resources/icon.icns; sourceTree = "<group>"; };
 		1AFC257B14FCDF1100443426 /* RubyChinaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFC257F14FCDF1100443426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -74,6 +77,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A6EC9AC14FD0BDC00A91FEF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1A6EC9AE14FD0BE700A91FEF /* SharedLib */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1A6EC9AE14FD0BE700A91FEF /* SharedLib */ = {
+			isa = PBXGroup;
+			children = (
+				1A6ECA3F14FD0C3300A91FEF /* DBPrefsWindowController */,
+			);
+			name = SharedLib;
+			sourceTree = "<group>";
+		};
+		1A6ECA3F14FD0C3300A91FEF /* DBPrefsWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				1A6ECA4414FD0C3300A91FEF /* DBPrefsWindowController.h */,
+				1A6ECA4514FD0C3300A91FEF /* DBPrefsWindowController.m */,
+			);
+			name = DBPrefsWindowController;
+			path = SharedLib/DBPrefsWindowController/Source;
+			sourceTree = SOURCE_ROOT;
+		};
 		1A859B9314FCE78600EB7867 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +153,7 @@
 		1AFC258514FCDF1100443426 /* RubyChinaReader */ = {
 			isa = PBXGroup;
 			children = (
+				1A6EC9AC14FD0BDC00A91FEF /* Classes */,
 				1A859B9314FCE78600EB7867 /* Resources */,
 				1AFC259114FCDF1100443426 /* RCRAppDelegate.h */,
 				1AFC259214FCDF1100443426 /* RCRAppDelegate.m */,
@@ -219,6 +249,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 1AFC257014FCDF1100443426;
 			productRefGroup = 1AFC257C14FCDF1100443426 /* Products */;
@@ -276,6 +307,7 @@
 			files = (
 				1AFC258C14FCDF1100443426 /* main.m in Sources */,
 				1AFC259314FCDF1100443426 /* RCRAppDelegate.m in Sources */,
+				1A6ECA4A14FD0C3300A91FEF /* DBPrefsWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

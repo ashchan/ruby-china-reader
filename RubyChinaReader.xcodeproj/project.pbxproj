@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		1A6ECA4A14FD0C3300A91FEF /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6ECA4514FD0C3300A91FEF /* DBPrefsWindowController.m */; };
 		1A6ECA5614FD0FB400A91FEF /* RCRAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6ECA5514FD0FB400A91FEF /* RCRAppController.m */; };
+		1A6ECA5814FE550600A91FEF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6ECA5714FE550600A91FEF /* WebKit.framework */; };
 		1A859B9614FCECDF00EB7867 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1A859B9514FCECDF00EB7867 /* icon.icns */; };
 		1AFC258014FCDF1100443426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFC257F14FCDF1100443426 /* Cocoa.framework */; };
 		1AFC258A14FCDF1100443426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC258814FCDF1100443426 /* InfoPlist.strings */; };
 		1AFC258C14FCDF1100443426 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC258B14FCDF1100443426 /* main.m */; };
-		1AFC259014FCDF1100443426 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC258E14FCDF1100443426 /* Credits.rtf */; };
 		1AFC259314FCDF1100443426 /* RCRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC259214FCDF1100443426 /* RCRAppDelegate.m */; };
 		1AFC259614FCDF1100443426 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC259414FCDF1100443426 /* MainMenu.xib */; };
 		1AFC259E14FCDF1200443426 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFC259D14FCDF1200443426 /* SenTestingKit.framework */; };
@@ -38,6 +38,7 @@
 		1A6ECA5214FD0E2C00A91FEF /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		1A6ECA5414FD0FB400A91FEF /* RCRAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRAppController.h; sourceTree = "<group>"; };
 		1A6ECA5514FD0FB400A91FEF /* RCRAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRAppController.m; sourceTree = "<group>"; };
+		1A6ECA5714FE550600A91FEF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1A859B9514FCECDF00EB7867 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = Resources/icon.icns; sourceTree = "<group>"; };
 		1AFC257B14FCDF1100443426 /* RubyChinaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFC257F14FCDF1100443426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -48,7 +49,6 @@
 		1AFC258914FCDF1100443426 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1AFC258B14FCDF1100443426 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1AFC258D14FCDF1100443426 /* RubyChinaReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RubyChinaReader-Prefix.pch"; sourceTree = "<group>"; };
-		1AFC258F14FCDF1100443426 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		1AFC259114FCDF1100443426 /* RCRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCRAppDelegate.h; sourceTree = "<group>"; };
 		1AFC259214FCDF1100443426 /* RCRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCRAppDelegate.m; sourceTree = "<group>"; };
 		1AFC259514FCDF1100443426 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -65,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A6ECA5814FE550600A91FEF /* WebKit.framework in Frameworks */,
 				1AFC258014FCDF1100443426 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +157,7 @@
 		1AFC257E14FCDF1100443426 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A6ECA5714FE550600A91FEF /* WebKit.framework */,
 				1AFC257F14FCDF1100443426 /* Cocoa.framework */,
 				1AFC259D14FCDF1200443426 /* SenTestingKit.framework */,
 				1AFC258114FCDF1100443426 /* Other Frameworks */,
@@ -193,7 +195,6 @@
 				1AFC258814FCDF1100443426 /* InfoPlist.strings */,
 				1AFC258B14FCDF1100443426 /* main.m */,
 				1AFC258D14FCDF1100443426 /* RubyChinaReader-Prefix.pch */,
-				1AFC258E14FCDF1100443426 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -291,7 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AFC258A14FCDF1100443426 /* InfoPlist.strings in Resources */,
-				1AFC259014FCDF1100443426 /* Credits.rtf in Resources */,
 				1AFC259614FCDF1100443426 /* MainMenu.xib in Resources */,
 				1A859B9614FCECDF00EB7867 /* icon.icns in Resources */,
 			);
@@ -360,14 +360,6 @@
 				1AFC258914FCDF1100443426 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		1AFC258E14FCDF1100443426 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1AFC258F14FCDF1100443426 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		1AFC259414FCDF1100443426 /* MainMenu.xib */ = {

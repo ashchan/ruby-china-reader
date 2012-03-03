@@ -8,9 +8,11 @@
 
 #import "RCRAppController.h"
 #import "RCRTopicsViewController.h"
+#import "RCRInfoViewController.h"
 
 @interface RCRAppController() {
     RCRTopicsViewController *topicsViewController;
+    RCRInfoViewController *infoViewController;
 }
 
 @end
@@ -29,14 +31,13 @@
     [self addView:textView label:@"Account" image:[NSImage imageNamed:NSImageNameUser]];
     [self addView:textView label:@"Options" image:[NSImage imageNamed:NSImageNameAdvanced]];
 
-    NSImageView *view = [[[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 300, 350)] autorelease];
-    view.image = [[[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://l.ruby-china.org/photo/74c63894f0c9f138f233889d901f4e31.png"]] autorelease];
-    [self addView:view label:@"About" image:[NSImage imageNamed:NSImageNameInfo]];
-
+    infoViewController = [[RCRInfoViewController alloc] initWithNibName:@"RCRInfoViewController" bundle:nil];
+    [self addView:infoViewController.view label:infoViewController.title image:[NSImage imageNamed:NSImageNameInfo]];
 }
 
 - (void)dealloc {
     [topicsViewController release];
+    [infoViewController release];
     [super dealloc];
 }
 

@@ -16,6 +16,10 @@
 		1A6AB5581502203A00CC0516 /* RCRTopicsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6AB5561502203A00CC0516 /* RCRTopicsViewController.xib */; };
 		1A6AB56015022D5F00CC0516 /* RCRInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6AB55E15022D5F00CC0516 /* RCRInfoViewController.m */; };
 		1A6AB56115022D5F00CC0516 /* RCRInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6AB55F15022D5F00CC0516 /* RCRInfoViewController.xib */; };
+		1A6AB5651502307800CC0516 /* RCROptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6AB5631502307800CC0516 /* RCROptionsViewController.m */; };
+		1A6AB5661502307800CC0516 /* RCROptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6AB5641502307800CC0516 /* RCROptionsViewController.xib */; };
+		1A6AB56A1502318100CC0516 /* RCRAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6AB5681502318000CC0516 /* RCRAccountViewController.m */; };
+		1A6AB56B1502318100CC0516 /* RCRAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6AB5691502318000CC0516 /* RCRAccountViewController.xib */; };
 		1A6ECA4A14FD0C3300A91FEF /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6ECA4514FD0C3300A91FEF /* DBPrefsWindowController.m */; };
 		1A6ECA5614FD0FB400A91FEF /* RCRAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6ECA5514FD0FB400A91FEF /* RCRAppController.m */; };
 		1A859B9614FCECDF00EB7867 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1A859B9514FCECDF00EB7867 /* icon.icns */; };
@@ -87,6 +91,12 @@
 		1A6AB55D15022D5F00CC0516 /* RCRInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRInfoViewController.h; sourceTree = "<group>"; };
 		1A6AB55E15022D5F00CC0516 /* RCRInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRInfoViewController.m; sourceTree = "<group>"; };
 		1A6AB55F15022D5F00CC0516 /* RCRInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCRInfoViewController.xib; sourceTree = "<group>"; };
+		1A6AB5621502307800CC0516 /* RCROptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCROptionsViewController.h; sourceTree = "<group>"; };
+		1A6AB5631502307800CC0516 /* RCROptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCROptionsViewController.m; sourceTree = "<group>"; };
+		1A6AB5641502307800CC0516 /* RCROptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCROptionsViewController.xib; sourceTree = "<group>"; };
+		1A6AB5671502318000CC0516 /* RCRAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRAccountViewController.h; sourceTree = "<group>"; };
+		1A6AB5681502318000CC0516 /* RCRAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRAccountViewController.m; sourceTree = "<group>"; };
+		1A6AB5691502318000CC0516 /* RCRAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCRAccountViewController.xib; sourceTree = "<group>"; };
 		1A6ECA4414FD0C3300A91FEF /* DBPrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPrefsWindowController.h; sourceTree = "<group>"; };
 		1A6ECA4514FD0C3300A91FEF /* DBPrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrefsWindowController.m; sourceTree = "<group>"; };
 		1A6ECA5214FD0E2C00A91FEF /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
@@ -161,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				1A6AB5561502203A00CC0516 /* RCRTopicsViewController.xib */,
+				1A6AB5691502318000CC0516 /* RCRAccountViewController.xib */,
+				1A6AB5641502307800CC0516 /* RCROptionsViewController.xib */,
 				1A6AB55F15022D5F00CC0516 /* RCRInfoViewController.xib */,
 			);
 			name = Views;
@@ -212,6 +224,10 @@
 				1A6ECA5514FD0FB400A91FEF /* RCRAppController.m */,
 				1A6AB5541502203A00CC0516 /* RCRTopicsViewController.h */,
 				1A6AB5551502203A00CC0516 /* RCRTopicsViewController.m */,
+				1A6AB5671502318000CC0516 /* RCRAccountViewController.h */,
+				1A6AB5681502318000CC0516 /* RCRAccountViewController.m */,
+				1A6AB5621502307800CC0516 /* RCROptionsViewController.h */,
+				1A6AB5631502307800CC0516 /* RCROptionsViewController.m */,
 				1A6AB55D15022D5F00CC0516 /* RCRInfoViewController.h */,
 				1A6AB55E15022D5F00CC0516 /* RCRInfoViewController.m */,
 			);
@@ -428,6 +444,8 @@
 				1A859B9614FCECDF00EB7867 /* icon.icns in Resources */,
 				1A6AB5581502203A00CC0516 /* RCRTopicsViewController.xib in Resources */,
 				1A6AB56115022D5F00CC0516 /* RCRInfoViewController.xib in Resources */,
+				1A6AB5661502307800CC0516 /* RCROptionsViewController.xib in Resources */,
+				1A6AB56B1502318100CC0516 /* RCRAccountViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +486,8 @@
 				1A6ECA5614FD0FB400A91FEF /* RCRAppController.m in Sources */,
 				1A6AB5571502203A00CC0516 /* RCRTopicsViewController.m in Sources */,
 				1A6AB56015022D5F00CC0516 /* RCRInfoViewController.m in Sources */,
+				1A6AB5651502307800CC0516 /* RCROptionsViewController.m in Sources */,
+				1A6AB56A1502318100CC0516 /* RCRAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,8 @@
 //
 
 #import "DBPrefsWindowController.h"
+#import <RestKit/RestKit.h>
 
-@interface RCRAppController : DBPrefsWindowController
+@interface RCRAppController : DBPrefsWindowController <RKRequestDelegate>
 
 @end

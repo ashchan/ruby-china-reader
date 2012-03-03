@@ -7,9 +7,9 @@
 //
 
 #import "RCRAppController.h"
-#import <WebKit/WebKit.h>
 
 @interface RCRAppController() {
+    NSTextView *_topicsView;
 }
 
 @end
@@ -21,10 +21,8 @@
 }
 
 - (void)setupToolbar{
-    WebView *webView = [[[WebView alloc] initWithFrame:CGRectMake(0, 0, 400, 600)] autorelease];
-    webView.applicationNameForUserAgent = @"Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_0 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Version/4.0.5 Mobile/8A293 Safari/6531.22.7";
-    webView.mainFrameURL = @"http://www.ruby-china.org/topics";
-    [self addView:webView label:@"Topics" image:[NSImage imageNamed:NSImageNameBonjour]];
+    _topicsView = [[[NSTextView alloc] initWithFrame:NSMakeRect(0, 0, 350, 400)] autorelease];
+    [self addView:_topicsView label:@"Topics" image:[NSImage imageNamed:NSImageNameBonjour]];
 
     NSTextView *textView = [[[NSTextView alloc] initWithFrame:NSMakeRect(0, 0, 300, 400)] autorelease];
     [self addView:textView label:@"Account" image:[NSImage imageNamed:NSImageNameUser]];
@@ -33,6 +31,19 @@
     NSImageView *view = [[[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 300, 350)] autorelease];
     view.image = [[[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://l.ruby-china.org/photo/74c63894f0c9f138f233889d901f4e31.png"]] autorelease];
     [self addView:view label:@"About" image:[NSImage imageNamed:NSImageNameInfo]];
+
+    [[RKClient sharedClient] get:@"api/topics.json" delegate:self];
+}
+
+- (void)dealloc {
+    [super dealloc];
+}
+
+#pragma - RKRequestDelegate
+- (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response {
+    NSLog(@"get back from /topics.json:");
+    NSLog(response.bodyAsString);
+    _topicsView.string = response.bodyAsString;
 }
 
 @end

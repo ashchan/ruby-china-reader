@@ -7,8 +7,9 @@
 //
 
 #import <RestKit/RestKit.h>
+#import "PullToRefreshDelegate.h"
 
-@interface RCRTopicsViewController : NSViewController <RKObjectLoaderDelegate, NSTableViewDelegate, NSTableViewDataSource>
+@interface RCRTopicsViewController : NSViewController <RKObjectLoaderDelegate, NSTableViewDelegate, NSTableViewDataSource, PullToRefreshDelegate>
 
 @property (assign) IBOutlet NSTableView *topicsTableView;
 

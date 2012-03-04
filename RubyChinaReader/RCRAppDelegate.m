@@ -26,7 +26,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [RKClient clientWithBaseURL:API_ENDPOINT];
     [self mapObjects];
     [[RCRAppController sharedPrefsWindowController] showWindow:nil];
 }
@@ -44,7 +43,7 @@
 #pragma mark - Private Methods
 
 - (void)mapObjects {
-    RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:API_ENDPOINT];
+    RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:[NSURL URLWithString:API_ENDPOINT]];
     
     RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[RCRUser class]];
     [userMapping mapAttributes:@"login", @"name", @"location", @"bio", @"tagline", @"website", nil];

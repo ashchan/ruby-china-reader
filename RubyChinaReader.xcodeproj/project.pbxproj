@@ -27,6 +27,11 @@
 		1A6ECA4A14FD0C3300A91FEF /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6ECA4514FD0C3300A91FEF /* DBPrefsWindowController.m */; };
 		1A6ECA5614FD0FB400A91FEF /* RCRAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6ECA5514FD0FB400A91FEF /* RCRAppController.m */; };
 		1A859B9614FCECDF00EB7867 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1A859B9514FCECDF00EB7867 /* icon.icns */; };
+		1AB3321B1503769C000D9DEA /* pull-to-refresh-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB3320C1503769C000D9DEA /* pull-to-refresh-arrow.png */; };
+		1AB3321D1503769C000D9DEA /* PullToRefreshClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB332101503769C000D9DEA /* PullToRefreshClipView.m */; };
+		1AB3321E1503769C000D9DEA /* PullToRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB332131503769C000D9DEA /* PullToRefreshScrollView.m */; };
+		1AB3321F1503769C000D9DEA /* release-to-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB332141503769C000D9DEA /* release-to-refresh.png */; };
+		1AB3322115037734000D9DEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3322015037734000D9DEA /* QuartzCore.framework */; };
 		1AFC258014FCDF1100443426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFC257F14FCDF1100443426 /* Cocoa.framework */; };
 		1AFC258A14FCDF1100443426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC258814FCDF1100443426 /* InfoPlist.strings */; };
 		1AFC258C14FCDF1100443426 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC258B14FCDF1100443426 /* main.m */; };
@@ -115,6 +120,14 @@
 		1A6ECA5414FD0FB400A91FEF /* RCRAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRAppController.h; sourceTree = "<group>"; };
 		1A6ECA5514FD0FB400A91FEF /* RCRAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRAppController.m; sourceTree = "<group>"; };
 		1A859B9514FCECDF00EB7867 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = Resources/icon.icns; sourceTree = "<group>"; };
+		1AB3320C1503769C000D9DEA /* pull-to-refresh-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-to-refresh-arrow.png"; sourceTree = "<group>"; };
+		1AB3320F1503769C000D9DEA /* PullToRefreshClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshClipView.h; sourceTree = "<group>"; };
+		1AB332101503769C000D9DEA /* PullToRefreshClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshClipView.m; sourceTree = "<group>"; };
+		1AB332111503769C000D9DEA /* PullToRefreshDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshDelegate.h; sourceTree = "<group>"; };
+		1AB332121503769C000D9DEA /* PullToRefreshScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshScrollView.h; sourceTree = "<group>"; };
+		1AB332131503769C000D9DEA /* PullToRefreshScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshScrollView.m; sourceTree = "<group>"; };
+		1AB332141503769C000D9DEA /* release-to-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "release-to-refresh.png"; sourceTree = "<group>"; };
+		1AB3322015037734000D9DEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1AFC257B14FCDF1100443426 /* RubyChinaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFC257F14FCDF1100443426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1AFC258214FCDF1100443426 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -140,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB3322115037734000D9DEA /* QuartzCore.framework in Frameworks */,
 				1A6AB54E1502053400CC0516 /* libxml2.dylib in Frameworks */,
 				1A6AB54C1502051300CC0516 /* SystemConfiguration.framework in Frameworks */,
 				1A6AB54A1502050100CC0516 /* Security.framework in Frameworks */,
@@ -209,6 +223,7 @@
 		1A6EC9AE14FD0BE700A91FEF /* SharedLib */ = {
 			isa = PBXGroup;
 			children = (
+				1AB332001503769C000D9DEA /* PullToRefresh */,
 				1A6AB5321502037C00CC0516 /* RestKit.xcodeproj */,
 				1A6ECA3F14FD0C3300A91FEF /* DBPrefsWindowController */,
 			);
@@ -263,6 +278,21 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		1AB332001503769C000D9DEA /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				1AB3320C1503769C000D9DEA /* pull-to-refresh-arrow.png */,
+				1AB332141503769C000D9DEA /* release-to-refresh.png */,
+				1AB3320F1503769C000D9DEA /* PullToRefreshClipView.h */,
+				1AB332101503769C000D9DEA /* PullToRefreshClipView.m */,
+				1AB332111503769C000D9DEA /* PullToRefreshDelegate.h */,
+				1AB332121503769C000D9DEA /* PullToRefreshScrollView.h */,
+				1AB332131503769C000D9DEA /* PullToRefreshScrollView.m */,
+			);
+			name = PullToRefresh;
+			path = SharedLib/PullToRefresh/PullToRefresh;
+			sourceTree = SOURCE_ROOT;
+		};
 		1AFC257014FCDF1100443426 = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				1A6AB54D1502053400CC0516 /* libxml2.dylib */,
+				1AB3322015037734000D9DEA /* QuartzCore.framework */,
 				1A6AB54B1502051300CC0516 /* SystemConfiguration.framework */,
 				1A6AB5491502050100CC0516 /* Security.framework */,
 				1A6AB547150204DF00CC0516 /* CoreServices.framework */,
@@ -466,6 +497,8 @@
 				1A6AB56115022D5F00CC0516 /* RCRInfoViewController.xib in Resources */,
 				1A6AB5661502307800CC0516 /* RCROptionsViewController.xib in Resources */,
 				1A6AB56B1502318100CC0516 /* RCRAccountViewController.xib in Resources */,
+				1AB3321B1503769C000D9DEA /* pull-to-refresh-arrow.png in Resources */,
+				1AB3321F1503769C000D9DEA /* release-to-refresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +545,8 @@
 				1A1FC5C81503184E009CDD67 /* RCRTopic.m in Sources */,
 				1A1FC5CB15032C26009CDD67 /* RCRTableRowView.m in Sources */,
 				1A1FC5CE15033875009CDD67 /* RCRUser.m in Sources */,
+				1AB3321D1503769C000D9DEA /* PullToRefreshClipView.m in Sources */,
+				1AB3321E1503769C000D9DEA /* PullToRefreshScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

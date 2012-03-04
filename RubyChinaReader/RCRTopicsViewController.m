@@ -18,6 +18,7 @@
 
 - (void)reloadRowForEntity:(id)object;
 - (RCRTopic *)topicForRow:(NSInteger)row;
+- (void)refresh;
 
 @end
 
@@ -30,8 +31,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Topics";
-        RKObjectMapping *topicMappping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRTopic class]];
-        [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/topics.json" objectMapping:topicMappping delegate:self];
+        [self refresh];
     }
     
     return self;
@@ -102,7 +102,18 @@
     return _topics.count;
 }
 
+#pragma mark - PullToRefreshDelegate
+
+- (void)ptrScrollViewDidTriggerRefresh:(id)sender {
+    [self refresh];
+}
+
 #pragma mark - Private Methods & misc
+
+- (void)refresh {
+    RKObjectMapping *topicMappping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRTopic class]];
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/topics.json" objectMapping:topicMappping delegate:self];
+}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:RCRTopicPropertyNamedGravatar]) {

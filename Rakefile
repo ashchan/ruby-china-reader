@@ -12,6 +12,7 @@ task :install do
   [
     ["https://github.com/kgn/DBPrefsWindowController.git", "master"],
     ["https://github.com/RestKit/RestKit.git", "development"],
+    ["https://github.com/ashchan/PullToRefresh.git", "none-arc"],
   ].each do |lib|
     `git clone #{lib[0]} -b #{lib[1]} --recursive`
   end

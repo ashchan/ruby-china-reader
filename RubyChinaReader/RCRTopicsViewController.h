@@ -10,6 +10,5 @@
 
 @interface RCRTopicsViewController : NSViewController <RKRequestDelegate>
 
-@property (assign) IBOutlet NSTextView *textView;
 
 @end

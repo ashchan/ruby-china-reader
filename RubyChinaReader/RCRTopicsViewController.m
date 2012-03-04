@@ -14,7 +14,6 @@
 
 @implementation RCRTopicsViewController
 
-@synthesize textView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,7 +28,6 @@
 
 #pragma - RKRequestDelegate
 - (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response {
-    textView.string = response.bodyAsString;
 }
 
 @end

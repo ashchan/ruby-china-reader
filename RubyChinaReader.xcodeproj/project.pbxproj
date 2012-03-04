@@ -10,6 +10,7 @@
 		1A1FC5C5150300D3009CDD67 /* RCRTopicCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5C4150300D3009CDD67 /* RCRTopicCellView.m */; };
 		1A1FC5C81503184E009CDD67 /* RCRTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5C71503184E009CDD67 /* RCRTopic.m */; };
 		1A1FC5CB15032C26009CDD67 /* RCRTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5CA15032C25009CDD67 /* RCRTableRowView.m */; };
+		1A1FC5CE15033875009CDD67 /* RCRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5CD15033875009CDD67 /* RCRUser.m */; };
 		1A6AB5461502046E00CC0516 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
 		1A6AB548150204DF00CC0516 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB547150204DF00CC0516 /* CoreServices.framework */; };
 		1A6AB54A1502050100CC0516 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5491502050100CC0516 /* Security.framework */; };
@@ -89,6 +90,8 @@
 		1A1FC5C71503184E009CDD67 /* RCRTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRTopic.m; sourceTree = "<group>"; };
 		1A1FC5C915032C25009CDD67 /* RCRTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRTableRowView.h; sourceTree = "<group>"; };
 		1A1FC5CA15032C25009CDD67 /* RCRTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRTableRowView.m; sourceTree = "<group>"; };
+		1A1FC5CC15033875009CDD67 /* RCRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRUser.h; sourceTree = "<group>"; };
+		1A1FC5CD15033875009CDD67 /* RCRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRUser.m; sourceTree = "<group>"; };
 		1A6AB5321502037C00CC0516 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = SharedLib/RestKit/RestKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		1A6AB547150204DF00CC0516 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		1A6AB5491502050100CC0516 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -174,6 +177,8 @@
 			children = (
 				1A1FC5C61503184E009CDD67 /* RCRTopic.h */,
 				1A1FC5C71503184E009CDD67 /* RCRTopic.m */,
+				1A1FC5CC15033875009CDD67 /* RCRUser.h */,
+				1A1FC5CD15033875009CDD67 /* RCRUser.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -506,6 +511,7 @@
 				1A1FC5C5150300D3009CDD67 /* RCRTopicCellView.m in Sources */,
 				1A1FC5C81503184E009CDD67 /* RCRTopic.m in Sources */,
 				1A1FC5CB15032C26009CDD67 /* RCRTableRowView.m in Sources */,
+				1A1FC5CE15033875009CDD67 /* RCRUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,5 +13,6 @@ NSString *const RCRTopicPropertyNamedImage = @"RCRTopicPropertyNamedImage";
 @implementation RCRTopic
 
 @synthesize title, repliesCount, nodeName, createdDate, updatedDate;
+@synthesize user;
 
 @end

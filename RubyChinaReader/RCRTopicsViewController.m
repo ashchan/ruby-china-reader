@@ -74,6 +74,7 @@
     cellView.textField.stringValue = entity.title;
     cellView.nodeName.stringValue = entity.nodeName;
     cellView.repliesCount.stringValue = entity.repliesCount.stringValue;
+    cellView.userName.stringValue = entity.user.login;
       
     return cellView;
 } 
@@ -89,7 +90,7 @@
     if (row != NSNotFound) {
         RCRTopicCellView *cellView = [topicsTableView viewAtColumn:0 row:row makeIfNecessary:NO];
         if (cellView) {
-            RCRTopic  *topic = [self _topicForRow:row];
+            RCRTopic  *topic = [self topicForRow:row];
             [NSAnimationContext beginGrouping];
             [[NSAnimationContext currentContext] setDuration:0.8];
             [cellView.imageView setAlphaValue:0];

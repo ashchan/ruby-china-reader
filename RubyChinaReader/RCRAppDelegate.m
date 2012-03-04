@@ -9,6 +9,7 @@
 #import <RestKit/RestKit.h>
 #import "RCRAppDelegate.h"
 #import "RCRAppController.h"
+#import "RCRUser.h"
 #import "RCRTopic.h"
 
 /*#ifdef DEBUG
@@ -32,12 +33,22 @@
 
 - (void)mapObjects {
     RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:API_ENDPOINT];
+    
+    RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[RCRUser class]];
+    [userMapping mapAttributes:@"login", @"name", @"location", @"bio", @"tagline", @"website", nil];
+    [userMapping mapKeyPathsToAttributes:@"github_url", @"githubUrl",
+        @"gravatar_hash", @"gravatarHash",
+        nil];
+    [manager.mappingProvider addObjectMapping:userMapping];
+
     RKObjectMapping *topicMapping = [RKObjectMapping mappingForClass:[RCRTopic class]];
-    [topicMapping mapKeyPath:@"title" toAttribute:@"title"];
-    [topicMapping mapKeyPath:@"replies_count" toAttribute:@"repliesCount"];
-    [topicMapping mapKeyPath:@"created_at" toAttribute:@"createdDate"];
-    [topicMapping mapKeyPath:@"updated_at" toAttribute:@"updatedDate"];
-    [topicMapping mapKeyPath:@"node_name" toAttribute:@"nodeName"];
+    [topicMapping mapKeyPathsToAttributes: @"title", @"title",
+        @"replies_count", @"repliesCount",
+        @"created_at", @"createdDate",
+        @"updated_at", @"updatedDate",
+        @"node_name", @"nodeName",
+        nil];
+    [topicMapping mapRelationship:@"user" withMapping:userMapping];
     
     [manager.mappingProvider addObjectMapping:topicMapping];
 }

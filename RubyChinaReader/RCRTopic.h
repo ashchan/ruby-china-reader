@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RCRUser.h"
 
 extern NSString *const RCRTopicPropertyNamedImage;
 
@@ -17,5 +18,6 @@ extern NSString *const RCRTopicPropertyNamedImage;
 @property (retain) NSDate *createdDate;
 @property (retain) NSDate *updatedDate;
 @property (retain) NSString *nodeName;
+@property (retain) RCRUser *user;
 
 @end

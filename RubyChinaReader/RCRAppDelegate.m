@@ -11,9 +11,9 @@
 #import "RCRAppController.h"
 
 #ifdef DEBUG
-    NSString * const API_ENDPOINT = @"http://localhost:3000/";
+    static NSString * API_ENDPOINT = @"http://localhost:3000/";
 #else
-    NSString * const API_ENDPOINT = @"http://ruby-china.org/";
+    static NSString * API_ENDPOINT = @"http://ruby-china.org/";
 #endif
 
 @implementation RCRAppDelegate

@@ -11,7 +11,6 @@
 		1A1FC5C81503184E009CDD67 /* RCRTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5C71503184E009CDD67 /* RCRTopic.m */; };
 		1A1FC5CB15032C26009CDD67 /* RCRTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5CA15032C25009CDD67 /* RCRTableRowView.m */; };
 		1A1FC5CE15033875009CDD67 /* RCRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5CD15033875009CDD67 /* RCRUser.m */; };
-		1A6AB5461502046E00CC0516 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
 		1A6AB548150204DF00CC0516 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB547150204DF00CC0516 /* CoreServices.framework */; };
 		1A6AB54A1502050100CC0516 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5491502050100CC0516 /* Security.framework */; };
 		1A6AB54C1502051300CC0516 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB54B1502051300CC0516 /* SystemConfiguration.framework */; };
@@ -32,6 +31,8 @@
 		1AB3321E1503769C000D9DEA /* PullToRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB332131503769C000D9DEA /* PullToRefreshScrollView.m */; };
 		1AB3321F1503769C000D9DEA /* release-to-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB332141503769C000D9DEA /* release-to-refresh.png */; };
 		1AB3322115037734000D9DEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3322015037734000D9DEA /* QuartzCore.framework */; };
+		1AB3323315039034000D9DEA /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
+		1AB3323A150393C8000D9DEA /* RestKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
 		1AFC258014FCDF1100443426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFC257F14FCDF1100443426 /* Cocoa.framework */; };
 		1AFC258A14FCDF1100443426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC258814FCDF1100443426 /* InfoPlist.strings */; };
 		1AFC258C14FCDF1100443426 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC258B14FCDF1100443426 /* main.m */; };
@@ -88,6 +89,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1AB33239150393B6000D9DEA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1AB3323A150393C8000D9DEA /* RestKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1A1FC5C3150300D3009CDD67 /* RCRTopicCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRTopicCellView.h; sourceTree = "<group>"; };
 		1A1FC5C4150300D3009CDD67 /* RCRTopicCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRTopicCellView.m; sourceTree = "<group>"; };
@@ -128,6 +142,7 @@
 		1AB332131503769C000D9DEA /* PullToRefreshScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshScrollView.m; sourceTree = "<group>"; };
 		1AB332141503769C000D9DEA /* release-to-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "release-to-refresh.png"; sourceTree = "<group>"; };
 		1AB3322015037734000D9DEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1AB3323615039233000D9DEA /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = file; name = RestKit.framework; path = "../../Library/Developer/Xcode/DerivedData/RubyChinaReader-bpnamuiwfmtgrcdjlzgymblmwneg/Build/Products/Debug-iphoneos/RestKit.framework"; sourceTree = "<group>"; };
 		1AFC257B14FCDF1100443426 /* RubyChinaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFC257F14FCDF1100443426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1AFC258214FCDF1100443426 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -153,12 +168,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB3323315039034000D9DEA /* RestKit.framework in Frameworks */,
 				1AB3322115037734000D9DEA /* QuartzCore.framework in Frameworks */,
 				1A6AB54E1502053400CC0516 /* libxml2.dylib in Frameworks */,
 				1A6AB54C1502051300CC0516 /* SystemConfiguration.framework in Frameworks */,
 				1A6AB54A1502050100CC0516 /* Security.framework in Frameworks */,
 				1A6AB548150204DF00CC0516 /* CoreServices.framework in Frameworks */,
-				1A6AB5461502046E00CC0516 /* RestKit.framework in Frameworks */,
 				1AFC258014FCDF1100443426 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				1A6AB54D1502053400CC0516 /* libxml2.dylib */,
+				1AB3323615039233000D9DEA /* RestKit.framework */,
 				1AB3322015037734000D9DEA /* QuartzCore.framework */,
 				1A6AB54B1502051300CC0516 /* SystemConfiguration.framework */,
 				1A6AB5491502050100CC0516 /* Security.framework */,
@@ -389,6 +405,7 @@
 				1AFC257714FCDF1100443426 /* Sources */,
 				1AFC257814FCDF1100443426 /* Frameworks */,
 				1AFC257914FCDF1100443426 /* Resources */,
+				1AB33239150393B6000D9DEA /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -622,6 +639,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -647,6 +665,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-ObjC",

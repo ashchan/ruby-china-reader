@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const RCRTopicPropertyNamedGravatar;
+
 @interface RCRUser : NSObject
 
 @property (retain) NSString *login;
@@ -18,5 +20,10 @@
 @property (retain) NSString *website;
 @property (retain) NSString *githubUrl;
 @property (retain) NSString *gravatarHash;
+
+@property (assign) BOOL loadingGravatar;
+@property (retain) NSImage *gravatar;
+
+- (void)loadGravatar;
 
 @end

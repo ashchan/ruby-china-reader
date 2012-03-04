@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "RCRUser.h"
 
-extern NSString *const RCRTopicPropertyNamedImage;
-
 @interface RCRTopic : NSObject
 
 @property (retain) NSString *title;

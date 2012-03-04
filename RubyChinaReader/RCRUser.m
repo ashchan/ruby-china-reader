@@ -8,6 +8,8 @@
 
 #import "RCRUser.h"
 
+NSString *const RCRTopicPropertyNamedGravatar = @"user.gravatar";
+
 @implementation RCRUser
 
 @synthesize login;
@@ -18,5 +20,42 @@
 @synthesize website;
 @synthesize githubUrl;
 @synthesize gravatarHash;
+
+@synthesize loadingGravatar;
+@synthesize gravatar;
+
+static NSOperationQueue *sharedGravatarOperationQueue() {
+    static NSOperationQueue *sharedGravatarOperationQueue = nil;
+    if (sharedGravatarOperationQueue == nil) {
+        sharedGravatarOperationQueue = [[NSOperationQueue alloc] init];
+    }
+    return sharedGravatarOperationQueue;    
+}
+
+- (NSURL *)gravatarUrl {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"http://gravatar.com/avatar/%@.png?s=48", gravatarHash]];
+}
+
+- (void)loadGravatar {
+    @synchronized (self) {
+        if (self.gravatar == nil && !self.loadingGravatar) {
+            loadingGravatar = YES;
+            [sharedGravatarOperationQueue() addOperationWithBlock:^(void) {
+                NSImage *image = [[NSImage alloc] initWithContentsOfURL:[self gravatarUrl]];
+                if (image != nil) {
+                    @synchronized (self) {
+                        loadingGravatar = NO;
+                        self.gravatar = image;
+                    }
+                    [image release];
+                } else {
+                    @synchronized (self) {
+                        self.gravatar = [NSImage imageNamed:NSImageNameTrashFull];
+                    }
+                }
+            }];
+        }
+    }
+}
 
 @end

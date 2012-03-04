@@ -10,4 +10,7 @@
 
 @interface RCRAppController : DBPrefsWindowController
 
+- (void)showAbout;
+- (void)showOptions;
+
 @end

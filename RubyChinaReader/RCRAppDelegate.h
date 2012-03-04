@@ -10,6 +10,7 @@
 
 @interface RCRAppDelegate : NSObject <NSApplicationDelegate>
 
-//@property (assign) IBOutlet NSWindow *window;
+- (IBAction)aboutClicked:(id)sender;
+- (IBAction)preferencesClicked:(id)sender;
 
 @end

@@ -31,6 +31,18 @@
     [[RCRAppController sharedPrefsWindowController] showWindow:nil];
 }
 
+#pragma mark - Actions
+
+- (IBAction)aboutClicked:(id)sender {
+    [(RCRAppController *)[RCRAppController sharedPrefsWindowController] showAbout];
+}
+
+- (IBAction)preferencesClicked:(id)sender {
+    [(RCRAppController *)[RCRAppController sharedPrefsWindowController] showOptions];
+}
+
+#pragma mark - Private Methods
+
 - (void)mapObjects {
     RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:API_ENDPOINT];
     

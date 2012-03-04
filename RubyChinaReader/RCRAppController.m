@@ -19,6 +19,8 @@
     RCRInfoViewController *infoViewController;
 }
 
+- (void)selectViewWithTitle:(NSString *)title;
+
 @end
 
 @implementation RCRAppController
@@ -39,6 +41,8 @@
 
     infoViewController = [[RCRInfoViewController alloc] initWithNibName:@"RCRInfoViewController" bundle:nil];
     [self addView:infoViewController.view label:infoViewController.title image:[NSImage imageNamed:NSImageNameInfo]];
+
+    self.window.showsToolbarButton = YES;
 }
 
 - (void)dealloc {
@@ -49,4 +53,21 @@
     [super dealloc];
 }
 
+- (void)showAbout {
+    [self selectViewWithTitle:infoViewController.title];
+}
+
+- (void)showOptions {
+    [self selectViewWithTitle:optionsViewController.title];
+}
+
+- (void)selectViewWithTitle:(NSString *)title {
+    for (NSToolbarItem *item in self.window.toolbar.items) {
+        if ([item.itemIdentifier isEqualToString:title]) {
+            [self toggleActivePreferenceView:item];
+            [self.window.toolbar setSelectedItemIdentifier:item.itemIdentifier];
+            return;
+        }
+    }
+}
 @end

@@ -142,7 +142,6 @@
 		1AB332131503769C000D9DEA /* PullToRefreshScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshScrollView.m; sourceTree = "<group>"; };
 		1AB332141503769C000D9DEA /* release-to-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "release-to-refresh.png"; sourceTree = "<group>"; };
 		1AB3322015037734000D9DEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		1AB3323615039233000D9DEA /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = file; name = RestKit.framework; path = "../../Library/Developer/Xcode/DerivedData/RubyChinaReader-bpnamuiwfmtgrcdjlzgymblmwneg/Build/Products/Debug-iphoneos/RestKit.framework"; sourceTree = "<group>"; };
 		1AFC257B14FCDF1100443426 /* RubyChinaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFC257F14FCDF1100443426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1AFC258214FCDF1100443426 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -331,7 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				1A6AB54D1502053400CC0516 /* libxml2.dylib */,
-				1AB3323615039233000D9DEA /* RestKit.framework */,
 				1AB3322015037734000D9DEA /* QuartzCore.framework */,
 				1A6AB54B1502051300CC0516 /* SystemConfiguration.framework */,
 				1A6AB5491502050100CC0516 /* Security.framework */,

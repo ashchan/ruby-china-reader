@@ -8,7 +8,8 @@
 
 #import <RestKit/RestKit.h>
 
-@interface RCRTopicsViewController : NSViewController <RKRequestDelegate, NSTableViewDelegate, NSTableViewDataSource>
+@interface RCRTopicsViewController : NSViewController <RKObjectLoaderDelegate, NSTableViewDelegate, NSTableViewDataSource>
 
+@property (assign) IBOutlet NSTableView *topicsTableView;
 
 @end

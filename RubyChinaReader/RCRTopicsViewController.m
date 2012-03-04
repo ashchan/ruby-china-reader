@@ -7,35 +7,49 @@
 //
 
 #import "RCRTopicsViewController.h"
+#import "RCRTopic.h"
 
-@interface RCRTopicsViewController ()
-
+@interface RCRTopicsViewController () {
+    NSArray *_topics;
+}
 @end
 
 @implementation RCRTopicsViewController
 
+@synthesize topicsTableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Topics";
-        [[RKClient sharedClient] get:@"api/topics.json" delegate:self];
+        RKObjectMapping *topicMappping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRTopic class]];
+        [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/topics.json" objectMapping:topicMappping delegate:self];
     }
     
     return self;
 }
 
-#pragma - RKRequestDelegate
+#pragma mark - RKRequestDelegate
 - (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response {
 }
 
-#pragma - NSTableViewDelegate
+#pragma mark - RKObjectLoaderDelegate
+- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
+    _topics = objects;
+    [topicsTableView reloadData];
+}
 
-#pragma - NSTableViewDataSource
+- (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
+}
+
+
+#pragma mark - NSTableViewDelegate
+
+#pragma mark - NSTableViewDataSource
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    return 10;
+    return [_topics count];
 }
 
 @end

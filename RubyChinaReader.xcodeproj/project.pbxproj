@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1FC5C5150300D3009CDD67 /* RCRTopicCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5C4150300D3009CDD67 /* RCRTopicCellView.m */; };
 		1A6AB5461502046E00CC0516 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
 		1A6AB548150204DF00CC0516 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB547150204DF00CC0516 /* CoreServices.framework */; };
 		1A6AB54A1502050100CC0516 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5491502050100CC0516 /* Security.framework */; };
@@ -80,6 +81,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A1FC5C3150300D3009CDD67 /* RCRTopicCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRTopicCellView.h; sourceTree = "<group>"; };
+		1A1FC5C4150300D3009CDD67 /* RCRTopicCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRTopicCellView.m; sourceTree = "<group>"; };
 		1A6AB5321502037C00CC0516 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = SharedLib/RestKit/RestKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		1A6AB547150204DF00CC0516 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		1A6AB5491502050100CC0516 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -170,10 +173,8 @@
 		1A6AB55015021DAD00CC0516 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1A6AB5561502203A00CC0516 /* RCRTopicsViewController.xib */,
-				1A6AB5691502318000CC0516 /* RCRAccountViewController.xib */,
-				1A6AB5641502307800CC0516 /* RCROptionsViewController.xib */,
-				1A6AB55F15022D5F00CC0516 /* RCRInfoViewController.xib */,
+				1A1FC5C3150300D3009CDD67 /* RCRTopicCellView.h */,
+				1A1FC5C4150300D3009CDD67 /* RCRTopicCellView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -237,6 +238,11 @@
 		1A859B9314FCE78600EB7867 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1AFC259414FCDF1100443426 /* MainMenu.xib */,
+				1A6AB5561502203A00CC0516 /* RCRTopicsViewController.xib */,
+				1A6AB5691502318000CC0516 /* RCRAccountViewController.xib */,
+				1A6AB5641502307800CC0516 /* RCROptionsViewController.xib */,
+				1A6AB55F15022D5F00CC0516 /* RCRInfoViewController.xib */,
 				1A859B9514FCECDF00EB7867 /* icon.icns */,
 			);
 			name = Resources;
@@ -292,7 +298,6 @@
 				1A859B9314FCE78600EB7867 /* Resources */,
 				1AFC259114FCDF1100443426 /* RCRAppDelegate.h */,
 				1AFC259214FCDF1100443426 /* RCRAppDelegate.m */,
-				1AFC259414FCDF1100443426 /* MainMenu.xib */,
 				1AFC258614FCDF1100443426 /* Supporting Files */,
 			);
 			path = RubyChinaReader;
@@ -488,6 +493,7 @@
 				1A6AB56015022D5F00CC0516 /* RCRInfoViewController.m in Sources */,
 				1A6AB5651502307800CC0516 /* RCROptionsViewController.m in Sources */,
 				1A6AB56A1502318100CC0516 /* RCRAccountViewController.m in Sources */,
+				1A1FC5C5150300D3009CDD67 /* RCRTopicCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 #import <RestKit/RestKit.h>
 
-@interface RCRTopicsViewController : NSViewController <RKRequestDelegate>
+@interface RCRTopicsViewController : NSViewController <RKRequestDelegate, NSTableViewDelegate, NSTableViewDataSource>
 
 
 @end

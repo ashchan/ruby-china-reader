@@ -30,4 +30,12 @@
 - (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response {
 }
 
+#pragma - NSTableViewDelegate
+
+#pragma - NSTableViewDataSource
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    return 10;
+}
+
 @end

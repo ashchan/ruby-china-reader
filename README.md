@@ -10,7 +10,7 @@ booting...
 
 ## Requirements
 
-* Mac OS X 10.6+
+* Mac OS X 10.7+
 
 ## License
 

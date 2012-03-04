@@ -4,8 +4,7 @@ booting...
 
 ## How to build
 
-* install [cundle](https://github.com/ashchan/cundle)
-* under the project root directory, run `cundle install` to install 3rd-party dependencies
+* under the project root directory, run `rake` to install 3rd-party dependencies
 * use Xcode 4.3 or above to build the project
 
 ## Requirements

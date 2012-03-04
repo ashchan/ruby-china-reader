@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const RCRTopicPropertyNamedImage;
+
 @interface RCRTopic : NSObject
 
-@property (assign) NSString *title;
-@property (assign) NSNumber *repliesCount;
-@property (assign) NSDate *createdDate;
-@property (assign) NSDate *updatedDate;
-@property (assign) NSString *nodeName;
+@property (retain) NSString *title;
+@property (retain) NSNumber *repliesCount;
+@property (retain) NSDate *createdDate;
+@property (retain) NSDate *updatedDate;
+@property (retain) NSString *nodeName;
 
 @end

@@ -11,11 +11,11 @@
 #import "RCRAppController.h"
 #import "RCRTopic.h"
 
-#ifdef DEBUG
+/*#ifdef DEBUG
     static NSString * API_ENDPOINT = @"http://localhost:3000";
-#else
+#else*/
     static NSString * API_ENDPOINT = @"http://ruby-china.org";
-#endif
+//#endif
 
 @interface RCRAppDelegate ()
 - (void)mapObjects;

@@ -11,8 +11,8 @@
 @interface RCRTopicCellView : NSTableCellView
 
 @property (weak) IBOutlet NSTextField *topicTitle;
-@property (weak) IBOutlet NSTextField *nodeName;
 @property (weak) IBOutlet NSButton *repliesCount;
+@property (weak) IBOutlet NSButton *nodeName;
 @property (weak) IBOutlet NSProgressIndicator *progressIndicator;
 
 @end

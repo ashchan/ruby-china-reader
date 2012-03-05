@@ -26,4 +26,8 @@
     // Drawing code here.
 }
 
+- (void)viewWillDraw {
+    [super viewWillDraw];
+    [self.nodeName sizeToFit];
+}
 @end

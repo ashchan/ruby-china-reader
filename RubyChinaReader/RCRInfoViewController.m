@@ -20,7 +20,7 @@
     if (self) {
         self.title = @"About";
         
-        NSImageView *view = [[[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 300, 350)] autorelease];
+        NSImageView *view = [[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 300, 350)];
         [self.view addSubview:view];
         [self performSelectorInBackground:@selector(loadImage) withObject:nil];
     }
@@ -29,7 +29,7 @@
 }
 
 - (void)loadImage {
-    ((NSImageView *)[self.view.subviews objectAtIndex:0]).image = [[[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://l.ruby-china.org/photo/74c63894f0c9f138f233889d901f4e31.png"]] autorelease];
+    ((NSImageView *)[self.view.subviews objectAtIndex:0]).image = [[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://l.ruby-china.org/photo/74c63894f0c9f138f233889d901f4e31.png"]];
 }
 
 @end

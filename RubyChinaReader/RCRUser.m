@@ -47,7 +47,6 @@ static NSOperationQueue *sharedGravatarOperationQueue() {
                         loadingGravatar = NO;
                         self.gravatar = image;
                     }
-                    [image release];
                 } else {
                     @synchronized (self) {
                         self.gravatar = [NSImage imageNamed:NSImageNameTrashFull];

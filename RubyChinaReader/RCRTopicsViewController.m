@@ -10,6 +10,7 @@
 #import "RCRTableRowView.h"
 #import "RCRTopicCellView.h"
 #import "RCRTopic.h"
+#import "PullToRefreshScrollView.h"
 
 @interface RCRTopicsViewController () {
     NSArray *_topics;
@@ -31,16 +32,14 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Topics";
-        [self refresh];
     }
     
     return self;
 }
 
-- (void)dealloc {
-    [_topics release];
-    [_observedVisibleItems release];
-    [super dealloc];
+- (void)awakeFromNib {
+    //((PullToRefreshScrollView *)topicsTableView.superview).delegate = self;
+    [self refresh];
 }
 
 #pragma mark - RKRequestDelegate
@@ -51,7 +50,6 @@
 #pragma mark - RKObjectLoaderDelegate
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
-    [_topics release];
     _topics = [objects copy];
     [topicsTableView reloadData];
 }
@@ -65,7 +63,16 @@
 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
     RCRTableRowView *rowView = [[RCRTableRowView alloc] initWithFrame:NSMakeRect(0, 0, 300, 20)];
     rowView.objectValue = [self topicForRow:row];
-    return [rowView autorelease];    
+    return rowView;    
+}
+
+- (void)tableView:(NSTableView *)tableView didRemoveRowView:(RCRTableRowView *)rowView forRow:(NSInteger)row {
+    RCRTopic *topic = rowView.objectValue;
+    NSInteger index = [_observedVisibleItems indexOfObject:topic.user];
+    if (index != NSNotFound) {
+        [topic removeObserver:self forKeyPath:RCRTopicPropertyNamedGravatar];
+        [_observedVisibleItems removeObjectAtIndex:index];
+    }    
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {

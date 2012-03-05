@@ -45,14 +45,6 @@
     self.window.showsToolbarButton = YES;
 }
 
-- (void)dealloc {
-    [topicsViewController release];
-    [accountViewController release];
-    [optionsViewController release];
-    [infoViewController release];
-    [super dealloc];
-}
-
 - (void)showAbout {
     [self selectViewWithTitle:infoViewController.title];
 }

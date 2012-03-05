@@ -11,6 +11,6 @@
 
 @interface RCRTopicsViewController : NSViewController <RKObjectLoaderDelegate, NSTableViewDelegate, NSTableViewDataSource, PullToRefreshDelegate>
 
-@property (assign) IBOutlet NSTableView *topicsTableView;
+@property (weak) IBOutlet NSTableView *topicsTableView;
 
 @end

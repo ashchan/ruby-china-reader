@@ -10,9 +10,9 @@
 
 @interface RCRTopicCellView : NSTableCellView
 
-@property (assign) IBOutlet NSTextField *userName;
-@property (assign) IBOutlet NSTextField *nodeName;
-@property (assign) IBOutlet NSButton *repliesCount;
-@property (assign) IBOutlet NSProgressIndicator *progressIndicator;
+@property (weak) IBOutlet NSTextField *userName;
+@property (weak) IBOutlet NSTextField *nodeName;
+@property (weak) IBOutlet NSButton *repliesCount;
+@property (weak) IBOutlet NSProgressIndicator *progressIndicator;
 
 @end

@@ -47,16 +47,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Topics";
-        _pullToRefreshDelegate = [[RCRPullToRefreshDelegate alloc] init];
-        _pullToRefreshDelegate.vc = self;
     }
     
     return self;
-}
-
-- (void)awakeFromNib {
-    scrollView.delegate = _pullToRefreshDelegate;
-    [self refresh];
 }
 
 #pragma mark - RKRequestDelegate
@@ -131,6 +124,11 @@
 #pragma mark - Private Methods & misc
 
 - (void)refresh {
+    if (_pullToRefreshDelegate == nil) {
+        _pullToRefreshDelegate = [[RCRPullToRefreshDelegate alloc] init];
+        _pullToRefreshDelegate.vc = self;
+        scrollView.delegate = _pullToRefreshDelegate;
+    }
     RKObjectMapping *topicMappping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRTopic class]];
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/topics.json" objectMapping:topicMappping delegate:self];
 }

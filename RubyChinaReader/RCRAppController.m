@@ -42,7 +42,7 @@
     infoViewController = [[RCRInfoViewController alloc] initWithNibName:@"RCRInfoViewController" bundle:nil];
     [self addView:infoViewController.view label:infoViewController.title image:[NSImage imageNamed:NSImageNameInfo]];
 
-    self.window.showsToolbarButton = YES;
+    [topicsViewController refresh];
 }
 
 - (void)showAbout {

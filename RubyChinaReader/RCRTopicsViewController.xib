@@ -188,6 +188,7 @@
 								<string key="NSFrame">{{1, 119}, {223, 15}}</string>
 								<reference key="NSSuperview" ref="515144670"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:60</string>
 								<int key="NSsFlags">1</int>
 								<reference key="NSTarget" ref="515144670"/>
@@ -391,7 +392,7 @@
 									<object class="NSButtonCell" key="NSCell" id="681116267">
 										<int key="NSCellFlags">-2080244224</int>
 										<int key="NSCellFlags2">134217728</int>
-										<string key="NSContents">Round Rect Button</string>
+										<string key="NSContents">1</string>
 										<object class="NSFont" key="NSSupport">
 											<string key="NSName">LucidaGrande</string>
 											<double key="NSSize">12</double>
@@ -985,6 +986,16 @@
 						<reference key="parent" ref="165376558"/>
 					</object>
 					<object class="IBObjectRecord">
+						<int key="objectID">454</int>
+						<reference key="object" ref="635786335"/>
+						<reference key="parent" ref="165376558"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">453</int>
+						<reference key="object" ref="624022794"/>
+						<reference key="parent" ref="165376558"/>
+					</object>
+					<object class="IBObjectRecord">
 						<int key="objectID">456</int>
 						<reference key="object" ref="319533580"/>
 						<array class="NSMutableArray" key="children">
@@ -1009,18 +1020,13 @@
 						<reference key="parent" ref="165376558"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">457</int>
-						<reference key="object" ref="681116267"/>
-						<reference key="parent" ref="319533580"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">454</int>
-						<reference key="object" ref="635786335"/>
+						<int key="objectID">483</int>
+						<reference key="object" ref="940890005"/>
 						<reference key="parent" ref="165376558"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">453</int>
-						<reference key="object" ref="624022794"/>
+						<int key="objectID">482</int>
+						<reference key="object" ref="849660863"/>
 						<reference key="parent" ref="165376558"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -1029,14 +1035,9 @@
 						<reference key="parent" ref="319533580"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">482</int>
-						<reference key="object" ref="849660863"/>
-						<reference key="parent" ref="165376558"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">483</int>
-						<reference key="object" ref="940890005"/>
-						<reference key="parent" ref="165376558"/>
+						<int key="objectID">457</int>
+						<reference key="object" ref="681116267"/>
+						<reference key="parent" ref="319533580"/>
 					</object>
 				</array>
 			</object>

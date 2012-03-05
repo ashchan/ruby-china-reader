@@ -12,7 +12,7 @@
 
 @property (assign) IBOutlet NSTextField *userName;
 @property (assign) IBOutlet NSTextField *nodeName;
-@property (assign) IBOutlet NSTextField *repliesCount;
+@property (assign) IBOutlet NSButton *repliesCount;
 @property (assign) IBOutlet NSProgressIndicator *progressIndicator;
 
 @end

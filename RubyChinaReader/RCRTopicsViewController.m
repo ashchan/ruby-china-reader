@@ -129,8 +129,10 @@
         _pullToRefreshDelegate.vc = self;
         scrollView.delegate = _pullToRefreshDelegate;
     }
-    RKObjectMapping *topicMappping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRTopic class]];
-    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/topics.json" objectMapping:topicMappping delegate:self];
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/topics.json" usingBlock:^(RKObjectLoader *loader) {
+        loader.objectMapping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRTopic class]];
+        loader.delegate = self;
+    }];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {

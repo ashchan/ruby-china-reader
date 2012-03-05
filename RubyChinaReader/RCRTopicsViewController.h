@@ -7,10 +7,13 @@
 //
 
 #import <RestKit/RestKit.h>
-#import "PullToRefreshDelegate.h"
+#import "PullToRefreshScrollView.h"
 
-@interface RCRTopicsViewController : NSViewController <RKObjectLoaderDelegate, NSTableViewDelegate, NSTableViewDataSource, PullToRefreshDelegate>
+@interface RCRTopicsViewController : NSViewController <RKObjectLoaderDelegate, NSTableViewDelegate, NSTableViewDataSource>
 
 @property (weak) IBOutlet NSTableView *topicsTableView;
+@property (weak) IBOutlet PullToRefreshScrollView *scrollView;
+
+- (void)refresh;
 
 @end

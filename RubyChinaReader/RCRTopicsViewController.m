@@ -7,38 +7,55 @@
 //
 
 #import "RCRTopicsViewController.h"
+#import "PullToRefreshDelegate.h"
 #import "RCRTableRowView.h"
 #import "RCRTopicCellView.h"
 #import "RCRTopic.h"
-#import "PullToRefreshScrollView.h"
+
+@interface RCRPullToRefreshDelegate : NSObject<PullToRefreshDelegate>
+@property (assign) RCRTopicsViewController *vc;
+@end
+
+@implementation RCRPullToRefreshDelegate
+
+@synthesize vc;
+
+- (void)ptrScrollViewDidTriggerRefresh:(id)sender {
+    [vc refresh];
+}
+
+@end
 
 @interface RCRTopicsViewController () {
     NSArray *_topics;
     NSMutableArray *_observedVisibleItems;
+    RCRPullToRefreshDelegate *_pullToRefreshDelegate;
 }
 
 - (void)reloadRowForEntity:(id)object;
 - (RCRTopic *)topicForRow:(NSInteger)row;
-- (void)refresh;
 
 @end
 
 @implementation RCRTopicsViewController
 
 @synthesize topicsTableView;
+@synthesize scrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Topics";
+        _pullToRefreshDelegate = [[RCRPullToRefreshDelegate alloc] init];
+        _pullToRefreshDelegate.vc = self;
     }
     
     return self;
 }
 
 - (void)awakeFromNib {
-    //((PullToRefreshScrollView *)topicsTableView.superview).delegate = self;
+    scrollView.delegate = _pullToRefreshDelegate;
     [self refresh];
 }
 
@@ -109,12 +126,6 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
     return _topics.count;
-}
-
-#pragma mark - PullToRefreshDelegate
-
-- (void)ptrScrollViewDidTriggerRefresh:(id)sender {
-    [self refresh];
 }
 
 #pragma mark - Private Methods & misc

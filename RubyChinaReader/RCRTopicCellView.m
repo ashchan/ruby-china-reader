@@ -10,7 +10,7 @@
 
 @implementation RCRTopicCellView
 
-@synthesize userName, nodeName, repliesCount, progressIndicator;
+@synthesize topicTitle, nodeName, repliesCount, progressIndicator;
 
 - (id)initWithFrame:(NSRect)frame
 {

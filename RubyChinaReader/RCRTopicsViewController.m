@@ -88,12 +88,12 @@
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     RCRTopic *topic = [self topicForRow:row];
     RCRTopicCellView *cellView = [topicsTableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-    cellView.textField.stringValue = topic.title;
+    cellView.textField.stringValue = topic.user.login;
     cellView.nodeName.stringValue = topic.nodeName;
     cellView.repliesCount.title = topic.repliesCount.stringValue;
     [cellView.repliesCount.cell setHighlightsBy:0];
     [cellView.repliesCount.cell setBezelStyle:NSInlineBezelStyle];
-    cellView.userName.stringValue = topic.user.login;
+    cellView.topicTitle.stringValue = topic.title;
     
     if (_observedVisibleItems == nil) {
         _observedVisibleItems = [NSMutableArray new];

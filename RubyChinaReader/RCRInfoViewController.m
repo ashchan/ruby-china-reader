@@ -16,6 +16,10 @@
 
 @synthesize appName, appVersion, credits, copyrightInfo;
 
+- (NSString *)nibName {
+    return @"RCRInfoViewController";
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

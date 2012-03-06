@@ -10,7 +10,7 @@
 
 @implementation RCRTopicCellView
 
-@synthesize topicTitle, nodeName, repliesCount, progressIndicator;
+@synthesize topicTitle, nodeName, gravatarButton, repliesCount, progressIndicator;
 
 - (id)initWithFrame:(NSRect)frame
 {

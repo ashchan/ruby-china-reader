@@ -29,6 +29,8 @@
 		1A6ECA4A14FD0C3300A91FEF /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6ECA4514FD0C3300A91FEF /* DBPrefsWindowController.m */; };
 		1A6ECA5614FD0FB400A91FEF /* RCRAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6ECA5514FD0FB400A91FEF /* RCRAppController.m */; };
 		1A859B9614FCECDF00EB7867 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1A859B9514FCECDF00EB7867 /* icon.icns */; };
+		1A9488271506EBE2004B83CA /* RCRUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9488251506EBE2004B83CA /* RCRUserDetailViewController.m */; };
+		1A9488281506EBE2004B83CA /* RCRUserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */; };
 		1AB3321B1503769C000D9DEA /* pull-to-refresh-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB3320C1503769C000D9DEA /* pull-to-refresh-arrow.png */; };
 		1AB3321D1503769C000D9DEA /* PullToRefreshClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB332101503769C000D9DEA /* PullToRefreshClipView.m */; };
 		1AB3321E1503769C000D9DEA /* PullToRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB332131503769C000D9DEA /* PullToRefreshScrollView.m */; };
@@ -140,6 +142,9 @@
 		1A6ECA5414FD0FB400A91FEF /* RCRAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRAppController.h; sourceTree = "<group>"; };
 		1A6ECA5514FD0FB400A91FEF /* RCRAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRAppController.m; sourceTree = "<group>"; };
 		1A859B9514FCECDF00EB7867 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = Resources/icon.icns; sourceTree = "<group>"; };
+		1A9488241506EBE2004B83CA /* RCRUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRUserDetailViewController.h; sourceTree = "<group>"; };
+		1A9488251506EBE2004B83CA /* RCRUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRUserDetailViewController.m; sourceTree = "<group>"; };
+		1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCRUserDetailViewController.xib; sourceTree = "<group>"; };
 		1AB3320C1503769C000D9DEA /* pull-to-refresh-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-to-refresh-arrow.png"; sourceTree = "<group>"; };
 		1AB3320F1503769C000D9DEA /* PullToRefreshClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshClipView.h; sourceTree = "<group>"; };
 		1AB332101503769C000D9DEA /* PullToRefreshClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshClipView.m; sourceTree = "<group>"; };
@@ -282,6 +287,8 @@
 				1A6AB5631502307800CC0516 /* RCROptionsViewController.m */,
 				1A6AB55D15022D5F00CC0516 /* RCRInfoViewController.h */,
 				1A6AB55E15022D5F00CC0516 /* RCRInfoViewController.m */,
+				1A9488241506EBE2004B83CA /* RCRUserDetailViewController.h */,
+				1A9488251506EBE2004B83CA /* RCRUserDetailViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -294,6 +301,7 @@
 				1A6AB5691502318000CC0516 /* RCRAccountViewController.xib */,
 				1A6AB5641502307800CC0516 /* RCROptionsViewController.xib */,
 				1A6AB55F15022D5F00CC0516 /* RCRInfoViewController.xib */,
+				1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */,
 				1A859B9514FCECDF00EB7867 /* icon.icns */,
 				1A4FA720150618A200FB6B8D /* Credits.html */,
 			);
@@ -524,6 +532,7 @@
 				1AB3321B1503769C000D9DEA /* pull-to-refresh-arrow.png in Resources */,
 				1AB3321F1503769C000D9DEA /* release-to-refresh.png in Resources */,
 				1A4FA721150618A200FB6B8D /* Credits.html in Resources */,
+				1A9488281506EBE2004B83CA /* RCRUserDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +581,7 @@
 				1A1FC5CE15033875009CDD67 /* RCRUser.m in Sources */,
 				1AB3321D1503769C000D9DEA /* PullToRefreshClipView.m in Sources */,
 				1AB3321E1503769C000D9DEA /* PullToRefreshScrollView.m in Sources */,
+				1A9488271506EBE2004B83CA /* RCRUserDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

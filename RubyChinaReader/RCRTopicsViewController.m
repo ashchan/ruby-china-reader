@@ -11,6 +11,7 @@
 #import "RCRTableRowView.h"
 #import "RCRTopicCellView.h"
 #import "RCRTopic.h"
+#import "RCRUserDetailViewController.h"
 
 @interface RCRPullToRefreshDelegate : NSObject<PullToRefreshDelegate>
 @property (assign) RCRTopicsViewController *vc;
@@ -30,10 +31,13 @@
     NSArray *_topics;
     NSMutableArray *_observedVisibleItems;
     RCRPullToRefreshDelegate *_pullToRefreshDelegate;
+    NSPopover *_userPopover;
+    RCRUserDetailViewController *_userDetailViewController;
 }
 
 - (void)reloadRowForEntity:(id)object;
 - (RCRTopic *)topicForRow:(NSInteger)row;
+- (RCRTopic *)topicForId:(NSInteger)topicId;
 
 @end
 
@@ -42,11 +46,19 @@
 @synthesize topicsTableView;
 @synthesize scrollView;
 
+- (NSString *)nibName {
+    return @"RCRTopicsViewController";
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Topics";
+        _userPopover = [[NSPopover alloc] init];
+        _userPopover.behavior = NSPopoverBehaviorTransient;
+        _userDetailViewController = [[RCRUserDetailViewController alloc] init];
+        _userPopover.contentViewController = _userDetailViewController;
     }
     
     return self;
@@ -66,7 +78,6 @@
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
 }
-
 
 #pragma mark - NSTableViewDelegate
 
@@ -108,10 +119,10 @@
     if (topic.user.gravatar == nil) {
         [cellView.progressIndicator setHidden:NO];
         [cellView.progressIndicator startAnimation:nil];
-        [cellView.imageView setHidden:YES];
     } else {
-        [cellView.imageView setImage:topic.user.gravatar];
+        cellView.gravatarButton.image = topic.user.gravatar;
     }
+    cellView.gravatarButton.tag = topic.topicId.integerValue;
 
     return cellView;
 } 
@@ -122,9 +133,35 @@
     return _topics.count;
 }
 
+#pragma mark - Actions
+
+- (IBAction)userImageClicked:(id)sender {
+    RCRTopic *topic = [self topicForId:[sender tag]];    
+    if (topic) {
+        if (topic.user.name.length > 0) {
+            _userDetailViewController.name.stringValue = topic.user.name;
+        } else {
+            _userDetailViewController.name.stringValue = topic.user.login;
+        }
+ 
+        if (topic.user.tagline) {
+            _userDetailViewController.tagline.stringValue = topic.user.tagline;
+        } else {
+            _userDetailViewController.tagline.stringValue = @"这哥们儿没签名";
+        } 
+        [_userPopover showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMaxXEdge];
+    }
+}
+
+- (IBAction)nodeNameClicked:(id)sender {
+}
+
 #pragma mark - Private Methods & misc
 
 - (void)refresh {
+    // force load nib
+    [_userDetailViewController view];
+
     if (_pullToRefreshDelegate == nil) {
         _pullToRefreshDelegate = [[RCRPullToRefreshDelegate alloc] init];
         _pullToRefreshDelegate.vc = self;
@@ -150,10 +187,10 @@
             RCRTopic  *topic = [self topicForRow:row];
             [NSAnimationContext beginGrouping];
             [[NSAnimationContext currentContext] setDuration:0.8];
-            [cellView.imageView setAlphaValue:0];
-            cellView.imageView.image = topic.user.gravatar;
-            [cellView.imageView setHidden:NO];
-            [[cellView.imageView animator] setAlphaValue:1.0];
+            [cellView.gravatarButton setAlphaValue:0];
+            cellView.gravatarButton.image = topic.user.gravatar;
+            [cellView.gravatarButton setHidden:NO];
+            [[cellView.gravatarButton animator] setAlphaValue:1.0];
             [cellView.progressIndicator setHidden:YES];
             [NSAnimationContext endGrouping];
         }
@@ -162,6 +199,15 @@
 
 - (RCRTopic *)topicForRow:(NSInteger)row {
     return (RCRTopic *)[_topics objectAtIndex:row];
+}
+
+- (RCRTopic *)topicForId:(NSInteger)topicId {
+    for (RCRTopic *topic in _topics) {
+        if (topic.topicId.integerValue == topicId) {
+            return topic;
+        }
+    }
+    return nil;
 }
 
 @end

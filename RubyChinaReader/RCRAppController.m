@@ -30,16 +30,16 @@
 }
 
 - (void)setupToolbar{
-    topicsViewController = [[RCRTopicsViewController alloc] initWithNibName:@"RCRTopicsViewController" bundle:nil];
+    topicsViewController = [[RCRTopicsViewController alloc] init];
     [self addView:topicsViewController.view label:topicsViewController.title image:[NSImage imageNamed:NSImageNameBonjour]];
 
-    accountViewController = [[RCRAccountViewController alloc] initWithNibName:@"RCRAccountViewController" bundle:nil];
-    [self addView:accountViewController.view label:accountViewController.title image:[NSImage imageNamed:NSImageNameUser]];
+    //accountViewController = [[RCRAccountViewController alloc] init];
+    //[self addView:accountViewController.view label:accountViewController.title image:[NSImage imageNamed:NSImageNameUser]];
     
-    optionsViewController = [[RCROptionsViewController alloc] initWithNibName:@"RCROptionsViewController" bundle:nil];
-    [self addView:optionsViewController.view label:optionsViewController.title image:[NSImage imageNamed:NSImageNameAdvanced]];
+    //optionsViewController = [[RCROptionsViewController alloc] init];
+    //[self addView:optionsViewController.view label:optionsViewController.title image:[NSImage imageNamed:NSImageNameAdvanced]];
 
-    infoViewController = [[RCRInfoViewController alloc] initWithNibName:@"RCRInfoViewController" bundle:nil];
+    infoViewController = [[RCRInfoViewController alloc] init];
     [self addView:infoViewController.view label:infoViewController.title image:[NSImage imageNamed:NSImageNameInfo]];
 
     [topicsViewController refresh];

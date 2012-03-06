@@ -15,5 +15,7 @@
 @property (weak) IBOutlet PullToRefreshScrollView *scrollView;
 
 - (void)refresh;
+- (IBAction)userImageClicked:(id)sender;
+- (IBAction)nodeNameClicked:(id)sender;
 
 @end

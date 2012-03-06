@@ -54,10 +54,14 @@
 
     RKObjectMapping *topicMapping = [RKObjectMapping mappingForClass:[RCRTopic class]];
     [topicMapping mapKeyPathsToAttributes: @"title", @"title",
+        @"_id", @"topicId",
+        @"body", @"body",
+        @"body_html", @"bodyHtml",
         @"replies_count", @"repliesCount",
         @"created_at", @"createdDate",
         @"updated_at", @"updatedDate",
         @"node_name", @"nodeName",
+        @"node_id", @"nodeId",
         nil];
     [topicMapping mapRelationship:@"user" withMapping:userMapping];
     

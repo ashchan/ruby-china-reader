@@ -14,6 +14,10 @@
 
 @implementation RCRAccountViewController
 
+- (NSString *)nibName {
+    return @"RCRAccountViewController";
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

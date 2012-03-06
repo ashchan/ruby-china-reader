@@ -1,28 +1,30 @@
 //
-//  RCROptionsViewController.m
+//  RCRUserDetailViewController.m
 //  RubyChinaReader
 //
-//  Created by James Chen on 3/3/12.
+//  Created by James Chen on 3/7/12.
 //  Copyright (c) 2012 ashchan.com. All rights reserved.
 //
 
-#import "RCROptionsViewController.h"
+#import "RCRUserDetailViewController.h"
 
-@interface RCROptionsViewController ()
+@interface RCRUserDetailViewController ()
 
 @end
 
-@implementation RCROptionsViewController
+@implementation RCRUserDetailViewController
+
+@synthesize name, tagline;
 
 - (NSString *)nibName {
-    return @"RCROptionsViewController";
+    return @"RCRUserDetailViewController";
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Options";
+        // Initialization code here.
     }
     
     return self;

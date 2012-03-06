@@ -10,4 +10,9 @@
 
 @interface RCRInfoViewController : NSViewController
 
+@property (weak) IBOutlet NSTextField *appName;
+@property (weak) IBOutlet NSTextField *appVersion;
+@property (assign) IBOutlet NSTextView *credits;
+@property (weak) IBOutlet NSTextField *copyrightInfo;
+
 @end

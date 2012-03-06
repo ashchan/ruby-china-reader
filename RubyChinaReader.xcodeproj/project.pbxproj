@@ -11,6 +11,7 @@
 		1A1FC5C81503184E009CDD67 /* RCRTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5C71503184E009CDD67 /* RCRTopic.m */; };
 		1A1FC5CB15032C26009CDD67 /* RCRTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5CA15032C25009CDD67 /* RCRTableRowView.m */; };
 		1A1FC5CE15033875009CDD67 /* RCRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5CD15033875009CDD67 /* RCRUser.m */; };
+		1A4FA721150618A200FB6B8D /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 1A4FA720150618A200FB6B8D /* Credits.html */; };
 		1A6AB548150204DF00CC0516 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB547150204DF00CC0516 /* CoreServices.framework */; };
 		1A6AB54A1502050100CC0516 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5491502050100CC0516 /* Security.framework */; };
 		1A6AB54C1502051300CC0516 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB54B1502051300CC0516 /* SystemConfiguration.framework */; };
@@ -111,6 +112,7 @@
 		1A1FC5CA15032C25009CDD67 /* RCRTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRTableRowView.m; sourceTree = "<group>"; };
 		1A1FC5CC15033875009CDD67 /* RCRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRUser.h; sourceTree = "<group>"; };
 		1A1FC5CD15033875009CDD67 /* RCRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRUser.m; sourceTree = "<group>"; };
+		1A4FA720150618A200FB6B8D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Credits.html; path = Resources/Credits.html; sourceTree = "<group>"; };
 		1A6AB5321502037C00CC0516 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = SharedLib/RestKit/RestKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		1A6AB547150204DF00CC0516 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		1A6AB5491502050100CC0516 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -288,6 +290,7 @@
 				1A6AB5641502307800CC0516 /* RCROptionsViewController.xib */,
 				1A6AB55F15022D5F00CC0516 /* RCRInfoViewController.xib */,
 				1A859B9514FCECDF00EB7867 /* icon.icns */,
+				1A4FA720150618A200FB6B8D /* Credits.html */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				1A6AB56B1502318100CC0516 /* RCRAccountViewController.xib in Resources */,
 				1AB3321B1503769C000D9DEA /* pull-to-refresh-arrow.png in Resources */,
 				1AB3321F1503769C000D9DEA /* release-to-refresh.png in Resources */,
+				1A4FA721150618A200FB6B8D /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

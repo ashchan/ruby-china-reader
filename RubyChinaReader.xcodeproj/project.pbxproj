@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0D7EC1150645330085BBED /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0D7EC0150645330085BBED /* Sparkle.framework */; };
+		1A0D7EC2150645DC0085BBED /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A0D7EC0150645330085BBED /* Sparkle.framework */; };
 		1A1FC5C5150300D3009CDD67 /* RCRTopicCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5C4150300D3009CDD67 /* RCRTopicCellView.m */; };
 		1A1FC5C81503184E009CDD67 /* RCRTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5C71503184E009CDD67 /* RCRTopic.m */; };
 		1A1FC5CB15032C26009CDD67 /* RCRTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5CA15032C25009CDD67 /* RCRTableRowView.m */; };
@@ -98,12 +100,14 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1AB3323A150393C8000D9DEA /* RestKit.framework in CopyFiles */,
+				1A0D7EC2150645DC0085BBED /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A0D7EC0150645330085BBED /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		1A1FC5C3150300D3009CDD67 /* RCRTopicCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRTopicCellView.h; sourceTree = "<group>"; };
 		1A1FC5C4150300D3009CDD67 /* RCRTopicCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRTopicCellView.m; sourceTree = "<group>"; };
 		1A1FC5C61503184E009CDD67 /* RCRTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRTopic.h; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				1A6AB54A1502050100CC0516 /* Security.framework in Frameworks */,
 				1A6AB548150204DF00CC0516 /* CoreServices.framework in Frameworks */,
 				1AFC258014FCDF1100443426 /* Cocoa.framework in Frameworks */,
+				1A0D7EC1150645330085BBED /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				1A6AB54D1502053400CC0516 /* libxml2.dylib */,
+				1A0D7EC0150645330085BBED /* Sparkle.framework */,
 				1AB3322015037734000D9DEA /* QuartzCore.framework */,
 				1A6AB54B1502051300CC0516 /* SystemConfiguration.framework */,
 				1A6AB5491502050100CC0516 /* Security.framework */,
@@ -624,7 +630,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -656,7 +662,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -680,6 +686,10 @@
 		1AFC25AE14FCDF1200443426 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RubyChinaReader/RubyChinaReader-Prefix.pch";
 				INFOPLIST_FILE = "RubyChinaReader/RubyChinaReader-Info.plist";
@@ -692,6 +702,10 @@
 		1AFC25AF14FCDF1200443426 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RubyChinaReader/RubyChinaReader-Prefix.pch";
 				INFOPLIST_FILE = "RubyChinaReader/RubyChinaReader-Info.plist";

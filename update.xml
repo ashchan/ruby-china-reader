@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <channel>
+      <title>Ruby China Reader Update</title>
+      <link>https://raw.github.com/ashchan/ruby-china-reader/master/update.xml</link>
+      <description>Ruby China Reader Update Feed</description>
+      <language>en</language>
+         <item>
+            <title>Version 0.1</title>
+            <sparkle:releaseNotesLink>https://raw.github.com/ashchan/ruby-china-reader/master/Changes.html</sparkle:releaseNotesLink>
+            <pubDate>Tue, 25 Mar 22:35:00 +0900</pubDate>
+            <enclosure url="https://github.com/downloads/ashchan/ruby-china-reader/RubyChinaReader-0.1b.zip"
+              sparkle:version="6"
+              sparkle:shortVersionString="0.1b"
+              length="1178409"
+              type="application/zip" />
+         </item>
+   </channel>
+</rss>

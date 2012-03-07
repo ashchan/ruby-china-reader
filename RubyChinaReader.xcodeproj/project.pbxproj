@@ -31,6 +31,7 @@
 		1A859B9614FCECDF00EB7867 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1A859B9514FCECDF00EB7867 /* icon.icns */; };
 		1A9488271506EBE2004B83CA /* RCRUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9488251506EBE2004B83CA /* RCRUserDetailViewController.m */; };
 		1A9488281506EBE2004B83CA /* RCRUserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */; };
+		1AB1A92215076862008D287B /* ruby-china-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB1A92115076862008D287B /* ruby-china-gray.png */; };
 		1AB3321B1503769C000D9DEA /* pull-to-refresh-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB3320C1503769C000D9DEA /* pull-to-refresh-arrow.png */; };
 		1AB3321D1503769C000D9DEA /* PullToRefreshClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB332101503769C000D9DEA /* PullToRefreshClipView.m */; };
 		1AB3321E1503769C000D9DEA /* PullToRefreshScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB332131503769C000D9DEA /* PullToRefreshScrollView.m */; };
@@ -145,6 +146,7 @@
 		1A9488241506EBE2004B83CA /* RCRUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRUserDetailViewController.h; sourceTree = "<group>"; };
 		1A9488251506EBE2004B83CA /* RCRUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRUserDetailViewController.m; sourceTree = "<group>"; };
 		1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCRUserDetailViewController.xib; sourceTree = "<group>"; };
+		1AB1A92115076862008D287B /* ruby-china-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ruby-china-gray.png"; path = "Resources/ruby-china-gray.png"; sourceTree = "<group>"; };
 		1AB3320C1503769C000D9DEA /* pull-to-refresh-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pull-to-refresh-arrow.png"; sourceTree = "<group>"; };
 		1AB3320F1503769C000D9DEA /* PullToRefreshClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshClipView.h; sourceTree = "<group>"; };
 		1AB332101503769C000D9DEA /* PullToRefreshClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshClipView.m; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				1A6AB55F15022D5F00CC0516 /* RCRInfoViewController.xib */,
 				1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */,
 				1A859B9514FCECDF00EB7867 /* icon.icns */,
+				1AB1A92115076862008D287B /* ruby-china-gray.png */,
 				1A4FA720150618A200FB6B8D /* Credits.html */,
 			);
 			name = Resources;
@@ -533,6 +536,7 @@
 				1AB3321F1503769C000D9DEA /* release-to-refresh.png in Resources */,
 				1A4FA721150618A200FB6B8D /* Credits.html in Resources */,
 				1A9488281506EBE2004B83CA /* RCRUserDetailViewController.xib in Resources */,
+				1AB1A92215076862008D287B /* ruby-china-gray.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

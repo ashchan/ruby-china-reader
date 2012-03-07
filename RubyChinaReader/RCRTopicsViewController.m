@@ -194,6 +194,13 @@
         } else {
             _userDetailViewController.tagline.stringValue = @"这哥们儿没签名";
         }
+        
+        if (topic.user.location.length > 0){
+            _userDetailViewController.location.stringValue = topic.user.location;
+        }
+        else{
+            [_userDetailViewController.location setHidden:YES];
+        }
 
         [_userPopover showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMaxXEdge];
     }

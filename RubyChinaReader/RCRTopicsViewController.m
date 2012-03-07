@@ -168,7 +168,7 @@
             _userDetailViewController.name.stringValue = topic.user.login;
         }
 
-        if (topic.user.tagline) {
+        if (topic.user.tagline.length > 0) {
             _userDetailViewController.tagline.stringValue = topic.user.tagline;
         } else {
             _userDetailViewController.tagline.stringValue = @"这哥们儿没签名";

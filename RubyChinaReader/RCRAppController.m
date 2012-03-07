@@ -36,8 +36,8 @@
     //accountViewController = [[RCRAccountViewController alloc] init];
     //[self addView:accountViewController.view label:accountViewController.title image:[NSImage imageNamed:NSImageNameUser]];
     
-    //optionsViewController = [[RCROptionsViewController alloc] init];
-    //[self addView:optionsViewController.view label:optionsViewController.title image:[NSImage imageNamed:NSImageNameAdvanced]];
+    optionsViewController = [[RCROptionsViewController alloc] init];
+    [self addView:optionsViewController.view label:optionsViewController.title image:[NSImage imageNamed:NSImageNameAdvanced]];
 
     infoViewController = [[RCRInfoViewController alloc] init];
     [self addView:infoViewController.view label:infoViewController.title image:[NSImage imageNamed:NSImageNameInfo]];

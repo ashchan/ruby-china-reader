@@ -79,6 +79,7 @@
 }
 
 - (void)refresh {
+    loading.hidden = NO;
     [loading startAnimation:nil];
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/topics.json?size=50" usingBlock:^(RKObjectLoader *loader) {
         loader.objectMapping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRTopic class]];
@@ -97,6 +98,8 @@
     _topics = [objects copy];
     topicsTableView.hidden = NO;
     [loading stopAnimation:nil];
+    loading.hidden = YES;
+
     [topicsTableView reloadData];
 }
 

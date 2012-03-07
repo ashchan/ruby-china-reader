@@ -32,7 +32,6 @@
 - (void)setupToolbar{
     topicsViewController = [[RCRTopicsViewController alloc] init];
     [self addView:topicsViewController.view label:topicsViewController.title image:[NSImage imageNamed:NSImageNameBonjour]];
-    topicsViewController.topicsTableView.hidden = YES;
 
     //accountViewController = [[RCRAccountViewController alloc] init];
     //[self addView:accountViewController.view label:accountViewController.title image:[NSImage imageNamed:NSImageNameUser]];
@@ -43,7 +42,7 @@
     infoViewController = [[RCRInfoViewController alloc] init];
     [self addView:infoViewController.view label:infoViewController.title image:[NSImage imageNamed:NSImageNameInfo]];
 
-    [topicsViewController refresh];
+    [topicsViewController start];
 }
 
 - (void)showAbout {

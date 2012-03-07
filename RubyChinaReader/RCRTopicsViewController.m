@@ -46,6 +46,7 @@
 
 @synthesize topicsTableView;
 @synthesize scrollView;
+@synthesize loading;
 
 - (NSString *)nibName {
     return @"RCRTopicsViewController";
@@ -65,15 +66,20 @@
     return self;
 }
 
-- (void)refresh {
+- (void)start {
     // force load nib
     [_userDetailViewController view];
 
-    if (_pullToRefreshDelegate == nil) {
-        _pullToRefreshDelegate = [[RCRPullToRefreshDelegate alloc] init];
-        _pullToRefreshDelegate.vc = self;
-        scrollView.delegate = _pullToRefreshDelegate;
-    }
+    _pullToRefreshDelegate = [[RCRPullToRefreshDelegate alloc] init];
+    _pullToRefreshDelegate.vc = self;
+    scrollView.delegate = _pullToRefreshDelegate;
+
+    topicsTableView.hidden = YES;
+    [self refresh];
+}
+
+- (void)refresh {
+    [loading startAnimation:nil];
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/topics.json?size=50" usingBlock:^(RKObjectLoader *loader) {
         loader.objectMapping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRTopic class]];
         loader.delegate = self;
@@ -90,6 +96,7 @@
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
     _topics = [objects copy];
     topicsTableView.hidden = NO;
+    [loading stopAnimation:nil];
     [topicsTableView reloadData];
 }
 

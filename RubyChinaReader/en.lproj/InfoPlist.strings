@@ -1,4 +1,4 @@
 /* Localized versions of Info.plist keys */
 
-CFBundleName = "Ruby China Reader";
-CFBundleDisplayName = "Ruby China Reader";
+CFBundleName = "Ruby China";
+CFBundleDisplayName = "Ruby China";

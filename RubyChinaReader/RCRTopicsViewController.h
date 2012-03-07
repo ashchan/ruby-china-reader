@@ -7,6 +7,7 @@
 //
 
 #import <RestKit/RestKit.h>
+#import "NSDate+TimeAgo.h"
 #import "PullToRefreshScrollView.h"
 
 @interface RCRTopicsViewController : NSViewController <RKObjectLoaderDelegate, NSTableViewDelegate, NSTableViewDataSource>

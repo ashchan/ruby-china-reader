@@ -39,12 +39,13 @@ void DrawSeparatorInRect(NSRect rect) {
 
 - (void)drawSelectionInRect:(NSRect)dirtyRect {
     if (self.selectionHighlightStyle != NSTableViewSelectionHighlightStyleNone) {
-        NSRect selectionRect = NSInsetRect(self.bounds, 2.5, 2.5);
-        [[NSColor colorWithCalibratedWhite:.65 alpha:1.0] setStroke];
+        NSRect selectionRect = NSInsetRect(self.bounds, 0, 0.2);
+//        [[NSColor colorWithCalibratedWhite:.65 alpha:1.0] setStroke];
+//        [[NSColor colorWithDeviceRed:0.2196 green:0.4588 blue:0.8431 alpha:1.0000] setFill];
         [[NSColor colorWithCalibratedWhite:.82 alpha:1.0] setFill];
-        NSBezierPath *selectionPath = [NSBezierPath bezierPathWithRoundedRect:selectionRect xRadius:6 yRadius:6];
+        NSBezierPath *selectionPath = [NSBezierPath bezierPathWithRoundedRect:selectionRect xRadius:1 yRadius:1];
         [selectionPath fill];
-        [selectionPath stroke];
+//        [selectionPath stroke];
     }
 }
 

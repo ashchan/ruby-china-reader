@@ -12,7 +12,8 @@
 
 @property (weak) IBOutlet NSTextField *topicTitle;
 @property (weak) IBOutlet NSButton *repliesCount;
-@property (weak) IBOutlet NSButton *nodeName;
+@property (weak) IBOutlet NSTextField *nodeName;
+@property (weak) IBOutlet NSTextField *repliedAt;
 @property (weak) IBOutlet NSButton *gravatarButton;
 @property (weak) IBOutlet NSProgressIndicator *progressIndicator;
 

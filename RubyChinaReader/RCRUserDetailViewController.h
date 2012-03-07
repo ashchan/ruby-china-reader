@@ -11,4 +11,5 @@
 @interface RCRUserDetailViewController : NSViewController
 @property (weak) IBOutlet NSTextField *name;
 @property (weak) IBOutlet NSTextField *tagline;
+@property (weak) IBOutlet NSTextField *location;
 @end

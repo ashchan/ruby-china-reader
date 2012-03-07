@@ -12,8 +12,7 @@
 #import "RCRTopicCellView.h"
 #import "RCRTopic.h"
 #import "RCRUserDetailViewController.h"
-#import "RCRAppController.h"
-#import "RCRTopicDetailController.h"
+#import "RCRUrlBuilder.h"
 
 @interface RCRPullToRefreshDelegate : NSObject<PullToRefreshDelegate>
 @property (assign) RCRTopicsViewController *vc;
@@ -170,8 +169,6 @@
     [self closeUserPopover];
 }
 
-
-
 #pragma mark - NSTableViewDataSource
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
@@ -210,15 +207,8 @@
 }
 
 - (void)topicRowClicked:(id)sender {
-    NSInteger rowIndex = [sender clickedRow];
-    RCRTopic *topic = [self topicForRow:rowIndex];
-    RCRTopicDetailController *detailSheet = [[RCRTopicDetailController alloc] initWithTopic:topic];
-    
-    [NSApp beginSheet:detailSheet.window
-       modalForWindow:[RCRAppController sharedPrefsWindowController].window
-        modalDelegate:self
-       didEndSelector:nil
-          contextInfo:nil];
+    RCRTopic *topic = [self topicForRow:[sender clickedRow]];
+    [[NSWorkspace sharedWorkspace] openURL:[RCRUrlBuilder urlWithPath:[NSString stringWithFormat:@"/topics/%@", topic.topicId]]];
 }
 
 #pragma mark - Private Methods & misc

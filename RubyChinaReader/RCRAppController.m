@@ -32,6 +32,7 @@
 - (void)setupToolbar{
     topicsViewController = [[RCRTopicsViewController alloc] init];
     [self addView:topicsViewController.view label:topicsViewController.title image:[NSImage imageNamed:NSImageNameBonjour]];
+    topicsViewController.topicsTableView.hidden = YES;
 
     //accountViewController = [[RCRAccountViewController alloc] init];
     //[self addView:accountViewController.view label:accountViewController.title image:[NSImage imageNamed:NSImageNameUser]];

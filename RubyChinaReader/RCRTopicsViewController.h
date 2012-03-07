@@ -14,7 +14,9 @@
 
 @property (weak) IBOutlet NSTableView *topicsTableView;
 @property (weak) IBOutlet PullToRefreshScrollView *scrollView;
+@property (weak) IBOutlet NSProgressIndicator *loading;
 
+- (void)start;
 - (void)refresh;
 - (IBAction)userImageClicked:(id)sender;
 - (IBAction)nodeNameClicked:(id)sender;

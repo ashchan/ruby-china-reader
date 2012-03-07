@@ -14,7 +14,7 @@
 
 @implementation RCRUserDetailViewController
 
-@synthesize name, tagline;
+@synthesize name, tagline, location;
 
 - (NSString *)nibName {
     return @"RCRUserDetailViewController";

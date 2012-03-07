@@ -60,6 +60,7 @@
         @"replies_count", @"repliesCount",
         @"created_at", @"createdDate",
         @"updated_at", @"updatedDate",
+        @"replied_at", @"repliedAt",
         @"node_name", @"nodeName",
         @"node_id", @"nodeId",
         nil];

@@ -18,6 +18,7 @@
 @property (retain) NSNumber *repliesCount;
 @property (retain) NSDate *createdDate;
 @property (retain) NSDate *updatedDate;
+@property (retain) NSDate *repliedAt;
 @property (retain) NSString *nodeName;
 @property (retain) NSNumber *nodeId;
 @property (retain) RCRUser *user;

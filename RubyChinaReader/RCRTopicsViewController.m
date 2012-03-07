@@ -120,8 +120,12 @@
     RCRTopic *topic = [self topicForRow:row];
     RCRTopicCellView *cellView = [topicsTableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     cellView.textField.stringValue = [NSString stringWithFormat:@"@%@", topic.user.login];
-    cellView.nodeName.title = topic.nodeName;
-    [cellView.nodeName.cell setBezelStyle:NSInlineBezelStyle];
+    
+    [cellView.nodeName setTitleWithMnemonic:topic.nodeName];
+    [cellView.nodeName setHidden:TRUE];
+    
+    [cellView.repliedAt setTitleWithMnemonic:[topic.repliedAt timeAgo]];
+    
     cellView.repliesCount.title = topic.repliesCount.stringValue;
     [cellView.repliesCount.cell setHighlightsBy:0];
     [cellView.repliesCount.cell setBezelStyle:NSInlineBezelStyle];
@@ -150,6 +154,8 @@
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
     [self closeUserPopover];
 }
+
+
 
 #pragma mark - NSTableViewDataSource
 

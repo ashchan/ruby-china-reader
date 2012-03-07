@@ -48,6 +48,7 @@
 		1AFC259F14FCDF1200443426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFC257F14FCDF1100443426 /* Cocoa.framework */; };
 		1AFC25A714FCDF1200443426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC25A514FCDF1200443426 /* InfoPlist.strings */; };
 		1AFC25AA14FCDF1200443426 /* RubyChinaReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC25A914FCDF1200443426 /* RubyChinaReaderTests.m */; };
+		9612CE5A1507806700380187 /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9612CE591507806700380187 /* NSDate+TimeAgo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,8 @@
 		1AFC25A614FCDF1200443426 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1AFC25A814FCDF1200443426 /* RubyChinaReaderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RubyChinaReaderTests.h; sourceTree = "<group>"; };
 		1AFC25A914FCDF1200443426 /* RubyChinaReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RubyChinaReaderTests.m; sourceTree = "<group>"; };
+		9612CE581507806700380187 /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
+		9612CE591507806700380187 /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +275,8 @@
 			isa = PBXGroup;
 			children = (
 				1A6ECA5214FD0E2C00A91FEF /* SynthesizeSingleton.h */,
+				9612CE581507806700380187 /* NSDate+TimeAgo.h */,
+				9612CE591507806700380187 /* NSDate+TimeAgo.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -586,6 +591,7 @@
 				1AB3321D1503769C000D9DEA /* PullToRefreshClipView.m in Sources */,
 				1AB3321E1503769C000D9DEA /* PullToRefreshScrollView.m in Sources */,
 				1A9488271506EBE2004B83CA /* RCRUserDetailViewController.m in Sources */,
+				9612CE5A1507806700380187 /* NSDate+TimeAgo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

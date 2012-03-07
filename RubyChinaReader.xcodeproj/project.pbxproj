@@ -14,6 +14,8 @@
 		1A1FC5CB15032C26009CDD67 /* RCRTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5CA15032C25009CDD67 /* RCRTableRowView.m */; };
 		1A1FC5CE15033875009CDD67 /* RCRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5CD15033875009CDD67 /* RCRUser.m */; };
 		1A4FA721150618A200FB6B8D /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 1A4FA720150618A200FB6B8D /* Credits.html */; };
+		1A6546B1150789F40030C113 /* RCRTopicDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6546AF150789F40030C113 /* RCRTopicDetailController.m */; };
+		1A6546B2150789F40030C113 /* RCRTopicDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6546B0150789F40030C113 /* RCRTopicDetailController.xib */; };
 		1A6AB548150204DF00CC0516 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB547150204DF00CC0516 /* CoreServices.framework */; };
 		1A6AB54A1502050100CC0516 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5491502050100CC0516 /* Security.framework */; };
 		1A6AB54C1502051300CC0516 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB54B1502051300CC0516 /* SystemConfiguration.framework */; };
@@ -121,6 +123,9 @@
 		1A1FC5CC15033875009CDD67 /* RCRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRUser.h; sourceTree = "<group>"; };
 		1A1FC5CD15033875009CDD67 /* RCRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRUser.m; sourceTree = "<group>"; };
 		1A4FA720150618A200FB6B8D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Credits.html; path = Resources/Credits.html; sourceTree = "<group>"; };
+		1A6546AE150789F40030C113 /* RCRTopicDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRTopicDetailController.h; sourceTree = "<group>"; };
+		1A6546AF150789F40030C113 /* RCRTopicDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRTopicDetailController.m; sourceTree = "<group>"; };
+		1A6546B0150789F40030C113 /* RCRTopicDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCRTopicDetailController.xib; sourceTree = "<group>"; };
 		1A6AB5321502037C00CC0516 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = SharedLib/RestKit/RestKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		1A6AB547150204DF00CC0516 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		1A6AB5491502050100CC0516 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -296,6 +301,8 @@
 				1A6AB55E15022D5F00CC0516 /* RCRInfoViewController.m */,
 				1A9488241506EBE2004B83CA /* RCRUserDetailViewController.h */,
 				1A9488251506EBE2004B83CA /* RCRUserDetailViewController.m */,
+				1A6546AE150789F40030C113 /* RCRTopicDetailController.h */,
+				1A6546AF150789F40030C113 /* RCRTopicDetailController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -309,6 +316,7 @@
 				1A6AB5641502307800CC0516 /* RCROptionsViewController.xib */,
 				1A6AB55F15022D5F00CC0516 /* RCRInfoViewController.xib */,
 				1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */,
+				1A6546B0150789F40030C113 /* RCRTopicDetailController.xib */,
 				1A859B9514FCECDF00EB7867 /* icon.icns */,
 				1AB1A92115076862008D287B /* ruby-china-gray.png */,
 				1A4FA720150618A200FB6B8D /* Credits.html */,
@@ -542,6 +550,7 @@
 				1A4FA721150618A200FB6B8D /* Credits.html in Resources */,
 				1A9488281506EBE2004B83CA /* RCRUserDetailViewController.xib in Resources */,
 				1AB1A92215076862008D287B /* ruby-china-gray.png in Resources */,
+				1A6546B2150789F40030C113 /* RCRTopicDetailController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +601,7 @@
 				1AB3321E1503769C000D9DEA /* PullToRefreshScrollView.m in Sources */,
 				1A9488271506EBE2004B83CA /* RCRUserDetailViewController.m in Sources */,
 				9612CE5A1507806700380187 /* NSDate+TimeAgo.m in Sources */,
+				1A6546B1150789F40030C113 /* RCRTopicDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

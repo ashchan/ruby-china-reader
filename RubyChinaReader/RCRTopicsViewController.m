@@ -12,6 +12,8 @@
 #import "RCRTopicCellView.h"
 #import "RCRTopic.h"
 #import "RCRUserDetailViewController.h"
+#import "RCRAppController.h"
+#import "RCRTopicDetailController.h"
 
 @interface RCRPullToRefreshDelegate : NSObject<PullToRefreshDelegate>
 @property (assign) RCRTopicsViewController *vc;
@@ -75,6 +77,9 @@
     scrollView.delegate = _pullToRefreshDelegate;
 
     topicsTableView.hidden = YES;
+    topicsTableView.target = self;
+    topicsTableView.doubleAction = @selector(topicRowClicked:);
+
     [self refresh];
 }
 
@@ -195,6 +200,18 @@
 }
 
 - (IBAction)nodeNameClicked:(id)sender {
+}
+
+- (void)topicRowClicked:(id)sender {
+    NSInteger rowIndex = [sender clickedRow];
+    RCRTopic *topic = [self topicForRow:rowIndex];
+    RCRTopicDetailController *detailSheet = [[RCRTopicDetailController alloc] initWithTopic:topic];
+    
+    [NSApp beginSheet:detailSheet.window
+       modalForWindow:[RCRAppController sharedPrefsWindowController].window
+        modalDelegate:self
+       didEndSelector:nil
+          contextInfo:nil];
 }
 
 #pragma mark - Private Methods & misc

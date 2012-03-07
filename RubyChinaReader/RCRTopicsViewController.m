@@ -38,6 +38,7 @@
 - (void)reloadRowForEntity:(id)object;
 - (RCRTopic *)topicForRow:(NSInteger)row;
 - (RCRTopic *)topicForId:(NSInteger)topicId;
+- (void)closeUserPopover;
 
 @end
 
@@ -56,12 +57,27 @@
     if (self) {
         self.title = @"Topics";
         _userPopover = [[NSPopover alloc] init];
-        _userPopover.behavior = NSPopoverBehaviorTransient;
+        _userPopover.behavior = NSPopoverBehaviorApplicationDefined;
         _userDetailViewController = [[RCRUserDetailViewController alloc] init];
         _userPopover.contentViewController = _userDetailViewController;
     }
-    
+
     return self;
+}
+
+- (void)refresh {
+    // force load nib
+    [_userDetailViewController view];
+
+    if (_pullToRefreshDelegate == nil) {
+        _pullToRefreshDelegate = [[RCRPullToRefreshDelegate alloc] init];
+        _pullToRefreshDelegate.vc = self;
+        scrollView.delegate = _pullToRefreshDelegate;
+    }
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/topics.json?size=50" usingBlock:^(RKObjectLoader *loader) {
+        loader.objectMapping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRTopic class]];
+        loader.delegate = self;
+    }];
 }
 
 #pragma mark - RKRequestDelegate
@@ -93,7 +109,7 @@
     if (index != NSNotFound) {
         [topic removeObserver:self forKeyPath:RCRTopicPropertyNamedGravatar];
         [_observedVisibleItems removeObjectAtIndex:index];
-    }    
+    }
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
@@ -106,7 +122,7 @@
     [cellView.repliesCount.cell setHighlightsBy:0];
     [cellView.repliesCount.cell setBezelStyle:NSInlineBezelStyle];
     cellView.topicTitle.stringValue = topic.title;
-    
+
     if (_observedVisibleItems == nil) {
         _observedVisibleItems = [NSMutableArray new];
     }
@@ -115,7 +131,7 @@
         [topic.user loadGravatar];
         [_observedVisibleItems addObject:topic.user];
     }
-    
+
     if (topic.user.gravatar == nil) {
         [cellView.progressIndicator setHidden:NO];
         [cellView.progressIndicator startAnimation:nil];
@@ -125,7 +141,11 @@
     cellView.gravatarButton.tag = topic.topicId.integerValue;
 
     return cellView;
-} 
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)notification {
+    [self closeUserPopover];
+}
 
 #pragma mark - NSTableViewDataSource
 
@@ -143,12 +163,13 @@
         } else {
             _userDetailViewController.name.stringValue = topic.user.login;
         }
- 
+
         if (topic.user.tagline) {
             _userDetailViewController.tagline.stringValue = topic.user.tagline;
         } else {
             _userDetailViewController.tagline.stringValue = @"这哥们儿没签名";
-        } 
+        }
+
         [_userPopover showRelativeToRect:[sender bounds] ofView:sender preferredEdge:NSMaxXEdge];
     }
 }
@@ -157,21 +178,6 @@
 }
 
 #pragma mark - Private Methods & misc
-
-- (void)refresh {
-    // force load nib
-    [_userDetailViewController view];
-
-    if (_pullToRefreshDelegate == nil) {
-        _pullToRefreshDelegate = [[RCRPullToRefreshDelegate alloc] init];
-        _pullToRefreshDelegate.vc = self;
-        scrollView.delegate = _pullToRefreshDelegate;
-    }
-    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/topics.json" usingBlock:^(RKObjectLoader *loader) {
-        loader.objectMapping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRTopic class]];
-        loader.delegate = self;
-    }];
-}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:RCRTopicPropertyNamedGravatar]) {
@@ -194,7 +200,7 @@
             [cellView.progressIndicator setHidden:YES];
             [NSAnimationContext endGrouping];
         }
-    }   
+    }
 }
 
 - (RCRTopic *)topicForRow:(NSInteger)row {
@@ -208,6 +214,12 @@
         }
     }
     return nil;
+}
+
+- (void)closeUserPopover {
+    if (_userPopover.shown) {
+        [_userPopover close];
+    }
 }
 
 @end

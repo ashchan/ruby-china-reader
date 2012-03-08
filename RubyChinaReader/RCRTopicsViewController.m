@@ -135,8 +135,16 @@
     RCRTopicCellView *cellView = [topicsTableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     cellView.textField.stringValue = [NSString stringWithFormat:@"@%@", topic.user.login];
     
-    [cellView.nodeName setTitleWithMnemonic:topic.nodeName];
-    [cellView.nodeName setHidden:YES];
+    NSString *statusText = @"";
+    if(topic.lastReplyUserLogin.length > 0){
+        statusText = [NSString stringWithFormat:@"[%@] 最后由 %@ 回复", topic.nodeName, topic.lastReplyUserLogin];
+    }
+    else{
+        statusText = [NSString stringWithFormat:@"[%@] 由 %@ 创建", topic.nodeName, topic.user.login];
+    }
+    
+    [cellView.nodeName setTitleWithMnemonic:statusText];
+//    [cellView.nodeName setHidden:YES];
     
     [cellView.repliedAt setTitleWithMnemonic:[topic.repliedAt timeAgo]];
     

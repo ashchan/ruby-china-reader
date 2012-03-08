@@ -22,5 +22,6 @@
 @property (retain) NSString *nodeName;
 @property (retain) NSNumber *nodeId;
 @property (retain) RCRUser *user;
+@property (retain) NSString *lastReplyUserLogin;
 
 @end

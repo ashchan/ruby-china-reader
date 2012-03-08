@@ -10,7 +10,7 @@
 
 @implementation RCRTopic
 
-@synthesize topicId, title, body, bodyHtml, repliesCount, nodeName, nodeId, createdDate, updatedDate, repliedAt;
+@synthesize topicId, title, body, bodyHtml, repliesCount, nodeName, nodeId, createdDate, updatedDate, repliedAt, lastReplyUserLogin;
 @synthesize user;
 
 @end

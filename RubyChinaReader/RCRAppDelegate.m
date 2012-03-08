@@ -63,6 +63,7 @@
         @"replied_at", @"repliedAt",
         @"node_name", @"nodeName",
         @"node_id", @"nodeId",
+        @"last_reply_user_login", @"lastReplyUserLogin",
         nil];
     [topicMapping mapRelationship:@"user" withMapping:userMapping];
     

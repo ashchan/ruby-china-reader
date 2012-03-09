@@ -8,12 +8,10 @@
 
 #import <RestKit/RestKit.h>
 #import "NSDate+TimeAgo.h"
-#import "PullToRefreshScrollView.h"
 
 @interface RCRTopicsViewController : NSViewController <RKObjectLoaderDelegate, NSTableViewDelegate, NSTableViewDataSource>
 
 @property (weak) IBOutlet NSTableView *topicsTableView;
-@property (weak) IBOutlet PullToRefreshScrollView *scrollView;
 @property (weak) IBOutlet NSProgressIndicator *loading;
 
 - (void)start;

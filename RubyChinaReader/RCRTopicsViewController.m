@@ -7,31 +7,15 @@
 //
 
 #import "RCRTopicsViewController.h"
-#import "PullToRefreshDelegate.h"
 #import "RCRTableRowView.h"
 #import "RCRTopicCellView.h"
 #import "RCRTopic.h"
 #import "RCRUserDetailViewController.h"
 #import "RCRUrlBuilder.h"
 
-@interface RCRPullToRefreshDelegate : NSObject<PullToRefreshDelegate>
-@property (assign) RCRTopicsViewController *vc;
-@end
-
-@implementation RCRPullToRefreshDelegate
-
-@synthesize vc;
-
-- (void)ptrScrollViewDidTriggerRefresh:(id)sender {
-    [vc refresh];
-}
-
-@end
-
 @interface RCRTopicsViewController () {
     NSArray *_topics;
     NSMutableArray *_observedVisibleItems;
-    RCRPullToRefreshDelegate *_pullToRefreshDelegate;
     NSPopover *_userPopover;
     RCRUserDetailViewController *_userDetailViewController;
 }
@@ -46,7 +30,6 @@
 @implementation RCRTopicsViewController
 
 @synthesize topicsTableView;
-@synthesize scrollView;
 @synthesize loading;
 
 - (NSString *)nibName {
@@ -70,10 +53,6 @@
 - (void)start {
     // force load nib
     [_userDetailViewController view];
-
-    _pullToRefreshDelegate = [[RCRPullToRefreshDelegate alloc] init];
-    _pullToRefreshDelegate.vc = self;
-    scrollView.delegate = _pullToRefreshDelegate;
 
     topicsTableView.hidden = YES;
     topicsTableView.target = self;

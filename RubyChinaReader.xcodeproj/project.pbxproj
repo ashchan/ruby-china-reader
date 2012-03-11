@@ -34,7 +34,6 @@
 		1A859B9614FCECDF00EB7867 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1A859B9514FCECDF00EB7867 /* icon.icns */; };
 		1A9488271506EBE2004B83CA /* RCRUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9488251506EBE2004B83CA /* RCRUserDetailViewController.m */; };
 		1A9488281506EBE2004B83CA /* RCRUserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */; };
-		1AB1A92215076862008D287B /* ruby-china-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB1A92115076862008D287B /* ruby-china-gray.png */; };
 		1AB3322115037734000D9DEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3322015037734000D9DEA /* QuartzCore.framework */; };
 		1AB3323315039034000D9DEA /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
 		1AB3323A150393C8000D9DEA /* RestKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
@@ -151,7 +150,6 @@
 		1A9488241506EBE2004B83CA /* RCRUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRUserDetailViewController.h; sourceTree = "<group>"; };
 		1A9488251506EBE2004B83CA /* RCRUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRUserDetailViewController.m; sourceTree = "<group>"; };
 		1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCRUserDetailViewController.xib; sourceTree = "<group>"; };
-		1AB1A92115076862008D287B /* ruby-china-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ruby-china-gray.png"; path = "Resources/ruby-china-gray.png"; sourceTree = "<group>"; };
 		1AB3322015037734000D9DEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1AFC257B14FCDF1100443426 /* RubyChinaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFC257F14FCDF1100443426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -311,7 +309,6 @@
 				1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */,
 				1A6546B0150789F40030C113 /* RCRTopicDetailController.xib */,
 				1A859B9514FCECDF00EB7867 /* icon.icns */,
-				1AB1A92115076862008D287B /* ruby-china-gray.png */,
 				1A4FA720150618A200FB6B8D /* Credits.html */,
 			);
 			name = Resources;
@@ -525,7 +522,6 @@
 				1A6AB56B1502318100CC0516 /* RCRAccountViewController.xib in Resources */,
 				1A4FA721150618A200FB6B8D /* Credits.html in Resources */,
 				1A9488281506EBE2004B83CA /* RCRUserDetailViewController.xib in Resources */,
-				1AB1A92215076862008D287B /* ruby-china-gray.png in Resources */,
 				1A6546B2150789F40030C113 /* RCRTopicDetailController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

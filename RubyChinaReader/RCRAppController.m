@@ -27,6 +27,8 @@
 
 @implementation RCRAppController
 
+const CGFloat SideBarWidth = 65;
+
 + (RCRAppController *)sharedAppController{
     static RCRAppController *_sharedAppController = nil;    
 	if(!_sharedAppController){
@@ -50,24 +52,38 @@
 
 - (void)windowDidLoad{
     NSWindow *window = 
-    [[NSWindow alloc] initWithContentRect:NSMakeRect(0, 0, 465, 600)
+    [[NSWindow alloc] initWithContentRect:NSMakeRect(400, 300, 465, 600)
                                 styleMask:(NSTitledWindowMask |
                                            NSClosableWindowMask |
+                                           NSResizableWindowMask |
                                            NSMiniaturizableWindowMask)
                                   backing:NSBackingStoreBuffered
                                     defer:YES];
     [self setWindow:window];
-    contentView = [[NSView alloc] initWithFrame:NSMakeRect(65, 0, 400, 600)];
-    [contentView setAutoresizingMask:(NSViewMinYMargin | NSViewWidthSizable)];
-    [self.window.contentView addSubview:contentView];
 
-    sideBar = [[EDSideBar alloc] initWithFrame:NSMakeRect(0, 0, 65, 600)];
+    sideBar = [[EDSideBar alloc] initWithFrame:NSMakeRect(0, 0, SideBarWidth, 600)];
     sideBar.sidebarDelegate = self;
     [self.window.contentView addSubview:sideBar];
 
-    topicsViewController = [[RCRTopicsViewController alloc] init];
-    [contentView addSubview:topicsViewController.view];
+    [sideBar setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[sideBar(==65)]-(>=0)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(sideBar)]];
+    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[sideBar]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(sideBar)]];
 
+    contentView = [[NSView alloc] initWithFrame:NSMakeRect(SideBarWidth, 0, 400, 600)];
+    [self.window.contentView addSubview:contentView];
+
+    [contentView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(==65)-[contentView(>=400)]-(==0)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(contentView)]];
+    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[contentView(>=250)]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(contentView)]];
+
+    topicsViewController = [[RCRTopicsViewController alloc] init];
+    NSView *topicsView = topicsViewController.view;
+    [contentView addSubview:topicsView];
+
+    [topicsView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[topicsView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(topicsView)]];
+    [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topicsView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(topicsView)]];
+ 
     [topicsViewController start];
 }
 

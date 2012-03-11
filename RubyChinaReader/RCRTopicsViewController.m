@@ -44,7 +44,6 @@
         _userPopover.behavior = NSPopoverBehaviorApplicationDefined;
         _userDetailViewController = [[RCRUserDetailViewController alloc] init];
         _userPopover.contentViewController = _userDetailViewController;
-        [self.view setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
     }
 
     return self;
@@ -121,7 +120,6 @@
     else{
         statusText = [NSString stringWithFormat:@"[%@] 由 %@ 创建", topic.nodeName, topic.user.login];
     }
-    
     [cellView.nodeName setTitleWithMnemonic:statusText];
 //    [cellView.nodeName setHidden:YES];
     

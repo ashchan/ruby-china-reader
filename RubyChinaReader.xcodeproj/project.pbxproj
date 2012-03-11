@@ -37,6 +37,7 @@
 		1AB3322115037734000D9DEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3322015037734000D9DEA /* QuartzCore.framework */; };
 		1AB3323315039034000D9DEA /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
 		1AB3323A150393C8000D9DEA /* RestKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
+		1ADBFE43150CC7520092B1E2 /* EDSideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBFE42150CC7520092B1E2 /* EDSideBar.m */; };
 		1AFC258014FCDF1100443426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFC257F14FCDF1100443426 /* Cocoa.framework */; };
 		1AFC258A14FCDF1100443426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC258814FCDF1100443426 /* InfoPlist.strings */; };
 		1AFC258C14FCDF1100443426 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC258B14FCDF1100443426 /* main.m */; };
@@ -151,6 +152,8 @@
 		1A9488251506EBE2004B83CA /* RCRUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRUserDetailViewController.m; sourceTree = "<group>"; };
 		1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCRUserDetailViewController.xib; sourceTree = "<group>"; };
 		1AB3322015037734000D9DEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1ADBFE41150CC7520092B1E2 /* EDSideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDSideBar.h; path = SharedLib/EDSidebar/EDSideBar/EDSideBar.h; sourceTree = SOURCE_ROOT; };
+		1ADBFE42150CC7520092B1E2 /* EDSideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDSideBar.m; path = SharedLib/EDSidebar/EDSideBar/EDSideBar.m; sourceTree = SOURCE_ROOT; };
 		1AFC257B14FCDF1100443426 /* RubyChinaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFC257F14FCDF1100443426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1AFC258214FCDF1100443426 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -249,6 +252,7 @@
 		1A6EC9AE14FD0BE700A91FEF /* SharedLib */ = {
 			isa = PBXGroup;
 			children = (
+				1ADBFE40150CC73C0092B1E2 /* EDSidebar */,
 				1A6AB5321502037C00CC0516 /* RestKit.xcodeproj */,
 				1A6ECA3F14FD0C3300A91FEF /* DBPrefsWindowController */,
 			);
@@ -312,6 +316,15 @@
 				1A4FA720150618A200FB6B8D /* Credits.html */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		1ADBFE40150CC73C0092B1E2 /* EDSidebar */ = {
+			isa = PBXGroup;
+			children = (
+				1ADBFE41150CC7520092B1E2 /* EDSideBar.h */,
+				1ADBFE42150CC7520092B1E2 /* EDSideBar.m */,
+			);
+			name = EDSidebar;
 			sourceTree = "<group>";
 		};
 		1AFC257014FCDF1100443426 = {
@@ -573,6 +586,7 @@
 				9612CE5A1507806700380187 /* NSDate+TimeAgo.m in Sources */,
 				1A6546B1150789F40030C113 /* RCRTopicDetailController.m in Sources */,
 				1A29596A15079D2700D397E5 /* RCRUrlBuilder.m in Sources */,
+				1ADBFE43150CC7520092B1E2 /* EDSideBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

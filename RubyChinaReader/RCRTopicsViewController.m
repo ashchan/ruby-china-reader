@@ -45,6 +45,7 @@
         _userPopover.behavior = NSPopoverBehaviorApplicationDefined;
         _userDetailViewController = [[RCRUserDetailViewController alloc] init];
         _userPopover.contentViewController = _userDetailViewController;
+        [self.view setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable];
     }
 
     return self;

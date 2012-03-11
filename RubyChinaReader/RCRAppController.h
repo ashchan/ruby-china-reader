@@ -12,5 +12,6 @@
 
 - (void)showAbout;
 - (void)showOptions;
+- (void)showMainWindow;
 
 @end

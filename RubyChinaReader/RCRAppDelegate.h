@@ -12,5 +12,6 @@
 
 - (IBAction)aboutClicked:(id)sender;
 - (IBAction)preferencesClicked:(id)sender;
+- (IBAction)showMainWindow:(id)sender;
 
 @end

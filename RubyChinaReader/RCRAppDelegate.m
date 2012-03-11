@@ -40,6 +40,10 @@
     [(RCRAppController *)[RCRAppController sharedPrefsWindowController] showOptions];
 }
 
+- (IBAction)showMainWindow:(id)sender {
+    [(RCRAppController *)[RCRAppController sharedPrefsWindowController] showMainWindow];
+}
+
 #pragma mark - Private Methods
 
 - (void)mapObjects {

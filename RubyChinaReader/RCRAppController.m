@@ -53,6 +53,12 @@
     [self selectViewWithTitle:optionsViewController.title];
 }
 
+- (void)showMainWindow {
+    // TODO: need to override DBPrefsWindowController's showWindow
+    // another option is to stop using DBPrefsWindowController
+    [self showWindow:nil];
+}
+
 - (void)selectViewWithTitle:(NSString *)title {
     for (NSToolbarItem *item in self.window.toolbar.items) {
         if ([item.itemIdentifier isEqualToString:title]) {

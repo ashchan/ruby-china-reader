@@ -11,10 +11,6 @@
 #import "RCRAppController.h"
 #import "RCRUser.h"
 #import "RCRTopic.h"
-#import "RCRTopicsViewController.h"
-#import "RCRAccountViewController.h"
-#import "RCROptionsViewController.h"
-#import "RCRInfoViewController.h"
 
 /*#ifdef DEBUG
     static NSString * API_ENDPOINT = @"http://localhost:3000";
@@ -23,12 +19,6 @@
 //#endif
 
 @interface RCRAppDelegate () {
-    RCRTopicsViewController *topicsViewController;
-    RCRAccountViewController *accountViewController;
-    RCROptionsViewController *optionsViewController;
-    RCRInfoViewController *infoViewController;
-    IBOutlet NSView *contentSubview;
-    IBOutlet EDSideBar *sideBar;
 }
 
 - (void)mapObjects;
@@ -36,50 +26,25 @@
 
 @implementation RCRAppDelegate
 
-@synthesize window;
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [self mapObjects];
-
-    sideBar.sidebarDelegate = self;
     
-    topicsViewController = [[RCRTopicsViewController alloc] init];
-    [contentSubview addSubview:topicsViewController.view];
-    [topicsViewController start];
-}
-
-- (void)awakeFromNib {
-    [sideBar setTranslatesAutoresizingMaskIntoConstraints:NO];
-    NSDictionary *views = NSDictionaryOfVariableBindings(sideBar);
-    [window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[sideBar(==65)]-(>=0)-|" options:0 metrics:nil views:views]];
-    [window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[sideBar]-0-|" options:0 metrics:nil views:views]];
-
-    [contentSubview setTranslatesAutoresizingMaskIntoConstraints:NO];
-    views = NSDictionaryOfVariableBindings(contentSubview);
-    [window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(==65)-[contentSubview]-(0)-|" options:0 metrics:nil views:views]];
-    [window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[contentSubview]-0-|" options:0 metrics:nil views:views]];
-    
-    [super awakeFromNib];
+    [[RCRAppController sharedAppController] showWindow:nil];
 }
 
 #pragma mark - Actions
 
 - (IBAction)aboutClicked:(id)sender {
-    [(RCRAppController *)[RCRAppController sharedPrefsWindowController] showAbout];
+    [[RCRAppController sharedAppController] showAbout];
 }
 
 - (IBAction)preferencesClicked:(id)sender {
-    [(RCRAppController *)[RCRAppController sharedPrefsWindowController] showOptions];
+   [[RCRAppController sharedAppController] showOptions];
 }
 
 - (IBAction)showMainWindow:(id)sender {
-    [(RCRAppController *)[RCRAppController sharedPrefsWindowController] showMainWindow];
-}
-
-#pragma mark - EDSlidebarDelegate
-
-- (void)sideBar:(EDSideBar*)tabBar didSelectButton:(NSInteger)index {
+    [[RCRAppController sharedAppController] showMainWindow];
 }
 
 #pragma mark - Private Methods

@@ -6,12 +6,14 @@
 //  Copyright (c) 2012 ashchan.com. All rights reserved.
 //
 
-#import "DBPrefsWindowController.h"
+#import "EDSideBar.h"
 
-@interface RCRAppController : DBPrefsWindowController
+@interface RCRAppController : NSWindowController <EDSideBarDelegate>
 
 - (void)showAbout;
 - (void)showOptions;
 - (void)showMainWindow;
+
++ (RCRAppController *)sharedAppController;
 
 @end

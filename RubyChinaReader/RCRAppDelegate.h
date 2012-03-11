@@ -7,11 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "EDSideBar.h"
 
-@interface RCRAppDelegate : NSObject <NSApplicationDelegate, EDSideBarDelegate>
-
-@property (assign) IBOutlet NSWindow *window;
+@interface RCRAppDelegate : NSObject <NSApplicationDelegate>
 
 - (IBAction)aboutClicked:(id)sender;
 - (IBAction)preferencesClicked:(id)sender;

@@ -11,9 +11,6 @@
 
 @interface RCRTopicsViewController : NSViewController <RKObjectLoaderDelegate, NSTableViewDelegate, NSTableViewDataSource>
 
-@property (weak) IBOutlet NSTableView *topicsTableView;
-@property (weak) IBOutlet NSProgressIndicator *loading;
-
 - (void)start;
 - (void)refresh;
 - (IBAction)userImageClicked:(id)sender;

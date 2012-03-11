@@ -18,6 +18,8 @@
     NSMutableArray *_observedVisibleItems;
     NSPopover *_userPopover;
     RCRUserDetailViewController *_userDetailViewController;
+    IBOutlet NSTableView *topicsTableView;
+    IBOutlet NSProgressIndicator *loading;
 }
 
 - (void)reloadRowForEntity:(id)object;
@@ -28,9 +30,6 @@
 @end
 
 @implementation RCRTopicsViewController
-
-@synthesize topicsTableView;
-@synthesize loading;
 
 - (NSString *)nibName {
     return @"RCRTopicsViewController";

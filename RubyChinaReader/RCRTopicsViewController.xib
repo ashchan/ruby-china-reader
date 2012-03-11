@@ -236,14 +236,6 @@
 					<int key="connectionID">2</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">loading</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="429021247"/>
-					</object>
-					<int key="connectionID">1725</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">userImageClicked:</string>
 						<reference key="source" ref="1001"/>
@@ -279,11 +271,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">loading</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="429021247"/>
+					</object>
+					<int key="connectionID">1727</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">topicsTableView</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="1000528627"/>
 					</object>
-					<int key="connectionID">199</int>
+					<int key="connectionID">1728</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1617,7 +1617,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1726</int>
+			<int key="maxID">1728</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

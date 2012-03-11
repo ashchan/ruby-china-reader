@@ -55,6 +55,7 @@
     [window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[sideBar(==65)]-(>=0)-|" options:0 metrics:nil views:views]];
     [window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[sideBar]-0-|" options:0 metrics:nil views:views]];
 
+    [contentSubview setTranslatesAutoresizingMaskIntoConstraints:NO];
     views = NSDictionaryOfVariableBindings(contentSubview);
     [window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(==65)-[contentSubview]-(0)-|" options:0 metrics:nil views:views]];
     [window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[contentSubview]-0-|" options:0 metrics:nil views:views]];

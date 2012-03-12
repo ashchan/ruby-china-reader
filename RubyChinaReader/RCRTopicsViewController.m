@@ -165,11 +165,19 @@
 - (IBAction)userImageClicked:(id)sender {
     RCRTopic *topic = [self topicForId:[sender tag]];    
     if (topic) {
-        if (topic.user.name.length > 0) {
-            _userDetailViewController.name.stringValue = topic.user.name;
-        } else {
-            _userDetailViewController.name.stringValue = topic.user.login;
-        }
+        NSMutableAttributedString *userName = [[NSMutableAttributedString alloc] initWithString:(topic.user.name.length > 0 ? topic.user.name : topic.user.login)];
+        NSRange range = NSMakeRange(0, userName.length);
+        [userName addAttribute:NSLinkAttributeName
+                         value:[RCRUrlBuilder urlWithPath:[NSString stringWithFormat:@"/users/%@", topic.user.login]]
+                         range:range];
+        [userName addAttribute:NSForegroundColorAttributeName
+                         value:[NSColor blueColor]
+                         range:range];
+        [userName addAttribute:NSUnderlineStyleAttributeName
+                         value:[NSNumber numberWithInt:NSSingleUnderlineStyle]
+                         range:range];
+        _userDetailViewController.name.allowsEditingTextAttributes = YES;    
+        _userDetailViewController.name.attributedStringValue = userName;
 
         if (topic.user.tagline.length > 0) {
             _userDetailViewController.tagline.stringValue = topic.user.tagline;

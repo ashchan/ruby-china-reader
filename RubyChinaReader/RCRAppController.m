@@ -8,26 +8,25 @@
 
 #import "RCRAppController.h"
 #import "RCRTopicsViewController.h"
-#import "RCRAccountViewController.h"
-#import "RCROptionsViewController.h"
-#import "RCRInfoViewController.h"
 
 @interface RCRAppController() {
     RCRTopicsViewController *topicsViewController;
-    RCRAccountViewController *accountViewController;
-    RCROptionsViewController *optionsViewController;
-    RCRInfoViewController *infoViewController;
     NSView *contentView;
     EDSideBar *sideBar;
 }
-
-- (void)selectViewWithTitle:(NSString *)title;
 
 @end
 
 @implementation RCRAppController
 
 const CGFloat SideBarWidth = 65;
+const CGFloat DefaultWindowHeight = 600;
+const CGFloat DefaultWindowWidth = 400;
+
+enum {
+    RCRSideBarRowTopics        = 0,
+    RCRSideBarRowNotification  = 1,
+};
 
 + (RCRAppController *)sharedAppController{
     static RCRAppController *_sharedAppController = nil;    
@@ -52,7 +51,7 @@ const CGFloat SideBarWidth = 65;
 
 - (void)windowDidLoad{
     NSWindow *window = 
-    [[NSWindow alloc] initWithContentRect:NSMakeRect(400, 300, 465, 600)
+    [[NSWindow alloc] initWithContentRect:NSMakeRect(400, 300, DefaultWindowWidth + SideBarWidth, DefaultWindowHeight)
                                 styleMask:(NSTitledWindowMask |
                                            NSClosableWindowMask |
                                            NSResizableWindowMask |
@@ -61,20 +60,21 @@ const CGFloat SideBarWidth = 65;
                                     defer:YES];
     [self setWindow:window];
 
-    sideBar = [[EDSideBar alloc] initWithFrame:NSMakeRect(0, 0, SideBarWidth, 600)];
-    sideBar.sidebarDelegate = self;
-    [self.window.contentView addSubview:sideBar];
-
-    [sideBar setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[sideBar(==65)]-(>=0)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(sideBar)]];
-    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[sideBar]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(sideBar)]];
-
-    contentView = [[NSView alloc] initWithFrame:NSMakeRect(SideBarWidth, 0, 400, 600)];
+    contentView = [[NSView alloc] initWithFrame:NSMakeRect(SideBarWidth, 0, DefaultWindowWidth, DefaultWindowHeight)];
     [self.window.contentView addSubview:contentView];
 
     [contentView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(==65)-[contentView(>=400)]-(==0)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(contentView)]];
     [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[contentView(>=250)]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(contentView)]];
+
+    sideBar = [[EDSideBar alloc] initWithFrame:NSMakeRect(0, 0, SideBarWidth, DefaultWindowHeight)];
+    sideBar.sidebarDelegate = self;
+    sideBar.layoutMode = ECSideBarLayoutTop;
+    [self.window.contentView addSubview:sideBar];
+
+    [sideBar setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[sideBar(==65)]-(>=0)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(sideBar)]];
+    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[sideBar]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(sideBar)]];
 
     topicsViewController = [[RCRTopicsViewController alloc] init];
     NSView *topicsView = topicsViewController.view;
@@ -83,35 +83,17 @@ const CGFloat SideBarWidth = 65;
     [topicsView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[topicsView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(topicsView)]];
     [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topicsView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(topicsView)]];
- 
+
+    [sideBar addButtonWithTitle:topicsViewController.title image:[NSImage imageNamed:NSImageNameBonjour]];
+
+    [sideBar selectButtonAtRow:RCRSideBarRowTopics];
     [topicsViewController start];
-}
-
-- (void)setupToolbar{
-}
-
-- (void)showAbout {
-    [self selectViewWithTitle:infoViewController.title];
-}
-
-- (void)showOptions {
-    [self selectViewWithTitle:optionsViewController.title];
 }
 
 - (void)showMainWindow {
     // TODO: need to override DBPrefsWindowController's showWindow
     // another option is to stop using DBPrefsWindowController
     [self showWindow:nil];
-}
-
-- (void)selectViewWithTitle:(NSString *)title {
-    for (NSToolbarItem *item in self.window.toolbar.items) {
-        if ([item.itemIdentifier isEqualToString:title]) {
-            //[self toggleActivePreferenceView:item];
-            [self.window.toolbar setSelectedItemIdentifier:item.itemIdentifier];
-            return;
-        }
-    }
 }
 
 #pragma mark - EDSlidebarDelegate

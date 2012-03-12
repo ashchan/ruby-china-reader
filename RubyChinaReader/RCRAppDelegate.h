@@ -13,5 +13,6 @@
 - (IBAction)aboutClicked:(id)sender;
 - (IBAction)preferencesClicked:(id)sender;
 - (IBAction)showMainWindow:(id)sender;
+- (IBAction)closeWindow:(id)sender;
 
 @end

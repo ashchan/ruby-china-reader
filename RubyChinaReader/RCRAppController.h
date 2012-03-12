@@ -10,8 +10,6 @@
 
 @interface RCRAppController : NSWindowController <EDSideBarDelegate>
 
-- (void)showAbout;
-- (void)showOptions;
 - (void)showMainWindow;
 
 + (RCRAppController *)sharedAppController;

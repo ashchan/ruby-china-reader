@@ -15,4 +15,6 @@
 @property (assign) IBOutlet NSTextView *credits;
 @property (weak) IBOutlet NSTextField *copyrightInfo;
 
+- (NSImage *)image;
+
 @end

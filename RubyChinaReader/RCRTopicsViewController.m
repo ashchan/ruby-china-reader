@@ -114,10 +114,10 @@
     cellView.textField.stringValue = [NSString stringWithFormat:@"@%@", topic.user.login];
     
     NSString *statusText = @"";
-    if(topic.lastReplyUserLogin.length > 0){
+    if (topic.lastReplyUserLogin.length > 0) {
         statusText = [NSString stringWithFormat:@"[%@] 最后由 %@ 回复", topic.nodeName, topic.lastReplyUserLogin];
     }
-    else{
+    else {
         statusText = [NSString stringWithFormat:@"[%@] 由 %@ 创建", topic.nodeName, topic.user.login];
     }
     [cellView.nodeName setTitleWithMnemonic:statusText];
@@ -178,6 +178,7 @@
         }
         
         if (topic.user.location.length > 0){
+            [_userDetailViewController.location setHidden:NO];
             _userDetailViewController.location.stringValue = topic.user.location;
         }
         else{

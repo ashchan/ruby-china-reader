@@ -18,11 +18,15 @@
     return @"RCROptionsViewController";
 }
 
+- (NSImage *)image {
+    return [NSImage imageNamed:NSImageNamePreferencesGeneral];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Options";
+        self.title = @"General";
     }
     
     return self;

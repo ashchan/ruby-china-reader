@@ -9,6 +9,7 @@
 #import <RestKit/RestKit.h>
 #import "RCRAppDelegate.h"
 #import "RCRAppController.h"
+#import "RCRPrefsController.h"
 #import "RCRUser.h"
 #import "RCRTopic.h"
 
@@ -36,15 +37,19 @@
 #pragma mark - Actions
 
 - (IBAction)aboutClicked:(id)sender {
-    [[RCRAppController sharedAppController] showAbout];
+    [(RCRPrefsController *)[RCRPrefsController sharedPrefsWindowController] showAbout];
 }
 
 - (IBAction)preferencesClicked:(id)sender {
-   [[RCRAppController sharedAppController] showOptions];
+    [(RCRPrefsController *)[RCRPrefsController sharedPrefsWindowController] showPreferences];
 }
 
 - (IBAction)showMainWindow:(id)sender {
     [[RCRAppController sharedAppController] showMainWindow];
+}
+
+- (IBAction)closeWindow:(id)sender {
+    [[NSApp keyWindow] close];
 }
 
 #pragma mark - Private Methods

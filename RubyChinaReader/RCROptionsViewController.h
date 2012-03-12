@@ -10,4 +10,5 @@
 
 @interface RCROptionsViewController : NSViewController
 
+- (NSImage *)image;
 @end

@@ -20,6 +20,10 @@
     return @"RCRInfoViewController";
 }
 
+- (NSImage *)image {
+    return [NSImage imageNamed:NSImageNameInfo];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

@@ -8,12 +8,16 @@
 
 #import "RCRAccountViewController.h"
 #import "RCRUrlBuilder.h"
+#import "RCRSettingsManager.h"
 
 @interface RCRAccountViewController ()
 - (IBAction)privateTokenButtonClicked:(id)sender;
+@property (weak) NSString *privateTokey;
 @end
 
 @implementation RCRAccountViewController
+
+@dynamic privateTokey;
 
 - (NSString *)nibName {
     return @"RCRAccountViewController";
@@ -31,6 +35,14 @@
     }
     
     return self;
+}
+
+- (NSString *)privateTokey {
+    return [RCRSettingsManager sharedRCRSettingsManager].privateToken;
+}
+
+- (void)setPrivateTokey:(NSString *)token {
+    [RCRSettingsManager sharedRCRSettingsManager].privateToken = token;
 }
 
 - (IBAction)privateTokenButtonClicked:(id)sender {

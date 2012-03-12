@@ -39,6 +39,8 @@
 		1AB3323A150393C8000D9DEA /* RestKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
 		1ADBFE43150CC7520092B1E2 /* EDSideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBFE42150CC7520092B1E2 /* EDSideBar.m */; };
 		1AF97242150DE24900955A7A /* RCRPrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF97241150DE24900955A7A /* RCRPrefsController.m */; };
+		1AF97274150EDE8A00955A7A /* RCRSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF97273150EDE8900955A7A /* RCRSettingsManager.m */; };
+		1AF97286150EDFEE00955A7A /* EMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF9727B150EDFED00955A7A /* EMKeychain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1AFC258014FCDF1100443426 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFC257F14FCDF1100443426 /* Cocoa.framework */; };
 		1AFC258A14FCDF1100443426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AFC258814FCDF1100443426 /* InfoPlist.strings */; };
 		1AFC258C14FCDF1100443426 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC258B14FCDF1100443426 /* main.m */; };
@@ -157,6 +159,10 @@
 		1ADBFE42150CC7520092B1E2 /* EDSideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDSideBar.m; path = SharedLib/EDSidebar/EDSideBar/EDSideBar.m; sourceTree = SOURCE_ROOT; };
 		1AF97240150DE24900955A7A /* RCRPrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRPrefsController.h; sourceTree = "<group>"; };
 		1AF97241150DE24900955A7A /* RCRPrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRPrefsController.m; sourceTree = "<group>"; };
+		1AF97272150EDE8900955A7A /* RCRSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRSettingsManager.h; sourceTree = "<group>"; };
+		1AF97273150EDE8900955A7A /* RCRSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRSettingsManager.m; sourceTree = "<group>"; };
+		1AF9727A150EDFED00955A7A /* EMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychain.h; sourceTree = "<group>"; };
+		1AF9727B150EDFED00955A7A /* EMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychain.m; sourceTree = "<group>"; };
 		1AFC257B14FCDF1100443426 /* RubyChinaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyChinaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFC257F14FCDF1100443426 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1AFC258214FCDF1100443426 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -225,6 +231,8 @@
 				1A1FC5C71503184E009CDD67 /* RCRTopic.m */,
 				1A1FC5CC15033875009CDD67 /* RCRUser.h */,
 				1A1FC5CD15033875009CDD67 /* RCRUser.m */,
+				1AF97272150EDE8900955A7A /* RCRSettingsManager.h */,
+				1AF97273150EDE8900955A7A /* RCRSettingsManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -255,6 +263,7 @@
 		1A6EC9AE14FD0BE700A91FEF /* SharedLib */ = {
 			isa = PBXGroup;
 			children = (
+				1AF97275150EDFED00955A7A /* EMKeychain */,
 				1ADBFE40150CC73C0092B1E2 /* EDSidebar */,
 				1A6AB5321502037C00CC0516 /* RestKit.xcodeproj */,
 				1A6ECA3F14FD0C3300A91FEF /* DBPrefsWindowController */,
@@ -331,6 +340,16 @@
 			);
 			name = EDSidebar;
 			sourceTree = "<group>";
+		};
+		1AF97275150EDFED00955A7A /* EMKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				1AF9727A150EDFED00955A7A /* EMKeychain.h */,
+				1AF9727B150EDFED00955A7A /* EMKeychain.m */,
+			);
+			name = EMKeychain;
+			path = SharedLib/EMKeychain;
+			sourceTree = SOURCE_ROOT;
 		};
 		1AFC257014FCDF1100443426 = {
 			isa = PBXGroup;
@@ -593,6 +612,8 @@
 				1A29596A15079D2700D397E5 /* RCRUrlBuilder.m in Sources */,
 				1ADBFE43150CC7520092B1E2 /* EDSideBar.m in Sources */,
 				1AF97242150DE24900955A7A /* RCRPrefsController.m in Sources */,
+				1AF97274150EDE8A00955A7A /* RCRSettingsManager.m in Sources */,
+				1AF97286150EDFEE00955A7A /* EMKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

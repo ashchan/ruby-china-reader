@@ -58,6 +58,7 @@ enum {
                                            NSMiniaturizableWindowMask)
                                   backing:NSBackingStoreBuffered
                                     defer:YES];
+    window.delegate = self;
     [self setWindow:window];
 
     contentView = [[NSView alloc] initWithFrame:NSMakeRect(SideBarWidth, 0, DefaultWindowWidth, DefaultWindowHeight)];
@@ -99,6 +100,14 @@ enum {
 #pragma mark - EDSlidebarDelegate
 
 - (void)sideBar:(EDSideBar*)tabBar didSelectButton:(NSInteger)index {
+}
+
+#pragma mark - NSWindowDelegate
+- (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)frameSize {
+    if (frameSize.width > 800) {
+        frameSize.width = 800;
+    }
+    return frameSize;
 }
 
 @end

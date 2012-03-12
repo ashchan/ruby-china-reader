@@ -8,7 +8,7 @@
 
 #import "EDSideBar.h"
 
-@interface RCRAppController : NSWindowController <EDSideBarDelegate>
+@interface RCRAppController : NSWindowController <NSWindowDelegate, EDSideBarDelegate>
 
 - (void)showMainWindow;
 

@@ -42,6 +42,9 @@
 - (void)setupToolbar {
     optionsViewController = [[RCROptionsViewController alloc] init];
     [self addView:optionsViewController.view label:optionsViewController.title image:[optionsViewController image]];
+    
+    accountViewController = [[RCRAccountViewController alloc] init];
+    [self addView:accountViewController.view label:accountViewController.title image:[accountViewController image]];
 
     infoViewController = [[RCRInfoViewController alloc] init];
     [self addView:infoViewController.view label:infoViewController.title image:[infoViewController image]];

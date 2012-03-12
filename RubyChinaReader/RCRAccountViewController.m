@@ -7,15 +7,20 @@
 //
 
 #import "RCRAccountViewController.h"
+#import "RCRUrlBuilder.h"
 
 @interface RCRAccountViewController ()
-
+- (IBAction)privateTokenButtonClicked:(id)sender;
 @end
 
 @implementation RCRAccountViewController
 
 - (NSString *)nibName {
     return @"RCRAccountViewController";
+}
+
+- (NSImage *)image {
+    return [NSImage imageNamed:NSImageNameUser];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -26,6 +31,10 @@
     }
     
     return self;
+}
+
+- (IBAction)privateTokenButtonClicked:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[RCRUrlBuilder urlWithPath:@"/account/edit"]];
 }
 
 @end

@@ -10,4 +10,6 @@
 
 @interface RCRAccountViewController : NSViewController
 
+- (NSImage *)image;
+
 @end

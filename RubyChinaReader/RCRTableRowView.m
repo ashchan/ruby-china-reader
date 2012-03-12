@@ -8,9 +8,50 @@
 
 #import "RCRTableRowView.h"
 
+@interface RCRTableRowView () {
+    BOOL mouseInside;
+    NSTrackingArea *trackingArea;
+}
+@property BOOL mouseInside;
+@end
+
 @implementation RCRTableRowView
 
 @synthesize objectValue;
+@dynamic mouseInside;
+
+- (void)setMouseInside:(BOOL)value {
+    if (mouseInside != value) {
+        mouseInside = value;
+        [self setNeedsDisplay:YES];
+    }
+}
+
+- (BOOL)mouseInside {
+    return mouseInside;
+}
+
+- (void)mouseEntered:(NSEvent *)theEvent {
+    self.mouseInside = YES;
+}
+
+- (void)mouseExited:(NSEvent *)theEvent {
+    self.mouseInside = NO;
+}
+
+- (void)ensureTrackingArea {
+    if (trackingArea == nil) {
+        trackingArea = [[NSTrackingArea alloc] initWithRect:NSZeroRect options:NSTrackingInVisibleRect | NSTrackingActiveAlways | NSTrackingMouseEnteredAndExited owner:self userInfo:nil];
+    }
+}
+
+- (void)updateTrackingAreas {
+    [super updateTrackingAreas];
+    [self ensureTrackingArea];
+    if (![[self trackingAreas] containsObject:trackingArea]) {
+        [self addTrackingArea:trackingArea];
+    }
+}
 
 static NSGradient *gradientWithTargetColor(NSColor *targetColor) {
     NSArray *colors = [NSArray arrayWithObjects:[targetColor colorWithAlphaComponent:0], targetColor, targetColor, [targetColor colorWithAlphaComponent:0], nil];
@@ -40,12 +81,19 @@ void DrawSeparatorInRect(NSRect rect) {
 - (void)drawSelectionInRect:(NSRect)dirtyRect {
     if (self.selectionHighlightStyle != NSTableViewSelectionHighlightStyleNone) {
         NSRect selectionRect = NSInsetRect(self.bounds, 0, 0.2);
-//        [[NSColor colorWithCalibratedWhite:.65 alpha:1.0] setStroke];
-//        [[NSColor colorWithDeviceRed:0.2196 green:0.4588 blue:0.8431 alpha:1.0000] setFill];
         [[NSColor colorWithCalibratedWhite:.82 alpha:1.0] setFill];
         NSBezierPath *selectionPath = [NSBezierPath bezierPathWithRoundedRect:selectionRect xRadius:1 yRadius:1];
         [selectionPath fill];
-//        [selectionPath stroke];
+    }
+}
+
+- (void)drawBackgroundInRect:(NSRect)dirtyRect {
+    [self.backgroundColor set];
+    NSRectFill(self.bounds);
+    
+    if (self.mouseInside) {
+        NSGradient *gradient = gradientWithTargetColor([NSColor colorWithCalibratedWhite:.82 alpha:1.0]);
+        [gradient drawInRect:self.bounds angle:0];
     }
 }
 

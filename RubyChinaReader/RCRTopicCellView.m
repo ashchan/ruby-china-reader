@@ -30,4 +30,5 @@
     [super viewWillDraw];
     [self.nodeName sizeToFit];
 }
+
 @end

@@ -13,7 +13,7 @@
 
 - (void)start;
 - (void)refresh;
+- (IBAction)newTopic:(id)sender;
 - (IBAction)userImageClicked:(id)sender;
-- (IBAction)nodeNameClicked:(id)sender;
 
 @end

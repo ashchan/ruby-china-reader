@@ -74,5 +74,13 @@
     [self.window makeKeyAndOrderFront:nil];
     [self selectViewWithTitle:infoViewController.title];
 }
-    
+
+- (void)showAccount {
+    if (![self.window isVisible]) {
+        [self showWindow:nil];
+    }
+    [self.window makeKeyAndOrderFront:nil];
+    [self selectViewWithTitle:accountViewController.title];
+}
+
 @end

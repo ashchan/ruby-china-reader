@@ -12,5 +12,6 @@
 
 - (void)showPreferences;
 - (void)showAbout;
+- (void)showAccount;
 
 @end

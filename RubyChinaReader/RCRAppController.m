@@ -8,12 +8,16 @@
 
 #import "RCRAppController.h"
 #import "RCRTopicsViewController.h"
+#import "RCRSettingsManager.h"
+#import "RCRPrefsController.h"
 
 @interface RCRAppController() {
     RCRTopicsViewController *topicsViewController;
     NSView *contentView;
     EDSideBar *sideBar;
 }
+
+- (void)newTopic;
 
 @end
 
@@ -87,13 +91,33 @@ enum {
 
     [sideBar addButtonWithTitle:topicsViewController.title image:[NSImage imageNamed:NSImageNameBonjour]];
 
+    NSButton *newTopicButton = [[NSButton alloc] init];
+    newTopicButton.bezelStyle = NSThickSquareBezelStyle;
+    newTopicButton.image = [NSImage imageNamed:NSImageNameAddTemplate];
+    newTopicButton.target = self;
+    newTopicButton.action = @selector(newTopic);
+    [self.window.contentView addSubview:newTopicButton];
+
+    [newTopicButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[newTopicButton(==20)]-(>=0)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(newTopicButton)]];
+    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=0)-[newTopicButton(==20)]-4-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(newTopicButton)]];
+
+    NSButton *refreshButton = [[NSButton alloc] init];
+    refreshButton.bezelStyle = NSThickSquareBezelStyle;
+    refreshButton.image = [NSImage imageNamed:NSImageNameRefreshTemplate];
+    refreshButton.target = topicsViewController;
+    refreshButton.action = @selector(refresh);
+    [self.window.contentView addSubview:refreshButton];
+
+    [refreshButton setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-32-[refreshButton(==20)]-(>=0)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(refreshButton)]];
+    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=0)-[refreshButton(==20)]-4-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(refreshButton)]];
+
     [sideBar selectButtonAtRow:RCRSideBarRowTopics];
     [topicsViewController start];
 }
 
 - (void)showMainWindow {
-    // TODO: need to override DBPrefsWindowController's showWindow
-    // another option is to stop using DBPrefsWindowController
     [self showWindow:nil];
 }
 
@@ -108,6 +132,27 @@ enum {
         frameSize.width = 800;
     }
     return frameSize;
+}
+
+#pragma mark - private methods
+
+- (void)newTopic {
+    if ([RCRSettingsManager sharedRCRSettingsManager].privateToken.length == 0) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"尚未设置密钥"
+                                         defaultButton:@"设置密钥"
+                                       alternateButton:@"太麻烦，不玩了"
+                                           otherButton:nil
+                             informativeTextWithFormat:@"发帖、查看通知等需要使用个人密钥。密钥会保存到 Keychain 中。"];
+        [alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
+    } else {
+        [topicsViewController newTopic:nil];
+    }
+}
+
+- (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    if (returnCode == NSAlertDefaultReturn) {
+        [(RCRPrefsController *)[RCRPrefsController sharedPrefsWindowController] showAccount];
+    }
 }
 
 @end

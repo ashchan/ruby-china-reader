@@ -12,6 +12,7 @@
 #import "RCRTopic.h"
 #import "RCRUserDetailViewController.h"
 #import "RCRUrlBuilder.h"
+#import "RCRSettingsManager.h"
 
 @interface RCRTopicsViewController () {
     NSArray *_topics;
@@ -197,12 +198,14 @@
     }
 }
 
-- (IBAction)nodeNameClicked:(id)sender {
-}
-
 - (void)topicRowClicked:(id)sender {
     RCRTopic *topic = [self topicForRow:[sender clickedRow]];
     [[NSWorkspace sharedWorkspace] openURL:[RCRUrlBuilder urlWithPath:[NSString stringWithFormat:@"/topics/%@", topic.topicId]]];
+}
+
+- (IBAction)newTopic:(id)sender {
+    NSString *token = [RCRSettingsManager sharedRCRSettingsManager].privateToken;
+    //todo
 }
 
 #pragma mark - Private Methods & misc

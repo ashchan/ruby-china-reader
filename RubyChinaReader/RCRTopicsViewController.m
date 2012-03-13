@@ -19,6 +19,8 @@
     NSMutableArray *_observedVisibleItems;
     NSPopover *_userPopover;
     RCRUserDetailViewController *_userDetailViewController;
+    NSTimer *_uiTimer; // update refresh button
+    NSTimer *_refreshTimer;
     IBOutlet NSTableView *topicsTableView;
     IBOutlet NSProgressIndicator *loading;
 }
@@ -27,6 +29,7 @@
 - (RCRTopic *)topicForRow:(NSInteger)row;
 - (RCRTopic *)topicForId:(NSInteger)topicId;
 - (void)closeUserPopover;
+- (void)createRefreshTimer;
 
 @end
 
@@ -45,6 +48,9 @@
         _userPopover.behavior = NSPopoverBehaviorApplicationDefined;
         _userDetailViewController = [[RCRUserDetailViewController alloc] init];
         _userPopover.contentViewController = _userDetailViewController;
+        _uiTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(uiTimerUpdated) userInfo:nil repeats:YES];
+
+        [[RCRSettingsManager sharedRCRSettingsManager] addObserver:self forKeyPath:@"refreshInterval" options:NSKeyValueObservingOptionNew context:nil];
     }
 
     return self;
@@ -62,12 +68,41 @@
 }
 
 - (void)refresh {
+    [RCRSettingsManager sharedRCRSettingsManager].lastTimeRefreshed = [[NSDate date] timeIntervalSince1970];
+    [self setCanRefresh:NO];
     loading.hidden = NO;
     [loading startAnimation:nil];
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/topics.json?size=50" usingBlock:^(RKObjectLoader *loader) {
         loader.objectMapping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRTopic class]];
         loader.delegate = self;
     }];
+
+    [self createRefreshTimer];
+}
+
+- (BOOL)canRefresh {
+    return [[NSDate date] timeIntervalSince1970] - [RCRSettingsManager sharedRCRSettingsManager].lastTimeRefreshed >= [RCRSettingsManager sharedRCRSettingsManager].minRefreshInterval;
+}
+
+- (void)setCanRefresh:(BOOL)yesOrNo {
+    // just trigger KVO
+}
+
+- (void)uiTimerUpdated {
+    [self setCanRefresh:YES];
+}
+
+- (void)createRefreshTimer {
+    [_refreshTimer invalidate];
+    _refreshTimer = [NSTimer scheduledTimerWithTimeInterval:[RCRSettingsManager sharedRCRSettingsManager].refreshInterval
+                                                     target:self
+                                                   selector:@selector(refreshTimerUpdated)
+                                                   userInfo:nil
+                                                    repeats:YES];
+}
+
+- (void)refreshTimerUpdated {
+    [self refresh];
 }
 
 #pragma mark - RKRequestDelegate
@@ -213,6 +248,12 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:RCRTopicPropertyNamedGravatar]) {
         [self performSelectorOnMainThread:@selector(reloadRowForEntity:) withObject:object waitUntilDone:NO modes:[NSArray arrayWithObject:NSRunLoopCommonModes]];
+        return;
+    }
+
+    if ([keyPath isEqualToString:@"refreshInterval"]) {
+        [self createRefreshTimer];
+        return;
     }
 }
 

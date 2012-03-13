@@ -16,4 +16,6 @@
 - (IBAction)newTopic:(id)sender;
 - (IBAction)userImageClicked:(id)sender;
 
+@property BOOL canRefresh;
+
 @end

@@ -17,8 +17,6 @@
     EDSideBar *sideBar;
 }
 
-- (void)newTopic;
-
 @end
 
 @implementation RCRAppController
@@ -103,6 +101,7 @@ enum {
     [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=0)-[newTopicButton(==20)]-4-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(newTopicButton)]];
 
     NSButton *refreshButton = [[NSButton alloc] init];
+    [refreshButton bind:@"enabled" toObject:topicsViewController withKeyPath:@"canRefresh" options:nil];
     refreshButton.bezelStyle = NSThickSquareBezelStyle;
     refreshButton.image = [NSImage imageNamed:NSImageNameRefreshTemplate];
     refreshButton.target = topicsViewController;

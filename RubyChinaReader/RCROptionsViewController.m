@@ -7,9 +7,10 @@
 //
 
 #import "RCROptionsViewController.h"
+#import "RCRSettingsManager.h"
 
 @interface RCROptionsViewController ()
-
+@property NSInteger refreshInterval;
 @end
 
 @implementation RCROptionsViewController
@@ -30,6 +31,14 @@
     }
     
     return self;
+}
+
+- (void)setRefreshInterval:(NSInteger)interval {
+    [RCRSettingsManager sharedRCRSettingsManager].refreshInterval = interval;
+}
+
+- (NSInteger)refreshInterval {
+    return [RCRSettingsManager sharedRCRSettingsManager].refreshInterval;
 }
 
 @end

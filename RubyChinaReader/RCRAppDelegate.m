@@ -52,6 +52,10 @@
     [[NSApp keyWindow] close];
 }
 
+- (IBAction)newTopicClicked:(id)sender {
+    [[RCRAppController sharedAppController] newTopic];
+}
+
 #pragma mark - Private Methods
 
 - (void)mapObjects {

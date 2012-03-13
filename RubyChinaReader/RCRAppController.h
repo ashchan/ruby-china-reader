@@ -14,4 +14,6 @@
 
 + (RCRAppController *)sharedAppController;
 
+- (void)newTopic;
+
 @end

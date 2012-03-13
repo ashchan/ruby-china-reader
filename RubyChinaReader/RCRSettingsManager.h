@@ -15,5 +15,7 @@
 @property (weak) NSString *privateToken;
 @property BOOL startAtLogin;
 @property NSInteger refreshInterval;
+@property (readonly) NSInteger minRefreshInterval;
+@property NSTimeInterval lastTimeRefreshed;
 
 @end

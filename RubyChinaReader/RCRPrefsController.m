@@ -20,10 +20,6 @@
 
 @implementation RCRPrefsController
 
-+ (NSString *)nibName {
-    return @"RCROptionsViewController";
-}
-
 - (id)initWithWindow:(NSWindow *)window
 {
     self = [super initWithWindow:window];

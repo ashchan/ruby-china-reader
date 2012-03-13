@@ -14,6 +14,7 @@
 		1A1FC5CB15032C26009CDD67 /* RCRTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5CA15032C25009CDD67 /* RCRTableRowView.m */; };
 		1A1FC5CE15033875009CDD67 /* RCRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1FC5CD15033875009CDD67 /* RCRUser.m */; };
 		1A29596A15079D2700D397E5 /* RCRUrlBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A29596915079D2700D397E5 /* RCRUrlBuilder.m */; };
+		1A3E12E5150F19B500D0897C /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A3E12E4150F19B500D0897C /* Preferences.xib */; };
 		1A4FA721150618A200FB6B8D /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 1A4FA720150618A200FB6B8D /* Credits.html */; };
 		1A6546B1150789F40030C113 /* RCRTopicDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A6546AF150789F40030C113 /* RCRTopicDetailController.m */; };
 		1A6546B2150789F40030C113 /* RCRTopicDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6546B0150789F40030C113 /* RCRTopicDetailController.xib */; };
@@ -124,6 +125,7 @@
 		1A1FC5CD15033875009CDD67 /* RCRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRUser.m; sourceTree = "<group>"; };
 		1A29596815079D2700D397E5 /* RCRUrlBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRUrlBuilder.h; sourceTree = "<group>"; };
 		1A29596915079D2700D397E5 /* RCRUrlBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRUrlBuilder.m; sourceTree = "<group>"; };
+		1A3E12E4150F19B500D0897C /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		1A4FA720150618A200FB6B8D /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = Credits.html; path = Resources/Credits.html; sourceTree = "<group>"; };
 		1A6546AE150789F40030C113 /* RCRTopicDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRTopicDetailController.h; sourceTree = "<group>"; };
 		1A6546AF150789F40030C113 /* RCRTopicDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRTopicDetailController.m; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				1AFC259414FCDF1100443426 /* MainMenu.xib */,
+				1A3E12E4150F19B500D0897C /* Preferences.xib */,
 				1A6AB5561502203A00CC0516 /* RCRTopicsViewController.xib */,
 				1A6AB5691502318000CC0516 /* RCRAccountViewController.xib */,
 				1A6AB5641502307800CC0516 /* RCROptionsViewController.xib */,
@@ -560,6 +563,7 @@
 				1A4FA721150618A200FB6B8D /* Credits.html in Resources */,
 				1A9488281506EBE2004B83CA /* RCRUserDetailViewController.xib in Resources */,
 				1A6546B2150789F40030C113 /* RCRTopicDetailController.xib in Resources */,
+				1A3E12E5150F19B500D0897C /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

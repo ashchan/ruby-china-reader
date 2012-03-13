@@ -21,9 +21,9 @@
 
 @implementation RCRAppController
 
-const CGFloat SideBarWidth = 65;
-const CGFloat DefaultWindowHeight = 600;
-const CGFloat DefaultWindowWidth = 300;
+const CGFloat SideBarWidth        = 65;
+const CGFloat DefaultWindowHeight = 650;
+const CGFloat DefaultWindowWidth  = DefaultWindowHeight * 0.618 - SideBarWidth;
 
 enum {
     RCRSideBarRowTopics        = 0,
@@ -53,7 +53,7 @@ enum {
 
 - (void)windowDidLoad{
     NSWindow *window = 
-    [[NSWindow alloc] initWithContentRect:NSMakeRect(400, 300, DefaultWindowWidth + SideBarWidth, DefaultWindowHeight)
+    [[NSWindow alloc] initWithContentRect:NSMakeRect(900, 250, DefaultWindowWidth + SideBarWidth, DefaultWindowHeight)
                                 styleMask:(NSTitledWindowMask |
                                            NSClosableWindowMask |
                                            NSResizableWindowMask |

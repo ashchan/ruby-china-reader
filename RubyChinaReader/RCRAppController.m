@@ -21,7 +21,7 @@
 
 const CGFloat SideBarWidth = 65;
 const CGFloat DefaultWindowHeight = 600;
-const CGFloat DefaultWindowWidth = 400;
+const CGFloat DefaultWindowWidth = 300;
 
 enum {
     RCRSideBarRowTopics        = 0,
@@ -65,7 +65,7 @@ enum {
     [self.window.contentView addSubview:contentView];
 
     [contentView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(==65)-[contentView(>=400)]-(==0)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(contentView)]];
+    [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(==65)-[contentView(>=300)]-(==0)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(contentView)]];
     [self.window.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[contentView(>=250)]-0-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(contentView)]];
 
     sideBar = [[EDSideBar alloc] initWithFrame:NSMakeRect(0, 0, SideBarWidth, DefaultWindowHeight)];

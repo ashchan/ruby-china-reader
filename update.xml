@@ -6,17 +6,17 @@
       <description>Ruby China Reader Update Feed</description>
       <language>en</language>
          <item>
-            <title>Version 0.1</title>
+            <title>Version 0.1 Beta</title>
             <sparkle:minimumSystemVersion>10.7.0</sparkle:minimumSystemVersion>
-            <pubDate>Tue, 25 Mar 22:35:00 +0900</pubDate>
-            <enclosure url="https://github.com/downloads/ashchan/ruby-china-reader/RubyChinaReader-0.1b.zip"
-              sparkle:version="6"
+            <pubDate>Wed, 14 Mar 00:27:00 +0900</pubDate>
+            <enclosure url="https://github.com/downloads/ashchan/ruby-china-reader/RubyReader-0.1b.zip"
+              sparkle:version="18"
               sparkle:shortVersionString="0.1b"
-              length="1178409"
+              length="1218254"
               type="application/zip" />
             <description><![CDATA[
               <h2>0.1b</h2>
-              <p>2012-03-06</p>
+              <p>2012-03-14</p>
               <p>原始预览版。</p>
             ]]></description>
          </item>

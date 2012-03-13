@@ -17,5 +17,6 @@
 - (IBAction)userImageClicked:(id)sender;
 
 @property BOOL canRefresh;
+@property BOOL canPostTopic;
 
 @end

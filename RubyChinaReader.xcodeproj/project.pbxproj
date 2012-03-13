@@ -38,6 +38,7 @@
 		1AB3322115037734000D9DEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3322015037734000D9DEA /* QuartzCore.framework */; };
 		1AB3323315039034000D9DEA /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
 		1AB3323A150393C8000D9DEA /* RestKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
+		1AC44D26150F7DEA0082A6C1 /* RCRNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC44D25150F7DEA0082A6C1 /* RCRNode.m */; };
 		1ADBFE43150CC7520092B1E2 /* EDSideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADBFE42150CC7520092B1E2 /* EDSideBar.m */; };
 		1AF97242150DE24900955A7A /* RCRPrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF97241150DE24900955A7A /* RCRPrefsController.m */; };
 		1AF97274150EDE8A00955A7A /* RCRSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF97273150EDE8900955A7A /* RCRSettingsManager.m */; };
@@ -157,6 +158,8 @@
 		1A9488251506EBE2004B83CA /* RCRUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRUserDetailViewController.m; sourceTree = "<group>"; };
 		1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCRUserDetailViewController.xib; sourceTree = "<group>"; };
 		1AB3322015037734000D9DEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1AC44D24150F7DEA0082A6C1 /* RCRNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRNode.h; sourceTree = "<group>"; };
+		1AC44D25150F7DEA0082A6C1 /* RCRNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRNode.m; sourceTree = "<group>"; };
 		1ADBFE41150CC7520092B1E2 /* EDSideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDSideBar.h; path = SharedLib/EDSidebar/EDSideBar/EDSideBar.h; sourceTree = SOURCE_ROOT; };
 		1ADBFE42150CC7520092B1E2 /* EDSideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDSideBar.m; path = SharedLib/EDSidebar/EDSideBar/EDSideBar.m; sourceTree = SOURCE_ROOT; };
 		1AF97240150DE24900955A7A /* RCRPrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRPrefsController.h; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 				1A1FC5CD15033875009CDD67 /* RCRUser.m */,
 				1AF97272150EDE8900955A7A /* RCRSettingsManager.h */,
 				1AF97273150EDE8900955A7A /* RCRSettingsManager.m */,
+				1AC44D24150F7DEA0082A6C1 /* RCRNode.h */,
+				1AC44D25150F7DEA0082A6C1 /* RCRNode.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 				1AF97242150DE24900955A7A /* RCRPrefsController.m in Sources */,
 				1AF97274150EDE8A00955A7A /* RCRSettingsManager.m in Sources */,
 				1AF97286150EDFEE00955A7A /* EMKeychain.m in Sources */,
+				1AC44D26150F7DEA0082A6C1 /* RCRNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

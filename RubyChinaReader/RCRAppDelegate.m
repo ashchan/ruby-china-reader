@@ -12,12 +12,7 @@
 #import "RCRPrefsController.h"
 #import "RCRUser.h"
 #import "RCRTopic.h"
-
-/*#ifdef DEBUG
-    static NSString * API_ENDPOINT = @"http://localhost:3000";
-#else*/
-    static NSString * API_ENDPOINT = @"http://ruby-china.org";
-//#endif
+#import "RCRNode.h"
 
 @interface RCRAppDelegate () {
 }
@@ -26,6 +21,12 @@
 @end
 
 @implementation RCRAppDelegate
+
+#ifdef DEBUG
+    static NSString * API_ENDPOINT = @"http://localhost:3000";
+#else
+    static NSString * API_ENDPOINT = @"http://ruby-china.org";
+#endif
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -59,6 +60,7 @@
 #pragma mark - Private Methods
 
 - (void)mapObjects {
+    [RKClient clientWithBaseURLString:API_ENDPOINT];
     RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:[NSURL URLWithString:API_ENDPOINT]];
     
     RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[RCRUser class]];
@@ -84,6 +86,11 @@
     [topicMapping mapRelationship:@"user" withMapping:userMapping];
     
     [manager.mappingProvider addObjectMapping:topicMapping];
+
+    RKObjectMapping *nodeMapping = [RKObjectMapping mappingForClass:[RCRNode class]];
+    [nodeMapping mapKeyPathsToAttributes:@"_id", @"nodeId",
+        @"name", @"name", nil];
+    [manager.mappingProvider addObjectMapping:nodeMapping];
 }
 
 @end

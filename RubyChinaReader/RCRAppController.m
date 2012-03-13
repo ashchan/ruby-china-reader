@@ -90,6 +90,7 @@ enum {
     [sideBar addButtonWithTitle:topicsViewController.title image:[NSImage imageNamed:NSImageNameBonjour]];
 
     NSButton *newTopicButton = [[NSButton alloc] init];
+    [newTopicButton bind:@"enabled" toObject:topicsViewController withKeyPath:@"canPostTopic" options:nil];
     newTopicButton.bezelStyle = NSThickSquareBezelStyle;
     newTopicButton.image = [NSImage imageNamed:NSImageNameAddTemplate];
     newTopicButton.target = self;

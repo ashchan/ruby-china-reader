@@ -13,9 +13,11 @@
 #import "RCRUserDetailViewController.h"
 #import "RCRUrlBuilder.h"
 #import "RCRSettingsManager.h"
+#import "RCRNode.h"
 
 @interface RCRTopicsViewController () {
     NSArray *_topics;
+    NSArray *_nodes;
     NSMutableArray *_observedVisibleItems;
     NSPopover *_userPopover;
     RCRUserDetailViewController *_userDetailViewController;
@@ -23,6 +25,10 @@
     NSTimer *_refreshTimer;
     IBOutlet NSTableView *topicsTableView;
     IBOutlet NSProgressIndicator *loading;
+    IBOutlet NSWindow *newTopicPanel;
+    IBOutlet NSTextField *newTopicTitle;
+    IBOutlet NSTextView *newTopicBody;
+    IBOutlet NSPopUpButton *newTopicNode;
 }
 
 - (void)reloadRowForEntity:(id)object;
@@ -30,10 +36,16 @@
 - (RCRTopic *)topicForId:(NSInteger)topicId;
 - (void)closeUserPopover;
 - (void)createRefreshTimer;
+- (void)fetchNodes;
+- (void)clearNewTopic;
+
+- (IBAction)submitTopic:(id)sender;
 
 @end
 
 @implementation RCRTopicsViewController
+
+@synthesize canPostTopic;
 
 - (NSString *)nibName {
     return @"RCRTopicsViewController";
@@ -65,6 +77,7 @@
     topicsTableView.doubleAction = @selector(topicRowClicked:);
 
     [self refresh];
+    [self fetchNodes];
 }
 
 - (void)refresh {
@@ -108,17 +121,26 @@
 #pragma mark - RKRequestDelegate
 
 - (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response {
+    if (response.statusCode == 201) {
+        [self clearNewTopic];
+        [NSApp endSheet:newTopicPanel returnCode:NSRunStoppedResponse];
+    }
 }
 
 #pragma mark - RKObjectLoaderDelegate
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
-    _topics = [objects copy];
-    topicsTableView.hidden = NO;
-    [loading stopAnimation:nil];
-    loading.hidden = YES;
+    if (objectLoader.objectMapping.objectClass == [RCRTopic class]) {
+        _topics = [objects copy];
+        topicsTableView.hidden = NO;
+        [loading stopAnimation:nil];
+        loading.hidden = YES;
 
-    [topicsTableView reloadData];
+        [topicsTableView reloadData];
+    } else if (objectLoader.objectMapping.objectClass == [RCRNode class]) {
+        _nodes = [objects copy];
+        self.canPostTopic = YES;
+    }
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
@@ -157,7 +179,6 @@
         statusText = [NSString stringWithFormat:@"[%@] 由 %@ 创建", topic.nodeName, topic.user.login];
     }
     [cellView.nodeName setTitleWithMnemonic:statusText];
-//    [cellView.nodeName setHidden:YES];
     
     [cellView.repliedAt setTitleWithMnemonic:[topic.repliedAt timeAgo]];
     
@@ -239,8 +260,35 @@
 }
 
 - (IBAction)newTopic:(id)sender {
-    NSString *token = [RCRSettingsManager sharedRCRSettingsManager].privateToken;
-    //todo
+    [newTopicNode removeAllItems];
+    for (RCRNode *node in _nodes) {
+        [newTopicNode addItemWithTitle:node.name];
+        [newTopicNode lastItem].tag = node.nodeId.integerValue;
+    }
+
+    [NSApp beginSheet:newTopicPanel
+       modalForWindow:[NSApp keyWindow]
+        modalDelegate:self
+       didEndSelector:@selector(didEndSheet:returnCode:contextInfo:)
+          contextInfo:nil];
+}
+
+- (IBAction)submitTopic:(id)sender {
+    if ([sender tag] == 1) {
+        NSDictionary* params = [NSDictionary dictionaryWithKeysAndObjects:@"title", newTopicTitle.stringValue,
+                                                                          @"body", newTopicBody.string,
+                                                                          @"node_id", [NSNumber numberWithInteger:newTopicNode.selectedTag],
+                                                                          @"token", [RCRSettingsManager sharedRCRSettingsManager].privateToken,
+                                                                          nil];
+        [ [RKClient sharedClient] post:@"/api/topics.json" params:params delegate:self];
+    } else {
+        [NSApp endSheet:newTopicPanel returnCode:NSRunAbortedResponse];
+        [self clearNewTopic];
+    }
+}
+
+- (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+    [newTopicPanel orderOut:self];
 }
 
 #pragma mark - Private Methods & misc
@@ -292,6 +340,19 @@
     if (_userPopover.shown) {
         [_userPopover close];
     }
+}
+
+- (void)fetchNodes {
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/nodes.json" usingBlock:^(RKObjectLoader *loader) {
+        loader.objectMapping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRNode class]];
+        loader.delegate = self;
+    }];
+}
+
+- (void)clearNewTopic {
+    newTopicTitle.stringValue = @"";
+    newTopicBody.string = @"";
+    [newTopicNode selectItemAtIndex:0];
 }
 
 @end

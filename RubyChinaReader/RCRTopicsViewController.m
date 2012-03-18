@@ -45,6 +45,8 @@
 
 @implementation RCRTopicsViewController
 
+NSString *const SELECT_NODE = @"--选择一个节点--";
+
 @synthesize canPostTopic;
 
 - (NSString *)nibName {
@@ -261,6 +263,8 @@
 
 - (IBAction)newTopic:(id)sender {
     [newTopicNode removeAllItems];
+    [newTopicNode addItemWithTitle:SELECT_NODE];
+    [newTopicNode lastItem].tag = -1;
     for (RCRNode *node in _nodes) {
         [newTopicNode addItemWithTitle:node.name];
         [newTopicNode lastItem].tag = node.nodeId.integerValue;
@@ -275,12 +279,43 @@
 
 - (IBAction)submitTopic:(id)sender {
     if ([sender tag] == 1) {
-        NSDictionary* params = [NSDictionary dictionaryWithKeysAndObjects:@"title", newTopicTitle.stringValue,
+        BOOL hasError = NO;
+
+        NSInteger node_id = newTopicNode.selectedTag;
+        if (newTopicTitle.stringValue.length == 0) {
+            hasError = YES;
+            newTopicTitle.backgroundColor = [NSColor redColor];
+        }
+        else {
+            newTopicTitle.backgroundColor = [NSColor textBackgroundColor];
+        }
+
+        if (newTopicBody.string.length == 0) {
+            hasError = YES;
+            newTopicBody.backgroundColor = [NSColor redColor];
+        } else {
+            newTopicBody.backgroundColor = [NSColor textBackgroundColor];
+        }
+
+        if (node_id == -1) {
+            hasError = YES;
+            NSMutableAttributedString *error = [[NSMutableAttributedString alloc] initWithString:SELECT_NODE];
+            [error addAttribute:NSBackgroundColorAttributeName value:[NSColor redColor] range:NSMakeRange(0, error.length)];
+            newTopicNode.selectedItem.attributedTitle = error;
+        } else {
+            [newTopicNode itemAtIndex:0].attributedTitle = nil;
+        }
+
+        if (!hasError) {
+            NSDictionary* params = [NSDictionary dictionaryWithKeysAndObjects:@"title", newTopicTitle.stringValue,
                                                                           @"body", newTopicBody.string,
                                                                           @"node_id", [NSNumber numberWithInteger:newTopicNode.selectedTag],
                                                                           @"token", [RCRSettingsManager sharedRCRSettingsManager].privateToken,
                                                                           nil];
-        [ [RKClient sharedClient] post:@"/api/topics.json" params:params delegate:self];
+            [[RKClient sharedClient] post:@"/api/topics.json" params:params delegate:self];
+        } else {
+            newTopicPanel.viewsNeedDisplay = YES;
+        }
     } else {
         [NSApp endSheet:newTopicPanel returnCode:NSRunAbortedResponse];
         [self clearNewTopic];

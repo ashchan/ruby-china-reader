@@ -11,17 +11,17 @@
 
 @interface RCRTopic : NSObject
 
-@property (retain) NSNumber *topicId;
-@property (retain) NSString *title;
-@property (retain) NSString *body;
-@property (retain) NSString *bodyHtml;
-@property (retain) NSNumber *repliesCount;
-@property (retain) NSDate *createdDate;
-@property (retain) NSDate *updatedDate;
-@property (retain) NSDate *repliedAt;
-@property (retain) NSString *nodeName;
-@property (retain) NSNumber *nodeId;
-@property (retain) RCRUser *user;
-@property (retain) NSString *lastReplyUserLogin;
+@property (strong) NSNumber *topicId;
+@property (strong) NSString *title;
+@property (strong) NSString *body;
+@property (strong) NSString *bodyHtml;
+@property (strong) NSNumber *repliesCount;
+@property (strong) NSDate *createdDate;
+@property (strong) NSDate *updatedDate;
+@property (strong) NSDate *repliedAt;
+@property (strong) NSString *nodeName;
+@property (strong) NSNumber *nodeId;
+@property (strong) RCRUser *user;
+@property (strong) NSString *lastReplyUserLogin;
 
 @end

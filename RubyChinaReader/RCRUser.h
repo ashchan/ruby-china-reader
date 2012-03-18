@@ -12,17 +12,17 @@ extern NSString *const RCRTopicPropertyNamedGravatar;
 
 @interface RCRUser : NSObject
 
-@property (retain) NSString *login;
-@property (retain) NSString *name;
-@property (retain) NSString *location;
-@property (retain) NSString *bio;
-@property (retain) NSString *tagline;
-@property (retain) NSString *website;
-@property (retain) NSString *githubUrl;
-@property (retain) NSString *gravatarHash;
+@property (strong) NSString *login;
+@property (strong) NSString *name;
+@property (strong) NSString *location;
+@property (strong) NSString *bio;
+@property (strong) NSString *tagline;
+@property (strong) NSString *website;
+@property (strong) NSString *githubUrl;
+@property (strong) NSString *gravatarHash;
 
 @property (assign) BOOL loadingGravatar;
-@property (retain) NSImage *gravatar;
+@property (strong) NSImage *gravatar;
 
 - (void)loadGravatar;
 

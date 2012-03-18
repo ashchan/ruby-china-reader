@@ -10,7 +10,7 @@
 
 @interface RCRNode : NSObject
 
-@property (retain) NSNumber *nodeId;
-@property (retain) NSString *name;
+@property (strong) NSNumber *nodeId;
+@property (strong) NSString *name;
 
 @end

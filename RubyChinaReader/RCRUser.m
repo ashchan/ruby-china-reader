@@ -20,6 +20,7 @@ NSString *const RCRTopicPropertyNamedGravatar = @"user.gravatar";
 @synthesize website;
 @synthesize githubUrl;
 @synthesize gravatarHash;
+@synthesize avatarUrl;
 
 @synthesize loadingGravatar;
 @synthesize gravatar;
@@ -33,6 +34,10 @@ static NSOperationQueue *sharedGravatarOperationQueue() {
 }
 
 - (NSURL *)gravatarUrl {
+    if (avatarUrl.length > 0) {
+        return [NSURL URLWithString:avatarUrl];
+    }
+
     return [NSURL URLWithString:[NSString stringWithFormat:@"http://gravatar.com/avatar/%@.png?s=48", gravatarHash]];
 }
 

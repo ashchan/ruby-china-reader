@@ -6,15 +6,21 @@
       <description>Ruby China Reader Update Feed</description>
       <language>en</language>
          <item>
-            <title>Version 0.1 Beta</title>
+            <title>Version 0.1</title>
             <sparkle:minimumSystemVersion>10.7.0</sparkle:minimumSystemVersion>
-            <pubDate>Wed, 14 Mar 00:27:00 +0900</pubDate>
-            <enclosure url="https://github.com/downloads/ashchan/ruby-china-reader/RubyChina-0.1b.zip"
-              sparkle:version="18"
-              sparkle:shortVersionString="0.1b"
-              length="1218254"
+            <pubDate>Tue, 3 Apr 00:15:00 +0900</pubDate>
+            <enclosure url="https://github.com/downloads/ashchan/ruby-china-reader/RubyChina-0.1.zip"
+              sparkle:version="19"
+              sparkle:shortVersionString="0.1"
+              length="1222369"
               type="application/zip" />
             <description><![CDATA[
+              <h2>0.1</h2>
+              <p>2012-04-03</p>
+              <ul>
+                <li>* 增加对加载用户上传头像的支持(之前只支持显示gravatar头像)。</li>
+              </ul>
+
               <h2>0.1b</h2>
               <p>2012-03-14</p>
               <p>原始预览版。</p>

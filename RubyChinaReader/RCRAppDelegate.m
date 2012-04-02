@@ -67,6 +67,7 @@
     [userMapping mapAttributes:@"login", @"name", @"location", @"bio", @"tagline", @"website", nil];
     [userMapping mapKeyPathsToAttributes:@"github_url", @"githubUrl",
         @"gravatar_hash", @"gravatarHash",
+        @"avatar_url", @"avatarUrl",
         nil];
     [manager.mappingProvider addObjectMapping:userMapping];
 

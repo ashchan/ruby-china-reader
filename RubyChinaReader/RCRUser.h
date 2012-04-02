@@ -20,6 +20,7 @@ extern NSString *const RCRTopicPropertyNamedGravatar;
 @property (strong) NSString *website;
 @property (strong) NSString *githubUrl;
 @property (strong) NSString *gravatarHash;
+@property (strong) NSString *avatarUrl;
 
 @property (assign) BOOL loadingGravatar;
 @property (strong) NSImage *gravatar;

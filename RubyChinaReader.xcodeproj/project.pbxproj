@@ -35,6 +35,7 @@
 		1A859B9614FCECDF00EB7867 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1A859B9514FCECDF00EB7867 /* icon.icns */; };
 		1A9488271506EBE2004B83CA /* RCRUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9488251506EBE2004B83CA /* RCRUserDetailViewController.m */; };
 		1A9488281506EBE2004B83CA /* RCRUserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */; };
+		1A9E4381155D22C90064AEB1 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E4380155D22C90064AEB1 /* EGOCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1AB3322115037734000D9DEA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3322015037734000D9DEA /* QuartzCore.framework */; };
 		1AB3323315039034000D9DEA /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
 		1AB3323A150393C8000D9DEA /* RestKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A6AB5411502037C00CC0516 /* RestKit.framework */; };
@@ -157,6 +158,8 @@
 		1A9488241506EBE2004B83CA /* RCRUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRUserDetailViewController.h; sourceTree = "<group>"; };
 		1A9488251506EBE2004B83CA /* RCRUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRUserDetailViewController.m; sourceTree = "<group>"; };
 		1A9488261506EBE2004B83CA /* RCRUserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCRUserDetailViewController.xib; sourceTree = "<group>"; };
+		1A9E437F155D22C90064AEB1 /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
+		1A9E4380155D22C90064AEB1 /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
 		1AB3322015037734000D9DEA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1AC44D24150F7DEA0082A6C1 /* RCRNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRNode.h; sourceTree = "<group>"; };
 		1AC44D25150F7DEA0082A6C1 /* RCRNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRNode.m; sourceTree = "<group>"; };
@@ -270,6 +273,7 @@
 		1A6EC9AE14FD0BE700A91FEF /* SharedLib */ = {
 			isa = PBXGroup;
 			children = (
+				1A9E437E155D22C90064AEB1 /* EGOCache */,
 				1AF97275150EDFED00955A7A /* EMKeychain */,
 				1ADBFE40150CC73C0092B1E2 /* EDSidebar */,
 				1A6AB5321502037C00CC0516 /* RestKit.xcodeproj */,
@@ -339,6 +343,16 @@
 			);
 			name = Resources;
 			sourceTree = "<group>";
+		};
+		1A9E437E155D22C90064AEB1 /* EGOCache */ = {
+			isa = PBXGroup;
+			children = (
+				1A9E437F155D22C90064AEB1 /* EGOCache.h */,
+				1A9E4380155D22C90064AEB1 /* EGOCache.m */,
+			);
+			name = EGOCache;
+			path = SharedLib/EGOCache;
+			sourceTree = SOURCE_ROOT;
 		};
 		1ADBFE40150CC73C0092B1E2 /* EDSidebar */ = {
 			isa = PBXGroup;
@@ -624,6 +638,7 @@
 				1AF97274150EDE8A00955A7A /* RCRSettingsManager.m in Sources */,
 				1AF97286150EDFEE00955A7A /* EMKeychain.m in Sources */,
 				1AC44D26150F7DEA0082A6C1 /* RCRNode.m in Sources */,
+				1A9E4381155D22C90064AEB1 /* EGOCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "RCRUser.h"
+#import "EGOCache.h"
 
 NSString *const RCRTopicPropertyNamedGravatar = @"user.gravatar";
 
@@ -41,23 +42,37 @@ static NSOperationQueue *sharedGravatarOperationQueue() {
     return [NSURL URLWithString:[NSString stringWithFormat:@"http://gravatar.com/avatar/%@.png?s=48", gravatarHash]];
 }
 
+- (NSString *)avatarCacheKey {
+    NSInteger hash = [[[[self gravatarUrl] absoluteString] description] hash];
+    return [NSString stringWithFormat:@"avatar-image-%ld", hash];
+}
+
 - (void)loadGravatar {
     @synchronized (self) {
         if (self.gravatar == nil && !self.loadingGravatar) {
-            loadingGravatar = YES;
-            [sharedGravatarOperationQueue() addOperationWithBlock:^(void) {
-                NSImage *image = [[NSImage alloc] initWithContentsOfURL:[self gravatarUrl]];
-                if (image != nil) {
-                    @synchronized (self) {
-                        loadingGravatar = NO;
-                        self.gravatar = image;
-                    }
-                } else {
-                    @synchronized (self) {
-                        self.gravatar = [NSImage imageNamed:NSImageNameTrashFull];
-                    }
+            __block NSImage *image = [[EGOCache currentCache] imageForKey:[self avatarCacheKey]];
+            if (image) {
+                @synchronized (self) {
+                    loadingGravatar = NO;
+                    self.gravatar = image;
                 }
-            }];
+            } else {
+                loadingGravatar = YES;
+                [sharedGravatarOperationQueue() addOperationWithBlock:^(void) {
+                    image = [[NSImage alloc] initWithContentsOfURL:[self gravatarUrl]];
+                    if (image) {
+                        @synchronized (self) {
+                            loadingGravatar = NO;
+                            self.gravatar = image;
+                            [[EGOCache currentCache] setImage:image forKey:[self avatarCacheKey] withTimeoutInterval:60 * 60 * 24 * 7];
+                        }
+                    } else {
+                        @synchronized (self) {
+                            self.gravatar = [NSImage imageNamed:NSImageNameTrashFull];
+                        }
+                    }
+                }];
+            }
         }
     }
 }

@@ -13,8 +13,8 @@
 
 @property (strong) NSNumber *topicId;
 @property (strong) NSString *title;
-@property (strong) NSString *body;
-@property (strong) NSString *bodyHtml;
+//@property (strong) NSString *body;
+//@property (strong) NSString *bodyHtml;
 @property (strong) NSNumber *repliesCount;
 @property (strong) NSDate *createdDate;
 @property (strong) NSDate *updatedDate;

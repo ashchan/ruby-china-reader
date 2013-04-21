@@ -30,8 +30,8 @@
     [super windowDidLoad];
 
     NSString *htmlBody = @"<!DOCTYPE html><html><head><meta charset='utf-8'></head><body>";
-    htmlBody = [htmlBody stringByAppendingString:_topic.bodyHtml];
-    htmlBody = [htmlBody stringByAppendingString:@"</body></html>"];
+    //htmlBody = [htmlBody stringByAppendingString:_topic.bodyHtml];
+    //htmlBody = [htmlBody stringByAppendingString:@"</body></html>"];
 
     NSData *htmlData = [htmlBody dataUsingEncoding:NSUTF8StringEncoding];
     NSAttributedString *html = [[NSAttributedString alloc] initWithHTML:htmlData

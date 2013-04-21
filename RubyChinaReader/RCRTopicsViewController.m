@@ -87,9 +87,15 @@ NSString *const SELECT_NODE = @"--选择一个节点--";
     [self setCanRefresh:NO];
     loading.hidden = NO;
     [loading startAnimation:nil];
-    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/topics.json?size=50" usingBlock:^(RKObjectLoader *loader) {
-        loader.objectMapping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRTopic class]];
-        loader.delegate = self;
+
+    [RKObjectManager.sharedManager getObjectsAtPath:@"/api/topics.json?size=50" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        _topics = [[mappingResult array] copy];
+        topicsTableView.hidden = NO;
+        [loading stopAnimation:nil];
+        loading.hidden = YES;
+
+        [topicsTableView reloadData];
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     }];
 
     [self createRefreshTimer];
@@ -121,35 +127,14 @@ NSString *const SELECT_NODE = @"--选择一个节点--";
 }
 
 #pragma mark - RKRequestDelegate
-
+/*
 - (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response {
     if (response.statusCode == 201) {
         [self clearNewTopic];
         [NSApp endSheet:newTopicPanel returnCode:NSRunStoppedResponse];
     }
 }
-
-#pragma mark - RKObjectLoaderDelegate
-
-- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
-    if (objectLoader.objectMapping.objectClass == [RCRTopic class]) {
-        _topics = [objects copy];
-        topicsTableView.hidden = NO;
-        [loading stopAnimation:nil];
-        loading.hidden = YES;
-
-        [topicsTableView reloadData];
-    } else if (objectLoader.objectMapping.objectClass == [RCRNode class]) {
-        _nodes = [objects copy];
-        self.canPostTopic = YES;
-    }
-}
-
-- (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
-}
-
-- (void)request:(RKRequest *)request didReceiveData:(NSInteger)bytesReceived totalBytesReceived:(NSInteger)totalBytesReceived totalBytesExpectedToReceive:(NSInteger)totalBytesExpectedToReceive {
-}
+*/
 
 #pragma mark - NSTableViewDelegate
 
@@ -181,8 +166,12 @@ NSString *const SELECT_NODE = @"--选择一个节点--";
         statusText = [NSString stringWithFormat:@"[%@] 由 %@ 创建", topic.nodeName, topic.user.login];
     }
     [cellView.nodeName setTitleWithMnemonic:statusText];
-    
-    [cellView.repliedAt setTitleWithMnemonic:[topic.repliedAt timeAgo]];
+
+    if (topic.repliedAt) {
+        [cellView.repliedAt setTitleWithMnemonic:[topic.repliedAt timeAgo]];
+    } else {
+        [cellView.repliedAt setTitleWithMnemonic:@""];
+    }
     
     cellView.repliesCount.title = topic.repliesCount.stringValue;
     [cellView.repliesCount.cell setHighlightsBy:0];
@@ -227,7 +216,7 @@ NSString *const SELECT_NODE = @"--选择一个节点--";
         NSMutableAttributedString *userName = [[NSMutableAttributedString alloc] initWithString:(topic.user.name.length > 0 ? topic.user.name : topic.user.login)];
         NSRange range = NSMakeRange(0, userName.length);
         [userName addAttribute:NSLinkAttributeName
-                         value:[RCRUrlBuilder urlWithPath:[NSString stringWithFormat:@"/users/%@", topic.user.login]]
+                         value:[RCRUrlBuilder urlWithPath:[NSString stringWithFormat:@"/%@", topic.user.login]]
                          range:range];
         [userName addAttribute:NSForegroundColorAttributeName
                          value:[NSColor blueColor]
@@ -307,12 +296,13 @@ NSString *const SELECT_NODE = @"--选择一个节点--";
         }
 
         if (!hasError) {
-            NSDictionary* params = [NSDictionary dictionaryWithKeysAndObjects:@"title", newTopicTitle.stringValue,
-                                                                          @"body", newTopicBody.string,
-                                                                          @"node_id", [NSNumber numberWithInteger:newTopicNode.selectedTag],
-                                                                          @"token", [RCRSettingsManager sharedRCRSettingsManager].privateToken,
-                                                                          nil];
-            [[RKClient sharedClient] post:@"/api/topics.json" params:params delegate:self];
+            NSDictionary *params = @{
+                                     @"title": newTopicTitle.stringValue,
+                                     @"body": newTopicBody.string,
+                                     @"node_id": [NSNumber numberWithInteger:newTopicNode.selectedTag],
+                                     @"token": [RCRSettingsManager sharedRCRSettingsManager].privateToken
+                                    };
+            //[[RKClient sharedClient] post:@"/api/topics.json" params:params delegate:self];
         } else {
             newTopicPanel.viewsNeedDisplay = YES;
         }
@@ -378,10 +368,14 @@ NSString *const SELECT_NODE = @"--选择一个节点--";
 }
 
 - (void)fetchNodes {
-    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/api/nodes.json" usingBlock:^(RKObjectLoader *loader) {
-        loader.objectMapping = [[RKObjectManager sharedManager].mappingProvider objectMappingForClass:[RCRNode class]];
-        loader.delegate = self;
-    }];
+    [RKObjectManager.sharedManager getObjectsAtPath:@"/api/nodes.json"
+                                         parameters:nil
+                                            success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                _nodes = [[mappingResult array] copy];
+                                                //self.canPostTopic = YES;
+                                            }
+                                            failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                            }];
 }
 
 - (void)clearNewTopic {

@@ -9,7 +9,7 @@
 #import <RestKit/RestKit.h>
 #import "NSDate+TimeAgo.h"
 
-@interface RCRTopicsViewController : NSViewController <RKObjectLoaderDelegate, NSTableViewDelegate, NSTableViewDataSource>
+@interface RCRTopicsViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
 
 - (void)start;
 - (void)refresh;

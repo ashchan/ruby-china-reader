@@ -13,19 +13,6 @@ NSString *const RCRTopicPropertyNamedGravatar = @"user.gravatar";
 
 @implementation RCRUser
 
-@synthesize login;
-@synthesize name;
-@synthesize location;
-@synthesize bio;
-@synthesize tagline;
-@synthesize website;
-@synthesize githubUrl;
-@synthesize gravatarHash;
-@synthesize avatarUrl;
-
-@synthesize loadingGravatar;
-@synthesize gravatar;
-
 static NSOperationQueue *sharedGravatarOperationQueue() {
     static NSOperationQueue *sharedGravatarOperationQueue = nil;
     if (sharedGravatarOperationQueue == nil) {
@@ -35,11 +22,11 @@ static NSOperationQueue *sharedGravatarOperationQueue() {
 }
 
 - (NSURL *)gravatarUrl {
-    if (avatarUrl.length > 0) {
-        return [NSURL URLWithString:avatarUrl];
+    if (self.avatarUrl.length > 0) {
+        return [NSURL URLWithString:self.avatarUrl];
     }
 
-    return [NSURL URLWithString:[NSString stringWithFormat:@"http://gravatar.com/avatar/%@.png?s=48", gravatarHash]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"http://gravatar.com/avatar/%@.png?s=48", self.gravatarHash]];
 }
 
 - (NSString *)avatarCacheKey {
@@ -53,16 +40,16 @@ static NSOperationQueue *sharedGravatarOperationQueue() {
             __block NSImage *image = [[EGOCache currentCache] imageForKey:[self avatarCacheKey]];
             if (image) {
                 @synchronized (self) {
-                    loadingGravatar = NO;
+                    self.loadingGravatar = NO;
                     self.gravatar = image;
                 }
             } else {
-                loadingGravatar = YES;
+                self.loadingGravatar = YES;
                 [sharedGravatarOperationQueue() addOperationWithBlock:^(void) {
                     image = [[NSImage alloc] initWithContentsOfURL:[self gravatarUrl]];
                     if (image) {
                         @synchronized (self) {
-                            loadingGravatar = NO;
+                            self.loadingGravatar = NO;
                             self.gravatar = image;
                             [[EGOCache currentCache] setImage:image forKey:[self avatarCacheKey] withTimeoutInterval:60 * 60 * 24 * 7];
                         }

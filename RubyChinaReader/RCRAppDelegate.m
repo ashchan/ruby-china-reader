@@ -22,11 +22,13 @@
 
 @implementation RCRAppDelegate
 
+/*
 #ifdef DEBUG
     static NSString * API_ENDPOINT = @"http://localhost:3000";
 #else
+*/
     static NSString * API_ENDPOINT = @"http://ruby-china.org";
-#endif
+//#endif
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -60,38 +62,40 @@
 #pragma mark - Private Methods
 
 - (void)mapObjects {
-    [RKClient clientWithBaseURLString:API_ENDPOINT];
-    RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:[NSURL URLWithString:API_ENDPOINT]];
+    RKObjectManager *manager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:API_ENDPOINT]];
     
     RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[RCRUser class]];
-    [userMapping mapAttributes:@"login", @"name", @"location", @"bio", @"tagline", @"website", nil];
-    [userMapping mapKeyPathsToAttributes:@"github_url", @"githubUrl",
-        @"gravatar_hash", @"gravatarHash",
-        @"avatar_url", @"avatarUrl",
-        nil];
-    [manager.mappingProvider addObjectMapping:userMapping];
+    [userMapping addAttributeMappingsFromArray:@[@"login", @"name", @"location", @"bio", @"tagline", @"website"]];
+    [userMapping addAttributeMappingsFromDictionary:@{
+        @"github_url":    @"githubUrl",
+        @"gravatar_hash": @"gravatarHash",
+        @"avatar_url":    @"avatarUrl"
+    }];
+    [manager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:userMapping pathPattern:nil keyPath:nil statusCodes:nil]];
 
     RKObjectMapping *topicMapping = [RKObjectMapping mappingForClass:[RCRTopic class]];
-    [topicMapping mapKeyPathsToAttributes: @"title", @"title",
-        @"_id", @"topicId",
-        @"body", @"body",
-        @"body_html", @"bodyHtml",
-        @"replies_count", @"repliesCount",
-        @"created_at", @"createdDate",
-        @"updated_at", @"updatedDate",
-        @"replied_at", @"repliedAt",
-        @"node_name", @"nodeName",
-        @"node_id", @"nodeId",
-        @"last_reply_user_login", @"lastReplyUserLogin",
-        nil];
-    [topicMapping mapRelationship:@"user" withMapping:userMapping];
-    
-    [manager.mappingProvider addObjectMapping:topicMapping];
+    [topicMapping addAttributeMappingsFromDictionary:@{
+        @"title":           @"title",
+        @"id":             @"topicId",
+        //@"body":            @"body",
+        //@"body_html":       @"bodyHtml",
+        @"replies_count":   @"repliesCount",
+        @"created_at":      @"createdDate",
+        @"updated_at":      @"updatedDate",
+        @"replied_at":      @"repliedAt",
+        @"node_name":       @"nodeName",
+        @"node_id":         @"nodeId",
+        @"last_reply_user_login": @"lastReplyUserLogin"
+    }];
+    [topicMapping addRelationshipMappingWithSourceKeyPath:@"user" mapping:userMapping];
+    [manager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:topicMapping pathPattern:nil keyPath:nil statusCodes:nil]];
 
     RKObjectMapping *nodeMapping = [RKObjectMapping mappingForClass:[RCRNode class]];
-    [nodeMapping mapKeyPathsToAttributes:@"_id", @"nodeId",
-        @"name", @"name", nil];
-    [manager.mappingProvider addObjectMapping:nodeMapping];
+    [nodeMapping addAttributeMappingsFromDictionary:@{
+        @"_id":  @"nodeId",
+        @"name": @"name"
+    }];
+    [manager addResponseDescriptor:[RKResponseDescriptor responseDescriptorWithMapping:topicMapping pathPattern:nil keyPath:nil statusCodes:nil]];
 }
 
 @end
